@@ -1,0 +1,124 @@
+<html>
+<head>
+<META HTTP-EQUIV="Pragma" CONTENT="No-Cache">
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<title>테이블 삽입</title>
+<style>
+body {background: threedface; color: windowtext;}
+body, select, td { font-family: arial; font-size: 9pt;}
+</style>
+
+<script language="javascript">
+<!--
+function createTable(){
+	if(window.open){
+		var val;
+		var key_1 = document.getElementById('border').value;
+		var key_2 = document.getElementById('cellspacing').value;
+		var key_3 = document.getElementById('cellpadding').value;
+		var key_4 = document.getElementById('width').value;
+		var key_5 = document.getElementById('widthExt').value;
+		var key_6 = document.getElementById('alignment').value;
+		var key_7 = document.getElementById('rows').value;
+		var key_8 = document.getElementById('cols').value;
+
+		val = '<table border="' + key_1 + '" cellspacing="' + key_2 + '" cellpadding="' + key_3 + '" width="' + key_4 + key_5 + '" align="' + key_6 + '">';
+
+		for (var i=0; i<key_7; i++){
+			val += '<TR>';
+			for (var j=0; j<key_8; j++) val += '<TD>&nbsp;</TD>';
+			val += '</TR>';
+		}
+		val += '</TABLE>';
+		
+		window.returnValue = val;
+		self.close();
+	}
+}
+//-->
+</script>
+
+</head>
+
+<BODY scroll=no leftmargin="1" marginwidth="1" topmargin="1" marginheight="1">
+
+<table border="0" cellpadding="5" cellspacing="3" width="340">
+	<tr>
+		<td align="center">
+		<table border="0" cellpadding="2" cellspacing="0" width="100%">
+			<tr>
+				<td width="305" valign="top">
+				<FIELDSET style="width:300; height:150">
+				<LEGEND><span style="font-size:9pt">표 삽입</LEGEND></span>
+
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td colspan="4" height="7" width="320"></td>
+					</tr>
+					<tr>
+						<td width="80"><p>&nbsp;&nbsp;가로줄:</p></td>
+						<td width="97"><input type="text" name="rows" size="4"  value="4"></td>
+						<td width="51">
+							<p>세로줄:</p>
+						</td>
+						<td width="92">
+						<input type="text" name="cols" size="4"  value="3">
+						</td>
+					</tr>
+					<tr>
+						<td width="320" height="7" colspan="4"></td>
+					</tr>
+					<tr>
+						<td width="80"><p>&nbsp;&nbsp;셀안쪽여백:</p></td>
+						<td width="97"><input type="text" name="cellpadding" size="4"  value="1"></td>
+						<td width="51">
+							<p>정렬:</p>
+						</td>
+						<td width="92">
+						<select name="alignment">
+						<option value="" selected>(기본값)</option>
+						<option value="center">가운데</option>
+						<option value="left">왼쪽</option>
+						<option value="right">오른쪽</option>
+						</select>
+						</td>
+					</tr>
+					<tr>
+						<td width="320" height="7" colspan="4"></td>
+					</tr>
+					<tr>
+						<td width="80"><p>&nbsp;&nbsp;셀간격:</p></td>
+						<td width="97"><input type="text" name="cellspacing" size="4"  value="1"></td>
+						<td width="51">
+							<p>Border:</p>
+						</td>
+						<td width="92">
+						<input type="text" name="border" size="4"  value="1">
+						</td>
+					</tr>
+					<tr>
+						<td width="320" height="7" colspan="4"></td>
+					</tr>
+					<tr>
+						<td width="80">&nbsp;&nbsp;너비:</td>
+						<td width="240" colspan="3">
+						<input type="text" name="width" value="100" style="width:50px" maxlength=4 class=input>
+						<select name="widthExt">
+						<option value="">픽셀</option>
+						<option value="%" selected>퍼센트</option>
+						</select>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+			<tr>
+				<td height=10></td>
+			</tr>
+		</table>
+		<input type="button" value="전송"  onclick="createTable()"> &nbsp;&nbsp;<input type="button" onClick="window.close();" value="취소" >
+		</td>
+	</tr>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,116 @@
+<html>
+<head>
+<META HTTP-EQUIV="Pragma" CONTENT="No-Cache">
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<title>이미지 삽입</title>
+<STYLE>
+body {background: threedface; color: windowtext;}
+body, select, td { font-family: arial; font-size: 9pt;}
+</STYLE>
+
+</head>
+
+<BODY scroll=no leftmargin="1" marginwidth="1" topmargin="1" marginheight="1">
+
+<script language="javascript">
+<!--
+function imgview(){
+	var size1; var size2;
+	var tmp = new Image();
+	var key = document.getElementById('upfile').value;
+	var imgObj = document.images;
+
+	tmp.src = key;
+	size1 = tmp.width;
+	size2 = tmp.height;
+
+	size1 = (82>=size1) ? size1 : 82;
+	size2 = (72>=size2) ? size2 : 72;
+
+	imgObj.Pickimg.style.display = "";
+	imgObj.Pickimg.src = key;
+	imgObj.Pickimg.width = size1;
+	imgObj.Pickimg.height = size2;
+}
+//-->
+</script>
+
+<table border="0" cellpadding="5" cellspacing="3" width="429">
+	<form name="add_form" action="upfile_ok.php" method="post" enctype='multipart/form-data'>
+	<input type="hidden" name="url" value="<?=$_GET['url']?>">
+	<tr>
+		<td align="center">
+		<table border="0" cellpadding="2" cellspacing="0" width="413">
+			<tr>
+				<td width="305" valign="top">
+				<FIELDSET style="width:310; height:117">
+				<LEGEND><span style="font-size:9pt">이미지 업로드</LEGEND></span>
+
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td colspan="4" height="7" width="300"></td>
+					</tr>
+					<tr>
+						<td width="61">&nbsp;&nbsp;&nbsp;Image:</td>
+						<td width="239" colspan="3"><input type="file" name="upfile" onchange="imgview();" style="width:95%" ></td>
+					</tr>
+					<tr>
+						<td width="300" height="7" colspan="4"></td>
+					</tr>
+					<tr>
+						<td width="61"><p>&nbsp;&nbsp;&nbsp;사이즈:</p></td>
+						<td width="97"><input type="text" name="imgsize" size="4" ></td>
+						<td width="42">
+							<p>정렬:</p>
+						</td>
+						<td width="100">
+						<select name="alignment">
+						<option value="" selected>(기본값)</option>
+						<option value="center">가운데</option>
+						<option value="left">왼쪽</option>
+						<option value="right">오른쪽</option>
+						</select>
+						</td>
+					</tr>
+					<tr>
+						<td width="300" height="7" colspan="4"></td>
+					</tr>
+					<tr>
+						<td width="61"><p>&nbsp;&nbsp;참조글:</p></td>
+						<td width="239" colspan="3"><input type="text" name="title" style="width:95%" ></td>
+					</tr>
+				</table>
+				</td>
+				<td width="113" align="center">
+				<FIELDSET style="width:130; height:117">
+				<LEGEND><span style="font-size:9pt">미리보기</LEGEND></span>
+
+				<table width="85" border="0" cellspacing="1" cellpadding="2" height="85">
+					<tr>
+						<td height="7" align="center"><img src='' width=1 height="1"></td>
+					</tr>
+					<tr>
+						<td height="78" align="center" bgcolor="#EAEAEA">
+						<table border="0" cellpadding="2" cellspacing="1" width="90" height="78" bgcolor="white">
+							<tr>
+								<td align="center" bgcolor="white"><img name='Pickimg' src="" onerror="this.style.display='none';"></td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr><td height=0></td></tr>
+	<tr>
+		<td align=center>
+		<input type="submit" value="전송" > &nbsp;&nbsp;<input type="button" onClick="window.close();" value="취소" >
+		</td>
+	</tr>
+</table>
+
+</BODY>
+</HTML>

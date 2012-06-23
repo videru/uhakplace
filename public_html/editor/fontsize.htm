@@ -1,0 +1,74 @@
+<html>
+<head>
+<META HTTP-EQUIV="Pragma" CONTENT="No-Cache">
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<title>글자 크기</title>
+<STYLE>
+body {background: threedface; color: windowtext;}
+body, select, td { font-family: arial; font-size: 9pt;}
+</STYLE>
+
+<script language="javascript">
+<!--
+function createFont(val){
+	if(window.open){
+		window.returnValue = val;
+		self.close();
+	}
+}
+//-->
+</script>
+
+<BODY scroll=no leftmargin="1" marginwidth="1" topmargin="1" marginheight="1">
+
+<table border="0" cellpadding="5" cellspacing="5" width="365">
+	<tr>
+		<td>
+		<table border="0" cellpadding="2" cellspacing="0" width="100%">
+			<tr>
+				<td valign="top" align="center">
+				<FIELDSET style="width:358; height:120">
+				<LEGEND><span style="font-size:9pt">글자 사이즈</LEGEND></span>
+
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td height="7"></td>
+					</tr>
+					<tr>
+						<td height="53" align="center">
+						<table border="0" cellspacing="0" width="100%">
+
+							<tr>
+								<td align="center" height="22"><a style="cursor:hand" onclick="createFont(2)"><span style="font-size:9pt;">가나다라바사</span></a></td>
+							</tr>
+							<tr>
+								<td align="center" height="22"><a style="cursor:hand" onclick="createFont(3)"><span style="font-size:12pt;">가나다라바사</span></a></td>
+							</tr>
+							<tr>
+								<td align="center" height="22"><a style="cursor:hand" onclick="createFont(4)"><span style="font-size:14pt;">가나다라바사</span></a></td>
+							</tr>
+							<tr>
+								<td align="center" height="22"><a style="cursor:hand" onclick="createFont(5)"><span style="font-size:18pt;">가나다라바사</span></a></td>
+							</tr>
+							<tr>
+								<td align="center" height="22"><a style="cursor:hand" onclick="createFont(6)"><span style="font-size:24pt;">가나다라바사</span></a></td>
+							</tr>
+							<tr>
+								<td align="center" height="22"><a style="cursor:hand" onclick="createFont(7)"><span style="font-size:36pt;">가나다라</span><a style="cursor:hand"><span style="font-size:36pt;">마바사</span></a></td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">	<input type="button" onClick="window.close();" value="닫기" ></td>
+	</tr>
+</table>
+
+</BODY>
+</HTML>

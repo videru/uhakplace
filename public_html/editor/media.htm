@@ -1,0 +1,80 @@
+<html>
+<head>
+<META HTTP-EQUIV="Pragma" CONTENT="No-Cache">
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<title>미디어 삽입</title>
+<STYLE>
+body {background: threedface; color: windowtext;}
+body, select, td { font-family: arial; font-size: 9pt;}
+</STYLE>
+
+<script language="javascript">
+<!--
+function createMedia(){
+	if(window.open){
+		var width; var height;
+		var key_1 = document.getElementById('link').value;
+		var key_2 = document.getElementById('width').value;
+		var key_3 = document.getElementById('height').value;
+
+		width = key_2 ? key_2 : '300';
+		height = key_3 ? key_3 : '250';
+
+		var val = '<embed src="' + key_1 + '" width="' + width + '" height="' + height + '" autostart="true"  loop="true">';
+
+		window.returnValue = val;
+		self.close();
+	}
+}
+//-->
+</script>
+
+</head>
+
+<BODY scroll=no leftmargin="1" marginwidth="1" topmargin="1" marginheight="1">
+
+<table border="0" cellpadding="5" cellspacing="3" width="260">
+	<tr>
+		<td align="center">
+		<table border="0" cellpadding="2" cellspacing="0" width="250">
+			<tr>
+				<td width="248" valign="top">
+				<FIELDSET style="width:248; height:90">
+				<LEGEND><span style="font-size:9pt">미디어</LEGEND></span>
+
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td colspan="4" height="7" width="255"></td>
+					</tr>
+					<tr>
+						<td width="61">&nbsp;&nbsp;위치 :</td>
+						<td width="194" colspan="3"><input type="text" name="link" style="width: 95%" class=input></td>
+					</tr>
+					<tr>
+						<td width="255" height="7" colspan="4"></td>
+					</tr>
+					<tr>
+						<td width="61"><p>&nbsp;&nbsp;가로 :</p></td>
+						<td width="97"><input type="text" name="width" size="4" ></td>
+						<td width="42">
+							<p>세로 :</p>
+						</td>
+						<td width="55">
+						<input type="text" name="height" size="4" >
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td align=center>
+		<input type="button" value="전송"  onclick="createMedia()"> &nbsp;&nbsp;<input type="button" onClick="window.close();" value="취소" >
+		</td>
+	</tr>
+</table>
+
+</BODY>
+</HTML>
