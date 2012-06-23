@@ -1,0 +1,1 @@
+<body onLoad="oCafeWrite.preCafeWriteContents();"> 

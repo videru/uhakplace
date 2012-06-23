@@ -1,0 +1,83 @@
+<HTML>
+<HEAD>
+<TITLE>게시물에 애니콘 넣기</TITLE>
+
+<style type="text/css"> 
+BODY,TD,SELECT,input,DIV,form,TEXTAREA,center,TD {font-family:모리스,굴림;color:#000000;font-size:9pt;line-height:160%}
+a:link { color:#000000; text-decoration:none }
+a:visited { color:#000000; text-decoration:none }
+a:active { color:#000000; text-decoration:none }
+.input {border:solid 2;background-color:white;border-color:#E5E5E5;color:#000000;height:24px;width:190px;}
+</style>
+
+<script>
+ function AddFlashcon(Flashcon)
+{
+//  if( this.opener.name == "Input" )
+	{
+    document.all.mytext.value = Flashcon;
+	}
+}
+</script>
+
+</HEAD>
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" scroll=no bgcolor=#fafafa>
+<table align="center" cellpadding="0" cellspacing="0" width=100%>
+<tr><td height="8" bgcolor=#E5E5E5></td></tr>
+<tr><td><img src="./cons_img1.gif"></td></tr>
+<tr><td height="2" bgcolor=#E5E5E5></td></tr>
+<tr><td height=50>
+<table cellpadding=0 cellspacing=0 align=center>
+<tr>
+<td width=200><input  name="mytext" type="text" value="" size="30" maxlength="255" class="input"></td>
+<td width=72><input type=image src="./cons_button1.gif" border=0 onclick="opener.document.all.bd_ext2.value=mytext.value;window.close();"></td>
+<td width=72><input type=image src="./cons_button2.gif" border=0 onfocus="blur();" onclick="self.close()" value="취소"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td height="2" bgcolor=#E5E5E5></td></tr>
+<tr><td height="5"></td></tr>
+<tr><td>
+
+<table cellpadding=0 cellspacing=0 align=center>
+<tr>
+<td><a HREF="javascript:AddFlashcon('ani_con_37');" onfocus=this.blur()><img SRC="./thum_img/flash_con37.gif" width=88 height=70 BORDER=0></a></td>
+<td><a HREF="javascript:AddFlashcon('ani_con_38');" onfocus=this.blur()><img SRC="./thum_img/flash_con38.gif" width=88 height=70 BORDER=0></a></td>
+<td><a HREF="javascript:AddFlashcon('ani_con_39');" onfocus=this.blur()><img SRC="./thum_img/flash_con39.gif" width=88 height=70 BORDER=0></a></td>
+<td><a HREF="javascript:AddFlashcon('ani_con_40');" onfocus=this.blur()><img SRC="./thum_img/flash_con40.gif" width=88 height=70 BORDER=0></a></td>
+</tr>
+<tr height=70>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr height=70>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+
+</td></tr>
+<tr><td height="5"></td></tr>
+<tr>
+<td align=center>
+
+<table cellpadding=0 cellspacing=2 width=360 bgcolor=#e5e5e5>
+<tr>
+<td bgcolor=#ffffff align=center><a onfocus='this.blur()' href="./anicon_pop3.html">Prev</a> &nbsp;&nbsp; <a onfocus='this.blur()' href="./anicon_pop.html">1</a> &nbsp; | &nbsp; <a onfocus='this.blur()' href="./anicon_pop2.html">2</a> &nbsp; | &nbsp; <a onfocus='this.blur()' href="./anicon_pop3.html">3</a> &nbsp; | &nbsp; <font color=#F8086E>4</font> &nbsp;&nbsp; Next</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td height="5"></td></tr>
+<tr><td height="2" bgcolor=#e5e5e5></td></tr>
+<tr><td align=right bgcolor=#ffffff height=30><a onfocus='this.blur()' href="http://daum.net" target=_blank><img src="./cons_img2.gif" border=0></a>&nbsp;</td></tr>
+</table>
+
+
+</BODY>
+</HTML>
