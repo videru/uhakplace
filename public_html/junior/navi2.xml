@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<XML메뉴>
+
+<메인1 url="../junior/fa_study_list.php"  frame="_self" mode="2">
+	<서브1 url="../junior/fa_study_list.php" frame="_self"/>
+	<서브2 url="../junior/fa_camp_list.php" frame="_self"/>
+</메인1>
+<메인2 url="../junior/ju_study_list.php"  frame="_self">
+	<서브1 url="../junior/ju_study_list.php" frame="_self"/>
+	<서브2 url="../junior/ju_camp_list.php" frame="_self"/>
+</메인2>
+<메인3 url="../junior/young_sch.php" frame="_self">
+	<서브1 url="../junior/young_sch.php" frame="_self"/>
+	<서브2 url="../junior/young_sch_list.php" frame="_self"/>
+</메인3>
+<메인4 url="../board/list.php?bbs_code=ju_notice" frame="_self">
+	<서브1 url="../board/list.php?bbs_code=ju_notice" frame="_self"/>
+	<서브2 url="../board/list.php?bbs_code=ju_qna" frame="_self"/>
+	<서브3 url="../board/list.php?bbs_code=ju_faq" frame="_self"/>
+	<서브4 url="../board/list.php?bbs_code=ju_talk" frame="_self"/>
+	<서브5 url="../board/list.php?bbs_code=ju_story" frame="_self"/>
+	<서브6 url="../board/list.php?bbs_code=ju_event" frame="_self"/>
+ 	<서브7 url="../board/list.php?bbs_code=ju_colum" frame="_self"/>
+</메인4>
+</XML메뉴>

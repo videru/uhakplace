@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<XML메뉴>
+
+<메인1 url="../phil/school_list.php?national=3"  frame="_self" mode="2">
+	<서브1 url="../phil/school_list.php?national=3" frame="_self"/>
+	<서브2 url="../phil/school_list.php?national=3&te=20" frame="_self"/>
+	<서브3 url="javascript:open_window('cost', '../phil/school_cost_con.php', 40, 40, 880, 700, 0, 0, 0, 1, 0);" frame="_self"/>
+</메인1>
+
+<메인2 url="../phil/site_view.php?code=1001" frame="_self">
+	<서브1 url="../phil/site_view.php?code=1001" frame="_self"/>
+	<서브2 url="../phil/school_list.php?national=1" frame="_self"/>
+	<서브3 url="../phil/young_list.php?national=1" frame="_self"/>
+	<서브4 url="../phil/young_list.php?national=1&section=1" frame="_self"/>
+	<서브5 url="../phil/intern_list.php?national=1" frame="_self"/>
+</메인2>
+
+
+<메인3 url="" frame="_self">
+	<서브1 url="../phil/site_view.php?code=3701" frame="_self"/>
+	<서브2 url="../phil/university_view.php?&num=3&national=3" frame="_self"/>
+</메인3>
+
+
+
+<메인4 url="javascript:alert('2010년 여름방학 캠프 마감되었습니다.');" frame="_self">
+
+</메인4>
+
+<메인5 url="../board/list.php?bbs_code=qna" frame="_self">
+	<서브1 url="../board/list.php?bbs_code=qna" frame="_self"/>
+	<서브2 url="../board/list.php?bbs_code=notice" frame="_self"/>
+	<서브3 url="../board/online.php" frame="_self"/>
+	<서브4 url="../board/mtm.php" frame="_self"/>
+</메인5>
+
+<메인6 url="../phil/bs_sch_list.php" frame="_self">
+	<서브1 url="../phil/bs_sch_list.php" frame="_self"/>
+	<서브2 url="../board/list.php?bbs_code=notice&ss[cat]=1" frame="_self"/>
+	<서브3 url="../board/list.php?bbs_code=notice&ss[cat]=2" frame="_self"/>
+	<서브4 url="../board/list.php?bbs_code=notice&ss[cat]=3" frame="_self"/>
+</메인6>
+
+<메인7 url="../phil/site_view.php?code=3101" frame="_self">
+	<서브1 url="../phil/site_view.php?code=3101" frame="_self"/>
+	<서브2 url="../phil/site_view.php?code=3102" frame="_self"/>
+	<서브3 url="../phil/site_view.php?code=3103" frame="_self"/>
+	<서브4 url="../phil/site_view.php?code=3104" frame="_self"/>
+</메인7>
+
+
+<메인8 url="../phil/site_view.php?code=3201" frame="_self">
+	<서브1 url="../phil/site_view.php?code=3201" frame="_self"/>
+	<서브2 url="../phil/site_view.php?code=3202" frame="_self"/>
+	<서브3 url="../phil/site_view.php?code=3203" frame="_self"/>
+	<서브4 url="../phil/site_view.php?code=3204" frame="_self"/>
+</메인8>
+
+
+<메인9 url="../board/list.php?bbs_code=news" frame="_self">
+	<서브1 url="../board/list.php?bbs_code=news" frame="_self"/>
+	<서브2 url="../board/list.php?bbs_code=sc_notice" frame="_self"/>
+	<서브3 url="../board/list.php?bbs_code=photo" frame="_self"/>
+	<서브4 url="../board/list.php?bbs_code=info" frame="_self"/>
+	<서브5 url="../board/list.php?bbs_code=yensu" frame="_self"/>
+	<서브6 url="../board/list.php?bbs_code=colum" frame="_self"/>
+	<서브7 url="../board/list.php?bbs_code=interview" frame="_self"/>
+</메인9>
+
+</XML메뉴>

@@ -1,0 +1,160 @@
+<!--공지사항 시작-->
+<div id="notice" style="width:318px; position:absolute; z-index:1; visibility:visible;">	
+<table width="318" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+         <tr> 			
+	      <td width="59" ><a href="/board/list.php?&bbs_code=notice"><img src="../img/main/main_board_tit1on.gif" width="59" height="25" border="0"></a></td>
+	      <td width="2" background="../img/main/main_board_titbg.gif"></td>
+          <td width="59" ><img src="../img/main/main_board_tit2.gif" onMouseOver="MM_showHideLayers('notice','','hide','qna','','show','yensu','','hide','alim','','hide','faq','','hide')"></td>
+	      <td width="2" background="../img/main/main_board_titbg.gif"></td>
+          <td width="59" ><img src="../img/main/main_board_tit3.gif" onMouseOver="MM_showHideLayers('notice','','hide','qna','','hide','yensu','','show','alim','','hide','faq','','hide')"></td>
+	      <td width="2" background="../img/main/main_board_titbg.gif"></td>
+          <td width="59" ><img src="../img/main/main_board_tit4.gif" onMouseOver="MM_showHideLayers('notice','','hide','qna','','hide','yensu','','hide','alim','','show','faq','','hide')"></td>
+	      <td width="2" background="../img/main/main_board_titbg.gif"></td>		 
+		  <td width="59" ><img src="../img/main/main_board_tit5.gif" onMouseOver="MM_showHideLayers('notice','','hide','qna','','hide','yensu','','hide','alim','','hide','faq','','show')"></td>
+		  <td align="right" background="../img/main/main_board_titbg.gif">&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr> 
+  <tr height="8"> 
+    <td>
+    </td>  
+  </tr>  
+  <tr> 
+    <td valign="top" ><?=rg_lastest('notice','default',5,36,'..','',$order='bd_next_num desc')?></td>
+  </tr>
+</table>
+</div>
+<!--공지사항끝 -->
+
+<!--q&a 시작-->
+<div id="qna" style="width:318px;  position:absolute; z-index:2; visibility:hidden;">	
+<table width="318" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+         <tr> 			
+	      <td width="59" ><img src="../img/main/main_board_tit1.gif" onMouseOver="MM_showHideLayers('notice','','show','qna','','hide','yensu','','hide','alim','','hide','faq','','hide')"></td>
+          <td width="2" background="../img/main/main_board_titbg.gif"></td>
+		  <td width="59" ><a href="/board/list.php?&bbs_code=qna"><img src="../img/main/main_board_tit2on.gif"  border="0"></a></td>
+	      <td width="2" background="../img/main/main_board_titbg.gif"></td>          
+		  <td width="59" ><img src="../img/main/main_board_tit3.gif" onMouseOver="MM_showHideLayers('notice','','hide','qna','','hide','yensu','','show','alim','','hide','faq','','hide')"></td>
+ 	      <td width="2" background="../img/main/main_board_titbg.gif"></td>         
+		  <td width="59" ><img src="../img/main/main_board_tit4.gif" onMouseOver="MM_showHideLayers('notice','','hide','qna','','hide','yensu','','hide','alim','','show','faq','','hide')"></td>
+	      <td width="2" background="../img/main/main_board_titbg.gif"></td>		  
+		  <td width="59" ><img src="../img/main/main_board_tit5.gif" onMouseOver="MM_showHideLayers('notice','','hide','qna','','hide','faq','','hide','alim','','hide','faq','','show')"></td>
+		  <td align="right" background="../img/main/main_board_titbg.gif">&nbsp;</td>
+
+        </tr>
+      </table>
+    </td>
+  </tr> 
+  <tr height="8"> 
+    <td>
+    </td>  
+  </tr>  
+  <tr height="162"> 
+    <td valign="top" ><?=rg_lastest('qna','default',5,36,'..','',$order='bd_next_num desc')?></td>
+  </tr>
+</table>
+</div>
+<!--q&a 끝 -->
+
+<!--연수후기 시작-->
+<div id="yensu" style="width:318px; ; position:absolute; z-index:3; visibility:hidden;">	
+<table width="318" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+         <tr> 			
+	      <td width="59" ><img src="../img/main/main_board_tit1.gif" onMouseOver="MM_showHideLayers('notice','','show','qna','','hide','yensu','','hide','alim','','hide','faq','','hide')"></td>
+ 	      <td width="2" background="../img/main/main_board_titbg.gif"></td>         
+		  <td width="59" ><img src="../img/main/main_board_tit2.gif" onMouseOver="MM_showHideLayers('notice','','hide','qna','','show','yensu','','hide','alim','','hide','faq','','hide')"></td>
+	      <td width="2" background="../img/main/main_board_titbg.gif"></td>         
+		  <td width="59" ><a href="/board/list.php?&bbs_code=success"><img src="../img/main/main_board_tit3on.gif"  border="0"></a></td>
+ 	      <td width="2" background="../img/main/main_board_titbg.gif"></td>         
+		  <td width="59" ><img src="../img/main/main_board_tit4.gif" onMouseOver="MM_showHideLayers('notice','','hide','qna','','hide','yensu','','hide','alim','','show','faq','','hide')"></td>		  
+		      <td width="2" background="../img/main/main_board_titbg.gif"></td>	 
+		  <td width="59" ><img src="../img/main/main_board_tit5.gif" onMouseOver="MM_showHideLayers('notice','','hide','qna','','hide','faq','','hide','alim','','hide','faq','','show')"></td>
+		  <td align="right" background="../img/main/main_board_titbg.gif">&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr> 
+  <tr height="8"> 
+    <td>
+    </td>  
+  </tr>  
+  <tr height="162"> 
+    <td valign="top" ><?=rg_lastest('success','default',5,36,'..','',$order='bd_next_num desc')?></td></td>
+  </tr>
+</table>
+</div>
+<!--연수후기 끝 -->
+
+<!--경고 시작-->
+<div id="alim" style="width:318px;  position:absolute; z-index:4; visibility:hidden;">	
+<table width="318" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+         <tr> 			
+	      <td width="59" ><img src="../img/main/main_board_tit1.gif" onMouseOver="MM_showHideLayers('notice','','show','qna','','hide','yensu','','hide','alim','','hide','faq','','hide')"></td>
+  	      <td width="2" background="../img/main/main_board_titbg.gif"></td>       
+		  <td width="59" ><img src="../img/main/main_board_tit2.gif" onMouseOver="MM_showHideLayers('notice','','hide','qna','','show','yensu','','hide','alim','','hide','faq','','hide')"></td>
+	      <td width="2" background="../img/main/main_board_titbg.gif"></td>          
+		  <td width="59" ><img src="../img/main/main_board_tit3.gif" onMouseOver="MM_showHideLayers('notice','','hide','qna','','hide','yensu','','show','alim','','hide','faq','','hide')"></td>
+	      <td width="2" background="../img/main/main_board_titbg.gif"></td>         
+		  <td width="59" ><a href="/board/list.php?&bbs_code=alim"><img src="../img/main/main_board_tit4on.gif"  border="0"></a></td>
+	      <td width="2" background="../img/main/main_board_titbg.gif"></td>		 
+		  <td width="59" ><img src="../img/main/main_board_tit5.gif" onMouseOver="MM_showHideLayers('notice','','hide','qna','','hide','faq','','hide','alim','','hide','faq','','show')"></td>
+		  <td align="right" background="../img/main/main_board_titbg.gif">&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr> 
+  <tr height="8"> 
+    <td>
+    </td>  
+  </tr>  
+  <tr height="162"> 
+    <td valign="top" ><?=rg_lastest('alim','default',5,36,'..','',$order='bd_next_num desc')?></td>
+  </tr>
+</table>
+</div>
+<!--경고 끝 -->
+
+<!--경고 시작-->
+<div id="faq" style="width:318px;  position:absolute; z-index:4; visibility:hidden;">	
+<table width="318" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+         <tr> 			
+	      <td width="59" ><img src="../img/main/main_board_tit1.gif" onMouseOver="MM_showHideLayers('notice','','show','qna','','hide','yensu','','hide','alim','','hide','faq','','hide')"></td>
+  	      <td width="2" background="../img/main/main_board_titbg.gif"></td>       
+		  <td width="59" ><img src="../img/main/main_board_tit2.gif" onMouseOver="MM_showHideLayers('notice','','hide','qna','','show','yensu','','hide','alim','','hide','faq','','hide')"></td>
+	      <td width="2" background="../img/main/main_board_titbg.gif"></td>          
+		  <td width="59" ><img src="../img/main/main_board_tit3.gif" onMouseOver="MM_showHideLayers('notice','','hide','qna','','hide','yensu','','show','alim','','hide','faq','','hide')"></td>
+	      <td width="2" background="../img/main/main_board_titbg.gif"></td>         
+	      <td width="2" background="../img/main/main_board_titbg.gif"></td>		  
+		  <td width="59" ><img src="../img/main/main_board_tit4.gif" onMouseOver="MM_showHideLayers('notice','','hide','qna','','hide','yensu','','hide','alim','','show','faq','','hide')"></td>
+		  <td width="59" ><a href="/board/list.php?&bbs_code=faq"><img src="../img/main/main_board_tit5on.gif"  border="0"></a></td>
+		  <td align="right" background="../img/main/main_board_titbg.gif">&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr> 
+  <tr height="8"> 
+    <td>
+    </td>  
+  </tr>  
+  <tr height="162"> 
+    <td valign="top" ><?=rg_lastest('faq','default',5,36,'..','',$order='bd_next_num desc')?></td>
+  </tr>
+</table>
+</div>
+<!--경고 끝 -->

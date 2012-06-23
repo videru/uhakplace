@@ -1,0 +1,9 @@
+.default_bbs_content	{font-family:Tahoma; font-size:9pt; border:1px solid #D4E9F3; border-collapse:collapse; word-break:break-all;}
+.default_bbs_content th	{background-color:#edf5fb; color:#000000; padding:3px 3px 3px 3px; font-weight:normal;border:1px solid #D4E9F3; }
+.default_bbs_content td	{padding:3px 3px 3px 3px; border-color:#D4E9F3;border:1px solid #D4E9F3; }
+.default_bbs_content input {border:#CCC 1px solid;font-size:9pt;}
+.default_bbs_content textarea {border:#CCC 1px solid;font-size:9pt;}
+
+.default_bbs_list	{border-top:3px solid #488baa;border-left:none;border-right:none;border-collapse:collapse;word-break:break-all;border-bottom:dotted 1px #CCC;}
+.default_bbs_list th	{color:#3b7c9a;font-family: "µ¸¿ò";font-weight:bold;font-size: 12px;height: 30px;background-color:#edf5fb;border-bottom:1px solid #488baa;border-left:none;border-right:none;text-align:center;}
+.default_bbs_list td	{height:30px;padding-top:3px;padding-bottom:3px;border-top:none;border-left:none;border-right:none;border-bottom:dotted 1px #CCC;}
