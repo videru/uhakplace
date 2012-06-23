@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>CHEditor</title>
+<meta http-equiv="content-type" content="text/html; charset=euc-kr" />
+
+<!-- cheidtor.js 파일의 위치를 지정합니다. -->
+<script type="text/javascript" language="javascript" src="../cheditor.js"></script>
+
+</head>
+<body>
+<center>
+<h3>CHEditor Demo</h3>
+
+
+<script type="text/javascript" language="javascript">
+var myeditor = new cheditor("myeditor");
+
+<!-- form 을 submit() 합니다. -->
+function doSubmit (theform)
+{
+    // textarea 'fm_post'에 에디터에서 입력한 내용를 넣습니다.
+    document.getElementById("fm_post").value = myeditor.outputBodyHTML();
+
+    alert(theform.fm_write.value);
+
+    // theform.submit() or return false;
+}
+
+<!-- 화면을 갱신하지 않고 글을 계속 입력할 수 있도록 하기 위해서입니다. -->
+<!-- form을 submit() 할 경우는 이 함수를 사용하지 않습니다. -->
+
+</script>
+
+<form method="post" name="theform" onsubmit="return doSubmit(this);">
+
+<!-- id 의 이름은 어떤 것이라도 상관없습니다. -->
+<!-- textarea가 화면에 보이지 않도록 style의 display 속성을 none으로 지정하여 주십시오. -->
+
+<textarea id="fm_post" name="fm_write" style="display:none">
+수정할 내용
+</textarea>
+
+<!-- 에디터를 화면에 출력합니다. -->
+<script type="text/javascript" language="javascript">
+myeditor.config.editorHeight = '200px';             // 에디터 세로폭입니다.
+myeditor.config.editorWidth = '80%';                // 에디터 가로폭입니다.
+myeditor.config.editorPath = '..';                  // 에디터 설치 경로입니다. 경로 끝에 '/'를 붙이지 않습니다.
+myeditor.inputForm = 'fm_post';                     // 입력 textarea의 ID 이름입니다.
+myeditor.run();                                     // 에디터를 실행합니다.
+</script>
+
+<p>
+<input type="submit" value="글입력" />
+</p>
+</form>
+<font face="verdana" size="1" color="#666666">
+Copyright ⓒ 1997-2007 by <b>CHCODE.</b> All right reserved.</font>
+</center>
+</body>
+</html>
