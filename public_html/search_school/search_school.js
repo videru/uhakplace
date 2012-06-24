@@ -33,7 +33,18 @@ function MM_swapImage() { //v3.0
 //change national image
 if(a[3] !=null)
  $("#national")[0].src=img_national[a[3]];
+ 
+ //미국의 경우에는 주가 있고 나머지는 업음
+ if(a[3] ==1)
+ 	$("#stateview").attr("disabled",'disabled');
+ else $("#stateview").removeAttr("disabled");
 }
+
+function MM_loadSchoolInfo()
+{
+	//주,도시,지역번호,학교번호, 학교이름
+}
+
 function MM_jumpMenu(targ,selObj,restore){ //v3.0
   eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
   if (restore) selObj.selectedIndex=0;
