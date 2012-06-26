@@ -35,9 +35,9 @@ if(a[3] !=null)
  $("#national")[0].src=img_national[a[3]];
  
  //미국의 경우에는 주가 있고 나머지는 업음
- if(a[3] ==1)
- 	$("#stateview").attr("disabled",'disabled');
- else $("#stateview").removeAttr("disabled");
+ if(a[3] !=1)
+ 	$("#stateselect").attr("disabled",'disabled');
+ else $("#stateselect").removeAttr("disabled");
 }
 
 function MM_loadSchoolInfo()

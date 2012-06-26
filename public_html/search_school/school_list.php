@@ -7,38 +7,46 @@ $rs_list -> set_table($_table['school']);
 
 /***********************************************************************/
 // 필터 조건에 의한 필터링
-
-if ($ss[1]) { $rs_list -> add_where("national = $ss[1]");
+echo $national ;
+if ($national) { $rs_list -> add_where("national = $national");
 }
 if ($area) { $rs_list -> add_where("area = $area");
 }
+$schools= $rs_list -> fetch();
+if($schools)
+{
+	foreach ($schools as &$value) {
+	     foreach ($value as &$dd) {
+	     	echo $dd ;
+		}
+	}
+}
 // 검색어로 검색
-if ($kw) { $rs_list -> add_where("title LIKE '%$kw%' escape '" . $dbcon -> escape_ch . "'");
-}
+// if ($kw) { $rs_list -> add_where("title LIKE '%$kw%' escape '" . $dbcon -> escape_ch . "'");
+// }
+// 
+// switch ($ot) {
+	// case 10 :
+		// $rs_list -> add_order("num DESC");
+		// break;
+	// default :
+		// $rs_list -> add_order("num DESC");
+		// break;
+// }
 
-switch ($ot) {
-	case 10 :
-		$rs_list -> add_order("num DESC");
-		break;
-	default :
-		$rs_list -> add_order("num DESC");
-		break;
-}
+// foreach ($ss as &$value) {
+    // echo $value ;
+// }
+// $page_info = $rs_list -> fetch();
+// foreach ($page_info as &$value) {
+    // echo $value ;
+// }
 
-$page_info = $rs_list -> select_list($page, 20, 10);
-foreach ($ss as &$value) {
-    echo $value ;
-}
-foreach ($_const as &$value) {
-    foreach ($value as &$dddd) {
-    echo $dddd ;
-}
-}
 
-$MENU_L = 'm5';
+//$MENU_L = 'm5';
 ?>
 
-<table border="0" cellpadding="0" cellspacing="0" width="800" align=center bgcolor="#FFFFFF">
+<!-- <table border="0" cellpadding="0" cellspacing="0" width="800" align=center bgcolor="#FFFFFF">
 	<tr>
 		<td>
 		<table width="770" border="0" cellspacing="0" cellpadding="0" align="center">
@@ -143,4 +151,4 @@ $_const['area'] = $_const['area8'];
 			?>
 		</table></td>
 	</tr>
-</table>
+</table> -->
