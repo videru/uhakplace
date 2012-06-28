@@ -75,7 +75,7 @@ $national=$data['national'] ;
 }
 ?>
 
-<? include('../inc/header.php'); ?>
+<? include('header.php'); ?>
 
 <form name="regi_form" method="post" action="?<?=$_get_param[3]?>" onSubmit="return validate(this)" enctype="multipart/form-data">
 
@@ -160,4 +160,3 @@ $national=$data['national'] ;
 	</tr>
 </table>
 </form>
-<?  include('../inc/footer.php');?>
