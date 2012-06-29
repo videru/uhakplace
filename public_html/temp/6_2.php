@@ -1,9 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+      
+      
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<META HTTP-EQUIV="location"
-      CONTENT="URL=6_2.php">
-<title>М∙└К╕╛М∙─ Л═└К╛╦ М▐╛М└╦ М∙└Л┌╛ЙЁ╪</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>гй╦╝ги юЭ╧╝ фВеп гй╩Г╟З</title>
 </head>
 
 <body>
@@ -26,3 +28,4 @@
 <div><iframe src="footer.html" width="100%" height="156" border="0" frameborder="no" scrolling="no" marginwidth="0" hspace="0" vspace="0"></iframe></div>
 </body>
 </html>
+      

@@ -21,5 +21,5 @@
 		include("msg.php");
 		exit;
 	}	
-	include('list_main_process.php');
+	include('list_main_process_new.php');
 ?>

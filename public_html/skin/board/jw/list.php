@@ -2,6 +2,19 @@
 #gall a img{ border: 2px solid #e4e4e4; }
 #gall a:hover img{ border: 2px solid #4B9FBE;	}
 </style>
+
+<div style="height:52px"></div><!-- 상단 div와 분리 -->
+<table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="223" valign="top"><embed src="../n_img/left_06.swf" width="223" height="400"></embed></td>
+    <td width="37">&nbsp;</td>
+    <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><img src="../n_img/6_1.jpg" width="720" height="250" /></td>
+      </tr>
+<tr>
+ <td>
+ <!-- 게시판 내용 -->
 <form name="list_form" method="post" enctype="multipart/form-data" action="?">
 <?=$_post_param[3]?>
 <input name="mode" type="hidden" value="">
@@ -39,6 +52,8 @@ $colspan=6; //기본 수
 		<tr><td colspan="<?=$colspan?>" height="2" bgcolor="#ffb59c"></td></tr>
 </table>
 </form>
+
+ <!-- 검색 등 -->
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
 	<tr>
 		<td height="16"></td>
@@ -83,7 +98,6 @@ function board_manager(){
 						<?=$_post_param[0]?>
 							<tr> 
 								
-								<td width="110"><img src="<?=$skin_url?>images/searchbg_left.gif"></td>								
 								<td width="565" background="<?=$skin_url?>images/searchbg.gif">&nbsp;
 									<input type="checkbox" name="ss[sn]" value="1" <?=$checked_sn?>>작성자&nbsp;
 									<input type="checkbox" name="ss[st]" value="1" <?=$checked_st?>>제목&nbsp;
@@ -91,7 +105,7 @@ function board_manager(){
 									<input name="kw" type="text" id="kw" value="<?=$kw?>" size="14" hname="검색어" style="border:0px;width:300px;height:18px;background-image:url('<?=$skin_url?>images/search_form.gif');" required>
 									<input type="image" src="<?=$skin_url?>images/s_search.gif" align="absmiddle">
 								</td>
-								<td width="34"><img src="<?=$skin_url?>images/searchbg_right.gif"></td>	
+								
 							</tr>
 							</form>
 						</table>
@@ -100,4 +114,10 @@ function board_manager(){
 			</table>
 		</td>
 	</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
 </table>
