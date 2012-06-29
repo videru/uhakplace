@@ -1,0 +1,211 @@
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>gmEditor v1.11 (지엠에디터) 설명서:</title>
+<meta name="generator" content="Namo WebEditor v5.0">
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="purple" alink="red">
+<table border="0" cellpadding="3" cellspacing="5" width="100%" bgcolor="#0066CC">
+    <tr>
+        <td>
+            <p><b><span style="font-size:22pt;"><font face="Arial" color="white">PHPMONSTER 
+            co.kr</font></span></b></p>
+        </td>
+    </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td>
+            <p>&nbsp;</p>
+        </td>
+    </tr>
+</table>
+<table border="0" cellpadding="3" cellspacing="5" width="100%" bgcolor="#EDEDED">
+    <tr>
+        <td>
+            <table border="0" cellpadding="2" cellspacing="4" width="100%" bgcolor="white">
+                <tr>
+                    <td height="25">
+                        <p><b><span style="font-size:12pt;">gmEditor v1.2 (지엠에디터) 
+                        설명서:</span></b></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>에디터를 설치하려면 반드시 PHP가 작동되어야 
+                            합니다.</li>
+                            <li>HTML편집외의 언어에서는 올바로 작동하지 않습니다.</li>
+                            <li>PHP가 작동하는 곳에서 사용할 수 있습니다.</li>
+                            <li>이미지업로드를 사용하려면 uploaded폴더의 퍼미션(권한) 
+                            707로 주세요.<br>uploaded폴더가 존재하지 않는다면 
+                            새로 만들어서 권한을 주십시요.<br>upfile_ok.php 파일의 열어보면 $dir 
+                            = &quot;./uploaded&quot;; 이 소스가 보일 것입니다.<br>&quot;./uploaded&quot; 
+                            를 수정해주면 다른 이름으로 변경가능합니다.<br></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td>
+            <p>&nbsp;</p>
+        </td>
+    </tr>
+</table>
+<table border="0" cellpadding="3" cellspacing="5" width="100%" bgcolor="#EDEDED">
+    <tr>
+        <td>
+            <table border="0" cellpadding="3" cellspacing="5" width="100%" bgcolor="white">
+                <tr>
+                    <td>
+                        <p><b><span style="font-size:12pt;">에디터 설치하기</span></b></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="#FAFAFA">
+                        <p>1. 아래 소스를 적당한 곳에 삽입합니다.<font color="blue"><br> 
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;?<br> &nbsp;&nbsp;&nbsp;&nbsp;include_once('./editor/func_editor.php');<br> 
+                        &nbsp;&nbsp;&nbsp;&nbsp;?&gt;<br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;?<br>&nbsp;&nbsp;&nbsp;&nbsp;// 
+                        폼 수정시 이전값을 가져오기 위해 필요함<br>&nbsp;&nbsp;&nbsp;&nbsp;$content 
+                        = &quot;폼내용&quot;;<br> &nbsp;&nbsp;&nbsp;&nbsp;// 
+                        이미지 업로드 사용 (1은 사용안함)<br> &nbsp;&nbsp;&nbsp;&nbsp;$upload_image 
+                        = '';<br> &nbsp;&nbsp;&nbsp;&nbsp;// 미디어 업로드 사용 
+                        (1은 사용안함)<br> &nbsp;&nbsp;&nbsp;&nbsp;$upload_media 
+                        = '';<br>&nbsp;&nbsp;&nbsp;&nbsp;?&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;?=myEditor('모드','에디터경로','폼이름','필드이름','폼사이즈','폼높이','랭귀지');?&gt;</font></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="#FAFAFA">
+                        <p>2. 1번의 소스를 삽입하였다면 아래 코드를 적당한 곳에 
+                        삽입해 주세요.<BR> &nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=submit&nbsp;value='&nbsp;등&nbsp;&nbsp;록&nbsp;'&nbsp;<font color="red">onclick=&quot;editor_wr_ok()&quot;</font>&gt;<br> 
+                        &nbsp;&nbsp;&nbsp;&nbsp;<font color="red">onclick='editor_wr_ok();'</font>&nbsp;이 
+                        코드는 내용을 전송할 때 필요합니다.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>3. myEditor 의 설명</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li><b>$mode :</b> 1은 에디터모드, 2는 텍스트 모드인데 
+                            에디터를 사용할 것이므로 1을 입력합니다.</li>
+                            <li><b>$editor_Url :</b> <font color="red">에디터가 
+                            설치된 경로 예)&nbsp;./editor</font></li>
+                            <li><b>$formName :</b>&nbsp;<font color="blue">폼 
+                            이름 &lt;form name=&quot;폼 이름&quot;&gt;</font></li>
+                            <li><b>$contentForm :</b>&nbsp;<font color="#67AC00">필드 
+                            이름 &lt;textarea name=&quot;필드 이름&quot;&gt;본문내용&lt;/textarea&gt;</font></li>
+                            <li><b>$textWidth :</b>&nbsp;<font color="#B7B000">필드 
+                            width값 (숫자, %만 입력)</font></li>
+                            <li><b>$textHeight :</b>&nbsp;<font color="#009999">필드 
+                            height값 (숫자만 입력)</font></li>
+                            <li><b>$lang :</b>&nbsp;문자셋 (입력하지 않으면 
+                            euc-kr로 자동지정)</li>
+                        </ul>
+                        <p>&lt;?=myEditor(1,<font color="red">'./editor'</font>,<font color="red">'</font><font color="blue">폼이름</font><font color="red">'</font>,<font color="red">'</font><font color="#67AC00">필드이름</font><font color="red">'</font>,<font color="red">'</font><font color="#B7B000">100%</font><font color="red">'</font>,<font color="red">'</font><font color="#009999">200</font><font color="red">','euc-kr'</font>);?&gt;</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td>
+            <p>&nbsp;</p>
+        </td>
+    </tr>
+</table>
+<table border="0" cellpadding="3" cellspacing="5" width="100%" bgcolor="#EDEDED">
+    <tr>
+        <td>
+            <table border="0" cellpadding="2" cellspacing="4" width="100%" bgcolor="white">
+                <tr>
+                    <td height="25">
+                        <p><b><span style="font-size:12pt;">예제 1:</span></b></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>아래소스를 삽입하고자 하는 위치에 삽입하는데 붉은색은 
+                        꼭 필요한 부분입니다.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><font color="red">&lt;?<br>include_once('./editor/func_editor.php');<br>$content 
+                        = &quot;폼내용&quot;;<br>?&gt;</font><br>&lt;form action=&quot;send.php&quot; 
+                        method=&quot;post&quot; <font color="red">name=&quot;add_form&quot;</font>&gt;<br><font color="red">&lt;?=myEditor(1,'./editor','add_form','content','100%','200');?&gt;</font><br>&lt;input 
+                        type=&quot;button&quot; value=&quot;글쓰기&quot; <font color="red">onClick=&quot;editor_wr_ok();&quot;</font>&gt;<br>&lt;/form&gt;</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td>
+            <p>&nbsp;</p>
+        </td>
+    </tr>
+</table>
+<table border="0" cellpadding="3" cellspacing="5" width="100%" bgcolor="#EDEDED">
+    <tr>
+        <td>
+            <table border="0" cellpadding="2" cellspacing="4" width="100%" bgcolor="white">
+                <tr>
+                    <td height="25">
+                        <p><b><span style="font-size:12pt;">예제 2:</span></b></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>demo.php 파일을 웹에서 직접 실행해 보시기 바랍니다.</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td>
+            <p>&nbsp;</p>
+        </td>
+    </tr>
+</table>
+<table border="0" cellpadding="3" cellspacing="5" width="100%" bgcolor="#EDEDED">
+    <tr>
+        <td>
+            <table border="0" cellpadding="2" cellspacing="4" width="100%" bgcolor="white">
+                <tr>
+                    <td height="25">
+                        <p><b><span style="font-size:12pt;">랭귀지추가:</span></b></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>에디터에는 기본적으로 euc-kr, utf-8을 지원합니다.<br>다른 
+                        언어를 추가하고자 한다면 에디터내에 존재하는 languages/<b>charset</b>/에 
+                        있는 java.lang.js를 번역해서 사용할 수 있습니다.<br>일본어로 
+                        사용한다면 languages에&nbsp;euc-jp폴더를 만들고 java.lang.js를 
+                        일본어로 번역해서 업로드하면 됩니다.</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+
+</html>

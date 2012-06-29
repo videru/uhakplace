@@ -1,0 +1,46 @@
+
+<script type="text/javascript" src="easyEditor.js"></script>
+
+<table border=1 cellpadding=5>
+<tr><td>
+
+<textarea name="content1" id="content1"></textarea>
+<script>
+var ed1 = new easyEditor("content1");
+ed1.init();
+</script><br>
+<button onclick="alert(ed1.getHtml())">내용보기</button>
+
+</td></tr></table> <br><br>
+
+
+<textarea name="content2" id="content2">
+<b>내용수정</b> <br> 
+수정일경우 그냥 textarea에 값만 들어있으면 됩니다!
+</textarea>
+<script>
+var ed2 = new easyEditor("content2");
+ed2.cfg.width = "300px";
+ed2.cfg.border = "1px solid #000";
+ed2.cfg.Btn = easyConfig.BtnTemplate["simple"];
+//ed2.addBtn("br",2);
+ed2.init();
+</script>
+
+<hr />
+
+<textarea name="content3" id="content3"></textarea>
+<script>
+var ed3 = new easyEditor("content3");
+ed3.cfg.width = "500px";
+
+ed3.cfg.imgpath = "./img/flat";
+ed3.cfg.over_bordercolor = "#facf98";
+ed3.cfg.over_bgcolor = "#ffffea";
+ed3.cfg.divbtn_bgcolor = "#e7e7e7";
+
+ed3.cfg.Btn = ["font","size","bar","color","hilite","bold","bar","link","bar","source"];
+
+ed3.init();
+</script>
+

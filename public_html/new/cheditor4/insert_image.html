@@ -1,0 +1,58 @@
+<?php
+include_once("_common.php");
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>CHEditor</title>
+<script type="text/javascript">
+//<![CDATA[
+var oEditor = parent.chutil.oname;
+function popupClose() {
+    eval('parent.'+oEditor).popupWinClose();
+}
+
+function doInsertImage(images) {
+    eval('parent.'+oEditor).doInsertImage(images);
+}
+
+function insertImage(images) {
+    var fm_align = insert_form.document.getElementById('fm_align').alignment;
+    var align = 'top';
+    var braz = false;
+
+    for (var i=0;i<fm_align.length; i++) {
+        if (fm_align[i].checked) {
+            align = fm_align[i].value;
+            if (align == 'break') {
+                align = 'top';
+                braz = true;
+            }
+            break;
+        }
+    }
+
+    for (var i=0; i<images.length; i++) {
+		images[i]['align'] = align;
+		if (braz) {
+			images[i]['align'] = 'top';
+			images[i]['alt'] = 'break';
+		}
+    }
+    
+	doInsertImage(images);
+    popupClose();
+}
+//]]>
+</script>
+</head>
+<frameset rows="*,0" frameborder="no" border="0" framespacing="0">
+<frame src="insert_image_form.php" name="insert_form" scrolling="no" />
+<frame src="" name="do_action" />
+</frameset>
+<noframes>
+<body>
+여러분의 브라우저가 프레임셋을 지원해야 합니다.
+</body>
+</noframes>
+</html>

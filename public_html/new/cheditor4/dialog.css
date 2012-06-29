@@ -1,0 +1,84 @@
+body { 
+	background-color: #ebe9ed;
+  	margin: 10px;
+  	border: 0px;
+  	padding: 0px;
+}
+
+td, input, select {
+	font-family: gulim, "MS Sans Serif";
+	font-size: 9pt;
+	vertical-align: middle;
+}
+
+.handCursor {
+	cursor: pointer;
+}
+	
+td.hover
+{
+	background-color : Fuchsia;
+}
+
+table.dlg {
+	border:0;
+}
+
+fieldset {
+	border: 1px solid #c5c5cc;
+	padding: 2px;
+}
+.dlg td {
+	text-align: left;
+	height: 20px;
+}
+
+form { 
+	display: inline; 
+}
+
+.dlg input {
+	border: 2px;
+}
+
+.img {
+  	border: 0;
+  	vertical-align: middle;
+}
+
+.normal {
+	font-family: gulim;
+  	font-size: 9pt;
+}
+
+.button {
+	font-family: gulim;
+  	font-size: 9pt;
+  	padding-top: 2px;
+  	height: 21px;
+  	width: 6em;
+}
+
+.button8em {
+	font-family: gulim;
+  	font-size: 9pt;
+  	padding-top: 2px;
+  	height: 21px;
+  	width: 8em;
+}
+
+.button10em {
+	font-family: gulim;
+  	font-size: 9pt;
+  	padding-top: 2px;
+  	height: 21px;
+  	width: 10em;
+}
+
+.spacer {
+	margin: 10px 0px 0px 0px;
+}
+
+.wrapper {
+	text-align: center;
+}

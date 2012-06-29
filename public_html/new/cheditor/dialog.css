@@ -1,0 +1,71 @@
+BODY { 
+	background-color: #f7f5f3;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+TD, INPUT, SELECT {
+	font-family: "±¼¸², MS Sans Serif";
+	font-size: x-small;
+	vertical-align: middle;
+}
+
+TD.HOVER
+{
+	background-color : Fuchsia;
+}
+
+TABLE.dlg {
+	border:0;
+}
+
+.dlg TD {
+	align: left;
+	height: 20;
+}
+
+.dlg INPUT {
+	border-size: 2px;
+}
+
+INPUT.button {
+	border-top: 1px solid white;
+	border-left: 1px solid white;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+	font-size: x-small; width: 60;
+}
+
+SELECT {
+	height: 75%;
+}
+
+.img {
+  border: 0;
+}
+
+font {
+	font-family: ±¼¸²;
+  font-size: 9pt;
+}
+
+#button {
+	font-family: ±¼¸²;
+  font-size: 9pt;
+  padding-top: 3px;
+  height: 24px;
+  width: 6em;
+}
+
+#button8em {
+	font-family: ±¼¸²;
+  font-size: 9pt;
+  padding-top: 3px;
+  height: 24px;
+  width: 8em;
+}
+
+.spacer {
+	margin: 10px 0 0 0;
+}

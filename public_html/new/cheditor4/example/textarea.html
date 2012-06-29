@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>CHEditor</title>
+<meta http-equiv="content-type" content="text/html; charset=euc-kr" />
+
+<!-- cheidtor.js 파일의 위치를 지정합니다. -->
+<script type="text/javascript" language="javascript" src="../cheditor.js"></script>
+
+</head>
+<body>
+<center>
+<h3>CHEditor Demo</h3>
+
+<div style="margin-bottom:4px">
+<img src="../icons//button/use_cheditor_tab_b.gif" id="but_cheditor" /><img
+src="../icons/button/use_texteditor_b.gif" id="but_textarea" />
+</div>
+
+<!-- 에디터를 화면에 출력합니다. -->
+<script type="text/javascript" language="javascript">
+var myeditor = new cheditor("myeditor");
+myeditor.config.editorHeight = '200px';             // 에디터 세로폭입니다.
+myeditor.config.editorWidth = '100%';               // 에디터 가로폭입니다.
+myeditor.config.editorPath = '..';                  // 에디터 설치 경로입니다.
+myeditor.inputForm = 'fm_post';                     // 입력 textarea의 ID 이름입니다.
+myeditor.run();                                     // 에디터를 실행합니다.
+
+var use_cheditor = 'cheditor';
+var set_editor = new Array('cheditor', 'textarea');
+var editor_attr = {
+    'cheditor' : {
+        'on' : '../icons/button/use_cheditor_tab_a.gif',
+        'off' : '../icons/button/use_cheditor_tab_b.gif',
+        'elm' : document.getElementById('but_cheditor'),
+        'clk' : set_cheditor
+    },
+    'textarea' : {
+        'on' : '../icons//button/use_texteditor_a.gif',
+        'off' : '../icons//button/use_texteditor_b.gif',
+        'elm' : document.getElementById('but_textarea'),
+        'clk' : set_textarea
+    }
+};
+
+switch_editor(use_cheditor);
+
+function set_cheditor ()
+{
+    myeditor.htmlMode();
+    switch_editor('cheditor');
+}
+
+function set_textarea ()
+{
+    myeditor.plainMode();
+    switch_editor('textarea');
+}
+
+function switch_editor (which)
+{
+    for (i=0; i < set_editor.length; i++) {
+        editor = editor_attr[set_editor[i]];
+
+        if (editor['elm'] == null || editor['elm'] == 'undefined')
+            continue;
+
+        if (set_editor[i] == which) {
+            editor['elm'].src = editor['on'];
+            editor['elm'].className = '';
+            editor['elm'].onclick = '';
+        }
+        else {
+            editor['elm'].src = editor['off'];
+            editor['elm'].className = 'hcursor';
+            editor['elm'].onclick = editor['clk'];
+        }
+    }
+}
+</script>
+
+<font face="verdana" size="1" color="#666666">
+Copyright ⓒ 1997-2007 by <b>CHCODE.</b> All right reserved.</font>
+</center>
+</body>
+</html>

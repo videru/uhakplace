@@ -1,0 +1,9 @@
+body         {font-family: Tahoma,Verdana,Arial;font-size: 11px;color: #555555;margin: 0px}
+td		     {font-size :11px; font-family: Tahoma,Verdana,Arial;}
+A:link,
+A:active     {font-size: 9pt;color: #737373;text-decoration: none;font-family: Tahoma,Verdana,Arial;}
+A:visited    {font-size: 9pt;color: #666666;text-decoration: none;font-family: Tahoma,Verdana,Arial;}
+b            {font-size:9pt; text-decoration: none;font-family: Tahoma,Verdana,Arial;}
+p            {margin-top:1px;margin-bottom:1px;font-family: Tahoma,Verdana,Arial;}
+.input       {font-family: Tahoma,Verdana,Arial;font-size: 12px;color: #333333;border: 1px solid #CCCCCC;}
+nobr.nowarp  {display: block;overflow: hidden;}

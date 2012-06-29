@@ -1,0 +1,50 @@
+<!-- lightbox 이미지 유틸리티 예제 -->
+<!-- 글 읽기 HTML 페이지에 아래 코드를 넣습니다. -->
+<!-- 
+이 lightbox 기능은 cheditor의 imgReSize 옵션이 true일 경우만, 작동합니다.
+
+예제 코드:
+
+<script type="text/javascript">
+var myeditor = new cheditor("myeditor");
+myeditor.config.imgReSize = true;       // 기본값 false
+myeditor.config.imgMaxWidth = 400;      // 이미지 가로폭이 이 값 보다 크면 적용됩니다.
+myeditor.config.imgMaxHeight = 400;     // 이미지 세로폭이 이 값 보다 크면 적용됩니다.
+...
+</script>
+-->
+<html>
+<head>
+<title>CHEditor Lightbox 데모</title>
+<meta http-equiv="content-type" content="text/html; charset=euc-kr">
+
+<!-- imageUtil.js 파일의 위치를 지정합니다. -->
+<!-- 예: src="/cheditor/imageUtil.js" -->
+<script type="text/javascript" language="javascript" src="../imageUtil.js"></script>
+
+<!-- imageUtil.js 에서 사용되는 이미지 경로를 지정합니다. -->
+<!-- 예: src="/cheditor/icons/imageutil/" -->
+<script type="text/javascript">
+    hs.iconsPath = '../icons/imageutil/';
+</script>
+
+<!-- imageUtil.css 파일의 위치를 지정합니다. -->
+<!-- 예: src="/cheditor/imageUtil.css" -->
+<link rel="stylesheet" type="text/css" href="../imageUtil.css">
+
+</head>
+<body>
+    <h4>이미지를 클릭하면 확대하실 수 있습니다.</h4>
+    <h4>확대한 후 이미지를 원하는 위치로 잡아 끌 수 있습니다.</h4>
+<!-- lightbox 컨테이너 개체: 화면에 출력되지 않습니다. -->
+<div id="lightbox-container"></div>
+
+<!-- 아래 코드는 cheditor에서 이미지와 캡션을 입력하면 자동으로 만들어집니다. -->
+<!-- 이래 코드는 예를 들기 위해 직접 입력한 것입니다. -->
+<!-- 아래 코드를 글 읽기 페이지에 넣지 마십시오. -->
+
+<a id="thumb" href="sample.jpg" class="imageUtil" onclick="return hs.run(this, 'CHEditor를 이용하여 이미지를 넣으면 라이트박스 기능이 자동으로 만들어집니다.')">
+    <img src="sample.jpg" alt="CHEditor를 이용하여 이미지를 넣으면 라이트박스 기능이 자동으로 만들어집니다." height="200" width="300" onload="addCaption(this)">
+</a>
+</body>
+</html>

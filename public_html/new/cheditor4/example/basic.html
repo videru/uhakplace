@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>CHEditor</title>
+<meta http-equiv="content-type" content="text/html; charset=euc-kr" />
+
+<!-- cheidtor.js 파일의 위치를 지정합니다. -->
+<script type="text/javascript" src="../cheditor.js"></script>
+
+</head>
+<body>
+  <p>&nbsp;</p>
+<center>
+
+<script type="text/javascript">
+<!-- cheditor 개체를 생성합니다. -->
+var myeditor = new cheditor("myeditor");
+var myeditor2 = new cheditor("myeditor2");
+<!-- 에디터에 삽입한 이미지 정보를 얻습니다. -->
+function getImages ()
+{
+  var img = myeditor.getImages();
+
+  if (img) {
+    var txt = '';
+    for (var i=0; i < img.length; i++) {
+        txt += '저장 URL: '    + img[i]['src'] + '\n' +
+               '저장 파일명: ' + img[i]['fileid'] + '\n' +
+               '원본 파일명: ' + img[i]['filename'] + '\n' +
+               '원본 가로: '   + img[i]['width'] + '\n' +
+               '원본 세로: '   + img[i]['height'] + '\n\n';
+    }
+
+    alert(txt);
+  }
+  else {
+     alert('삽입한 이미지 정보가 없습니다.');
+  }
+
+  myeditor.returnFalse();
+}
+
+<!-- 에디터에 입력한 모든 내용을 가져옵니다. -->
+function getHtmlContent ()
+{
+    alert(myeditor.outputHTML());
+}
+
+<!-- 에디터에 입력한 내용 중 <body>...</body> 내용만 가져옵니다. -->
+function getBodyContent ()
+{
+  alert(myeditor.outputBodyHTML());
+}
+
+<!-- HTML 태그를 제외한 순수 입력 글자들만 가져 옵니다. -->
+function getTextContent ()
+{
+    alert(myeditor.outputBodyText());
+}
+
+<!-- 에디터에 작성한 내용중 순수 입력한 문자만 가져옵니다. -->
+<!-- 한글 한 문자는 2로 계산하며, 내용 중 공백 역시 계산합니다. -->
+<!-- 첫문자와 마지막 문자가 공백이면 삭제하고 계산하지 않습니다. -->
+function getContentLength ()
+{
+    alert(myeditor.inputLength());
+}
+
+<!-- 전체 문서 길이입니다. -->
+function getDocumentLength ()
+{
+    alert(myeditor.contentsLengthAll());
+}
+
+</script>
+
+<!-- 에디터를 화면에 출력합니다. -->
+<script type="text/javascript">
+myeditor.config.editorHeight = '200px';             // 에디터 세로폭입니다.
+myeditor.config.editorWidth = '80%';                // 에디터 가로폭입니다.
+myeditor.config.imgReSize = true;                   // 이미지 리사이징 기능을 사용합니다.
+myeditor.config.editorPath = '..';                  // 에디터 설치 경로입니다. 경로 끝에 '/'를 붙이지 않습니다.
+myeditor.inputForm = 'fm_post';                     // 에디터로 불러드릴 textarea의 id 입니다.
+myeditor.run();                                     // 에디터를 실행합니다. 
+</script>
+<p>
+
+<input type="button" value="내용 모두 가져오기" onclick="getHtmlContent()" />
+<input type="button" value="BODY 안쪽 내용" onclick="getBodyContent()" />
+<input type="button" value="이미지 정보 가져오기" onclick="getImages()" />
+<input type="button" value="입력 문자만 가져오기" onclick="getTextContent()" />
+</p>
+<font face="verdana" size="1" color="#666666">
+Copyright ⓒ 1997-2008 by <b>CHCODE.</b> All right reserved.</font>
+</center>
+</body>
+</html>

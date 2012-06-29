@@ -1,0 +1,61 @@
+gmEditor v1.0(지엠에디터) 설치 설명서
+-------------------------------------------------------------------------------
+
+* 에디터를 설치하려면 반드시 PHP가 작동되어야 합니다.
+* HTML편집외의 언어에서는 올바로 작동하지 않습니다.
+
+
+1. 이미지업로드를 사용하려면 uploaded폴더의 퍼미션(권한) 707로 주세요.
+   upfile_ok.php 파일의 열어보면 $dir = "./uploaded"; 이 소스가 보일 것입니다.
+   "./uploaded" 를 수정해주면 다른 이름으로 변경가능합니다.
+
+2. 삽입하고자하는 위치에 아래 소스를 삽입합니다.
+
+
+///////////////////////////////////////////////////////////////////////////////
+<?include_once('./editor/func_editor.php');?>
+<?
+$content = "폼내용";
+// 폼 수정시 이전값을 가져오기 위해 필요함
+// 폼메일에 적용할때는 이전값을 가져올 필요가 없으므로 생략가능함
+?>
+
+<?=myEditor($mode,$editor_Url,$formName,$contentForm,$textWidth,$textHeight);?>
+///////////////////////////////////////////////////////////////////////////////
+
+	// $mode <- 에디터 모드  2는 텍스트모드, 1은 에디터모드
+	// $editor_Url <- 에디터 경로 ../editor
+	// $formName <- 폼 이름 <form name="폼 이름">
+	// $contentForm <- 필드 이름 <textarea name="필드 이름"></textarea>
+	// $textWidth <- 필드 width값 (숫자만 입력)
+	// $textHeight <- 필드 height값 (숫자만 입력)
+
+
+
+3. 설치가 어렵다면 아래 샘플을 살펴 보거나 demo.php를 실행시켜 보시기 바랍니다.
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////
+////  작성 샘플
+/////////////////////////////////////////////////////////////////////
+
+<html>
+<head></head>
+
+<?
+include_once('./editor/func_editor.php');
+$content = "폼내용";
+?>
+
+<body>
+<form action="send.php" method="post" name="add_form">
+
+<?=myEditor(1,'./editor','add_form','content','100%','200');?>
+
+<input type="button" value="글쓰기" onClick="editor_wr_ok();">
+</form>
+</body>
+</html>

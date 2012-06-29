@@ -1,0 +1,94 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Pragma" CONTENT="No-Cache">
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<TITLE>Search</TITLE>
+<STYLE>
+body, select, td { font-family: arial; font-size: 9pt;}
+body {background: threedface; color: windowtext; font-family: arial;}
+</STYLE>
+
+</HEAD>
+
+<BODY scroll=no>
+
+<div align=right><a style="cursor:hand" onclick="location.reload()">[새로고침]</a></div>
+
+<HR>
+
+<script language=javascript>
+<!--
+// 검색단어 변환
+function search(){
+	var shflag = "";
+	var gmform = document.add_form;
+	var str = gmform.sh.value;
+	var str2 = gmform.reg.value;
+
+	if(gmform.opt1[1].checked) shflag = "g";
+	if(gmform.opt2[1].checked) shflag += "i";
+
+	replacekey = new RegExp(str,shflag);
+	gmform.content.value = gmform.content.value.replace(replacekey,str2);
+}
+
+// HTML,TEXT 모드상태 체크
+function chkMode(){
+	if(window.opener.document.getElementById('ModeType').checked==true) return true;
+	return false;
+}
+
+// 부모창에 변경내용 적용
+function sTr_Reg(){
+	if(window.opener){
+		var key = document.getElementById('content').value;
+		if(chkMode()){
+			window.opener.gmEditor.document.body.innerText = key;
+		}
+		else{
+			window.opener.gmEditor.document.body.innerHTML = key;
+		}
+	}
+}
+//-->
+</script>
+
+<table border="0" cellpadding="2" cellspacing="2" width="100%">
+	<form name="add_form">
+    <tr>
+        <td colspan=2>
+		검색할 단어 : <input type="text" name="sh" size=30 class=input><br>
+		변경할 단어 : <input type="text" name="reg" size=30 class=input>
+		<input type=button value=" 변 경 " onclick="search();" ><br>
+		</td>
+	</tr>
+	<tr>
+		<td width=40%>
+			변경 대상 : <input type="radio" name="opt1" checked>하나씩 <input type="radio" name="opt1">일괄 변경
+		</td>
+		<td width=60%>
+			대,소문자 구별 : <input type="radio" name="opt2" checked>있음 <input type="radio" name="opt2">없음
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2>
+		<script language="javascript">
+		<!--
+			var TextValue = opener.frames.gmEditor.document.body.innerHTML;
+			document.write('<textarea name="content" wrap="hard" style="width=625;height=400" >' + TextValue + '</textarea>');
+		//-->
+		</script>
+		</td>
+	</tr>
+
+	<tr>
+		<td align=center colspan=2>
+			<input type="button" value=" 적 용 " onclick="sTr_Reg()" class=input>
+			 &nbsp;<input type="button" value=" 닫 기 " onclick="window.close()" class=input>
+		</td>
+	</tr>
+	</form>
+</table>
+
+</BODY>
+</HTML>
