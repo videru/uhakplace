@@ -200,7 +200,7 @@ onload=set_img_width_init;
 <table width="100%" border="0">
 	<tr>
 		<td>
-<? include('list_main_process.php'); ?>
+<? include('list_main_process_new.php'); ?>
 		</td>
 	</tr>
 </table>

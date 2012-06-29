@@ -48,7 +48,7 @@ $colspan=6; //기본 수
 	if(isset($bd_num)) $o_bd_num=$bd_num;
 	while($data=$rs_list->fetch()) {
 		$i_no=--$no;
-		include("list_data_process.php");
+		include("list_data_process_new.php");
 		
 		if($bd_delete > 0) include($_skin_list_delete); // 삭제글	
 		else if($bd_secret > 0) include($_skin_list_secret); // 비밀글
