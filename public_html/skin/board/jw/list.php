@@ -10,7 +10,17 @@
     <td width="37">&nbsp;</td>
     <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td><img src="../n_img/6_1.jpg" width="720" height="250" /></td>
+        <td><img src="<?
+        switch($bbs_code)
+        {
+        	case "jw_notice":echo"../n_img/6_1.jpg";
+        	break;
+        	case "jw_ot":echo "../n_img/6_2.jpg";
+        	break;
+        	case "jw_yensu":echo "../n_img/6_4.jpg";
+        	break;
+        }
+        ?>" width="720" height="250" /></td>
       </tr>
 <tr>
  <td>
@@ -115,6 +125,8 @@ function board_manager(){
 		</td>
 	</tr>
 </table>
+
+<!-- À±°û -->
 </td>
 </tr>
 </table>

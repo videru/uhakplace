@@ -1,8 +1,9 @@
+<?header("Location:../board/list_new.php?bbs_code=jw_yensu")?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<META HTTP-EQUIV="refresh" CONTENT="0;URL=./6_4.php">
-<title>필리핀 전문 포털 필사과</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>�꾨━���꾨Ц �ы꽭 �꾩궗怨�/title>
 </head>
 
 <body>

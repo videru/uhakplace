@@ -1,4 +1,4 @@
-
+<?header("Location:../board/list_new.php?bbs_code=jw_ot")?>
       
       
       <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
