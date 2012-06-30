@@ -1,7 +1,7 @@
 <?
 /* =====================================================
 
-  ���������� : 
+  최종수정일 : 
  ===================================================== */
 	include_once("../include/lib.php");
 	
@@ -33,10 +33,10 @@
 			$ret_url_login='?ret_url=' . urlencode($ret_url);
 		
 		if(!$validate->userid($mb_id))
-			rg_href($ret_url_login,'���̵� Ȯ�����ּ���.');
+			rg_href($ret_url_login,'아이디를 확인해주세요.');
 			
 		if(!$validate->strlen_chk($mb_pass,4,12))
-			rg_href($ret_url_login,'��ȣ�� Ȯ�����ּ���.');
+			rg_href($ret_url_login,'암호를 확인해주세요.');
 		
 		$mb_pass = rg_password_encode($mb_pass);
 		
@@ -45,27 +45,27 @@
 		$rs->add_where("mb_id='".$dbcon->escape_string($mb_id)."'");
 		$rs->select();
 		if(!$rs->num_rows()) //
-			rg_href($ret_url_login,'���Ե��� ���� ���̵� �Դϴ�.');			
+			rg_href($ret_url_login,'가입되지 않은 아이디 입니다.');			
 		
 		$data=$rs->fetch();
 		if($data['mb_pass']!=$mb_pass) {
-			rg_href($ret_url_login,'��ȣ�� ��Ȯ�� �Է��ϼ���.');
+			rg_href($ret_url_login,'암호를 정확히 입력하세요.');
 		}
 
 		switch($data['mb_state']) {
-			case 1 : // ���ε� ���̵�
+			case 1 : // 승인된 아이디
 				break;
 			case '0' : 
-				rg_href($ret_url_login,'���δ�����Դϴ�.');		
+				rg_href($ret_url_login,'승인대기중입니다.');		
 				break;
 			case '2' : 
-				rg_href($ret_url_login,'�̽��ε� ���̵� �Դϴ�.');		
+				rg_href($ret_url_login,'미승인된 아이디 입니다.');		
 				break;
 			case '3' : 
-				rg_href($ret_url_login,'Ż��� ���̵��Դϴ�.\n�簡���� ���Ұ�� �����ڿ��� �����ֽʽÿ�.');	
+				rg_href($ret_url_login,'탈퇴된 아이디입니다.\n재가입을 원할경우 관리자에게 메일주십시요.');	
 				break;
 			default :
-				rg_href($ret_url_login,'�˼����� ���� �����ڿ��� ���� �ٶ��ϴ�.');	
+				rg_href($ret_url_login,'알수없는 오류 관리자에게 연락 바랍니다.');	
 				break;
 		}
 		$login_date=time();
@@ -77,15 +77,15 @@
 		$rs->add_where("mb_num={$data['mb_num']}");
 		$rs->update();
 		
-		// ���� �α��� ���ڿ� ���� �α��� ���ڰ� �ٸ��ٸ� �α��� ����Ʈ �ø���. 
+		// 지난 로그인 날자와 현재 로그인 날자가 다르다면 로그인 포인트 올린다. 
 		if(floor($data['login_date']/86400) < floor(time()/86400))
 			rg_set_point($data['mb_num'],$_po_type_code['etc'],
-								$_site_info['login_point'],'�α���','�α�������Ʈ','');
+								$_site_info['login_point'],'로그인','로그인포인트','');
 			
 		$ss_mb_id = $data['mb_id'];
 		$ss_mb_num = $data['mb_num'];
 		$ss_login_ok = 'ok';
-		// �α��� üũ��� �ؽ�����Ÿ �α��νð�,���̵�,ȸ����ȣ�� üũ
+		// 로그인 체크방법 해쉬데이타 로그인시간,아이디,회원번호로 체크
 //		$ss_hash = md5($data['login_ip'].$data['mb_id'].$data['mb_num']);
 //		$ss_hash = md5($data['join_date'].$data['mb_id'].$data['mb_num']);
 		$ss_hash = md5($login_date.$data['mb_id'].$data['mb_num']);
@@ -125,7 +125,7 @@
           </tr>      
           <tr>
             <td width="65" ><img src="../img/login_tit_id.gif" width="41" height="16" /></td>
-            <td width="200"><input type="text" class="input" name="mb_id" size="20" maxlength="12" hname="���̵�" required tabindex="101"></td>
+            <td width="200"><input type="text" class="input" name="mb_id" size="20" maxlength="12" hname="아이디" required tabindex="101"></td>
             <td width="120" rowspan="3"><input type="image" src="../img/login_btn_login.gif" class="border" tabindex="3"></td>
           </tr>
           <tr>
@@ -133,7 +133,7 @@
             </tr>
           <tr>
             <td><img src="../img/login_tit_ps.gif" width="41" height="16" /></td>
-            <td><input name="mb_pass" type="password" class="input" size="20" required hname="��ȣ" tabindex="102"></td>
+            <td><input name="mb_pass" type="password" class="input" size="20" required hname="암호" tabindex="102"></td>
             </tr>
           
           <tr>

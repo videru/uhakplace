@@ -1,24 +1,32 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>гй╦╝ги юЭ╧╝ фВеп гй╩Г╟З</title>
+<title>М∙└К╕╛М∙─ Л═└К╛╦ М▐╛М└╦ М∙└Л┌╛ЙЁ╪</title>
 
 <script language="JavaScript"> 
 <!--  
 function bookmark(){
-   window.external.AddFavorite('http://www.uhakplace.co.kr/', 'гй╦╝ги юЭ╧╝ фВеп гй╩Г╟З')
+   window.external.AddFavorite('http://www.uhakplace.co.kr/', 'Л°═М∙≥М■▄К═┬Л²╢Л┼╓')
 }
 //-->
 </script>
 </head>
-
+<?
+	include_once("../include/lib.php");
+?>
+<? include_once('../phil/_header_new.php'); ?>
 
 <body onload="javascript:addfavorites();">
 <div style="height:35px;"></div>
 <table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr align="right">
-    <td><a href="http://www.uhakplace.co.kr" target="_parent" onfocus="blur();"><img src="../n_img/main_03.jpg" width="48" height="17" border="0" /></a><a href="http://www.uhakplace.co.kr/temp/login.html" target="_parent" onfocus="blur();"><img src="../n_img/main_04.jpg" width="55" height="17" border="0" /></a><a href="http://www.uhakplace.co.kr/temp/8_2.html" target="_parent" onfocus="blur();"><img src="../n_img/main_05.jpg" width="63" height="17" border="0" /></a><a href="javascript:bookmark();" onfocus="blur();"><img src="../n_img/main_06.jpg" width="64" height="17" border="0" /></a></td>
+    <td>
+    	<?=rg_outlogin('jw_top')?>
+    	<a href="http://www.uhakplace.co.kr/new" target="_parent" onfocus="blur();"><img src="../n_img/main_03.jpg" width="48" height="17" border="0" /></a>
+    	<a href="http://www.uhakplace.co.kr/temp/login.php" target="_parent" onfocus="blur();"><img src="../n_img/main_04.jpg" width="55" height="17" border="0" /></a>
+    	<a href="http://www.uhakplace.co.kr/temp/8_2.php" target="_parent" onfocus="blur();"><img src="../n_img/main_05.jpg" width="63" height="17" border="0" /></a>
+    	<a href="javascript:bookmark();" onfocus="blur();"><img src="../n_img/main_06.jpg" width="64" height="17" border="0" /></a>
+    </td>
   </tr>
   <tr>
     <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -30,7 +38,7 @@ function bookmark(){
   </tr>
 </table>
 
-<div style="height:52px"></div><!--го╢э div©м ╨п╦╝ -->
+<div style="height:52px"></div><!--Л⌡░К·≤ Й╡┐ЙЁ╪К╤└К╕╛-->
 </body>
 </html>
 

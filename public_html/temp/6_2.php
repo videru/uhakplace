@@ -5,11 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ÇÊ¸®ÇÉ Àü¹® Æ÷ÅÐ ÇÊ»ç°ú</title>
+<title>ï¿½Ê¸ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê»ï¿½ï¿½</title>
 </head>
 
 <body>
-<div><iframe src="top.html" width="100%" height="113" border="0" frameborder="no" scrolling="no" marginwidth="0" hspace="0" vspace="0"></iframe></div>
+<div><? include_once('./top.php'); ?></div>
 <div style="height:52px"></div>
 <table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
@@ -25,7 +25,7 @@
     </table></td>
   </tr>
 </table>
-<div><iframe src="footer.html" width="100%" height="156" border="0" frameborder="no" scrolling="no" marginwidth="0" hspace="0" vspace="0"></iframe></div>
+<div><? include_once('./footer.php'); ?></div>
 </body>
 </html>
       

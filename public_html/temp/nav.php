@@ -4,18 +4,22 @@
     <td width="37">&nbsp;</td>
     <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td><img src="<?
+        <td><?
+        $title_img;
         switch($bbs_code)
         {
-        	case "jw_notice":echo"../n_img/6_1.jpg";
+        	case "jw_notice":$title_img="../n_img/6_1.jpg";
         	break;
-        	case "jw_ot":echo "../n_img/6_2.jpg";
+        	case "jw_ot":$title_img= "../n_img/6_2.jpg";
         	break;
-        	case "jw_yensu":echo "../n_img/6_4.jpg";
+        	case "jw_yensu":$title_img= "../n_img/6_4.jpg";
         	break;
-        }//Å¸ÀÌÆ² ÀÌ¹ÌÁö
-        ?>" width="720" height="250" /></td>
+        }//íƒ€ì´í‹€ì´ë¯¸ì§€
+        if($title_img)
+        	echo "<img src='$title_img' width='720' height='250' />"
+        
+        ?> </td>
       </tr>
 <tr>
  <td>
- <!-- °Ô½ÃÆÇ ³»¿ë -->
+ <!-- ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -->

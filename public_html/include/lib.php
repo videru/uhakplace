@@ -1,9 +1,9 @@
 <?
 /* =====================================================
 
-  ÃÖÁ¾¼öÁ¤ÀÏ : 2007-07-13
-2007-07-13 header("Content-type: text/html; charset=euc-kr"); Ãß°¡
-2010-01-28 BOARD_VERSION »ó¼ö ¼±¾ðºÎºÐ config.php ¿¡¼­ º» ÆÄÀÏ·Î ÀÌµ¿
+  ìµœì¢…ìˆ˜ì •ì¼ : 2007-07-13
+2007-07-13 header("Content-type: text/html; charset=euc-kr"); ì¶”ê°€
+2010-01-28 BOARD_VERSION ìƒìˆ˜ ì„ ì–¸ë¶€ë¶„ config.php ì—ì„œ ë³¸ íŒŒì¼ë¡œ ì´ë™
  ===================================================== */
 
   define('RGBOARD_VERSION', '4.1.1');
@@ -18,13 +18,13 @@
 	if(!isset($site_url)) $site_url='../';
 	if(!isset($site_path) || preg_match("/:\/\//",$site_path)) $site_path='../';	
 
-	// ¸ÞÀÎ ¶óÀÌºê·¯¸®
+	// ë©”ì¸ ë¼ì´ë¸ŒëŸ¬ë¦¬
 	include_once($site_path.'include/config.php');
 	include_once($_path['inc'].'func_comm.php');
 	include_once($_path['inc'].'validate.php');
 	include_once($_path['inc'].'class_db.php');
 	
-	// magic_quotes_gpc °¡ ¼³Á¤µÈ°æ¿ì
+	// magic_quotes_gpc ê°€ ì„¤ì •ëœê²½ìš°
 	if(get_magic_quotes_gpc()) {
 		ini_set('magic_quotes_sybase',0);
     rg_array_recursive_function($_GET, 'stripslashes');
@@ -33,7 +33,7 @@
     rg_array_recursive_function($_REQUEST, 'stripslashes');
 		include_once($_path['inc'].'register_globals.inc.php');
 	} else if (!ini_get('register_globals')) {
-	// register_globals ¼³Á¤ÀÌ ¾ÈµÇ¾î ÀÖÀ»°æ¿ì
+	// register_globals ì„¤ì •ì´ ì•ˆë˜ì–´ ìžˆì„ê²½ìš°
 		include_once($_path['inc'].'register_globals.inc.php');
 	}
 
@@ -43,10 +43,11 @@
   session_cache_limiter('nocache, must-revalidate');
 
 
-// ¼¼¼ÇÀ¯Áö½Ã°£ 1ÀÏ·Î ´Ã¸²
+// ì„¸ì…˜ìœ ì§€ì‹œê°„ 1ì¼ë¡œ ëŠ˜ë¦¼
 ini_set("session.cookie_lifetime", "86400"); 
 ini_set("session.cache_expire", "86400"); 
 ini_set("session.gc_maxlifetime", "86400"); 
+ini_set("session.cookie_domain", ".uhakplace.co.kr");
   session_start();	
 
 	$__dbconf=@file($_path['data'].'db_info.php');
@@ -57,7 +58,7 @@ ini_set("session.gc_maxlifetime", "86400");
 		exit;
 	}
 	if(count($__dbconf) < 9) {
-		echo 'µ¥ÀÌÅ¸º£ÀÌ½º ¼³Á¤ ÆÄÀÏ¿¡·¯.';
+		echo 'ë°ì´íƒ€ë² ì´ìŠ¤ ì„¤ì • íŒŒì¼ì—ëŸ¬.';
 		exit;
 	}
 	
@@ -66,7 +67,7 @@ ini_set("session.gc_maxlifetime", "86400");
 	}
 
 	if($__dbconf[0] != '<'.'?' || $__dbconf[count($__dbconf)-1] != '?'.'>') {
-		echo 'µ¥ÀÌÅ¸º£ÀÌ½º ¼³Á¤ ÆÄÀÏ¿¡·¯..';
+		echo 'ë°ì´íƒ€ë² ì´ìŠ¤ ì„¤ì • íŒŒì¼ì—ëŸ¬..';
 		exit;
 	}
 	
@@ -74,10 +75,10 @@ ini_set("session.gc_maxlifetime", "86400");
 		$__dbconf[$i]=substr($__dbconf[$i],2);
 	}
 	
-	$validate = new validate(); // À¯È¿¼º°Ë»ç
+	$validate = new validate(); // ìœ íš¨ì„±ê²€ì‚¬
 	
 	$dbcon=false;
-	switch($__dbconf[6]) { // µðºñÁ¾·ù
+	switch($__dbconf[6]) { // ë””ë¹„ì¢…ë¥˜
 		case 'CUBRID' :
 			include_once($_path['inc'].'class_db_cubrid.php');
 			define('DB_TYPE', 'cubrid');
@@ -100,7 +101,7 @@ ini_set("session.gc_maxlifetime", "86400");
 	$dbcon->connect($__dbconf[2],$__dbconf[3],$__dbconf[4],$__dbconf[5],$__dbconf[7]);
 
 	if(!is_object($dbcon) || !$dbcon->dbcon) {
-		echo 'µ¥ÀÌÅ¸º£ÀÌ½º Á¢¼Ó¿¡·¯. µ¥ÀÌÅ¸º£ÀÌ½º Á¤º¸¸¦ È®ÀÎÇØÁÖ¼¼¿ä.';
+		echo 'ë°ì´íƒ€ë² ì´ìŠ¤ ì ‘ì†ì—ëŸ¬. ë°ì´íƒ€ë² ì´ìŠ¤ ì •ë³´ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”.';
 		exit;
 	}
 
@@ -109,7 +110,7 @@ ini_set("session.gc_maxlifetime", "86400");
 	unset($__dbconf);
 	$rs=new $rs_class($dbcon);
 
-	// ·Î±×ÀÎ µÇ¾î ÀÖ´Â »óÅÂ¶ó¸é È¸¿ø Á¤º¸¸¦
+	// ë¡œê·¸ì¸ ë˜ì–´ ìžˆëŠ” ìƒíƒœë¼ë©´ íšŒì› ì •ë³´ë¥¼
 	if(!empty($_SESSION['ss_login_ok'])	&& !empty($_SESSION['ss_mb_num']) &&
 		 !empty($_SESSION['ss_mb_id']) 		&& !empty($_SESSION['ss_hash'])) {
 		$rs->clear();
@@ -118,8 +119,8 @@ ini_set("session.gc_maxlifetime", "86400");
 		$rs->add_where("mb_id='{$_SESSION['ss_mb_id']}'");
 		$rs->select();
 		if($rs->num_rows()<1) {
-			// ·Î±×ÀÎµÇ¾î ÀÖ´Â È¸¿øÀÇ Á¤º¸°¡ ¿Ã¹Ù¸£Áö ¾Ê´Ù¸é ·Î±×¾Æ¿ô.
-			// ºñÁ¤»óÀûÀÎ Á¢±Ù
+			// ë¡œê·¸ì¸ë˜ì–´ ìžˆëŠ” íšŒì›ì˜ ì •ë³´ê°€ ì˜¬ë°”ë¥´ì§€ ì•Šë‹¤ë©´ ë¡œê·¸ì•„ì›ƒ.
+			// ë¹„ì •ìƒì ì¸ ì ‘ê·¼
 			$ss_mb_id='';
 			$ss_mb_num='';
 			$ss_login_ok='';
@@ -140,10 +141,10 @@ ini_set("session.gc_maxlifetime", "86400");
 			$ss_hash_chk = md5($_mb['login_date'].$_mb['mb_id'].$_mb['mb_num']);
 			if($_SESSION['ss_hash'] == $ss_hash_chk) {
 				$_mb['mb_files']=unserialize($_mb['mb_files']);
-				// È¸¿ø·¹º§ÀÌ $_const['admin_level'] ÀÌ»ó ÀÌ¸é »çÀÌÆ®°ü¸®ÀÚ 
+				// íšŒì›ë ˆë²¨ì´ $_const['admin_level'] ì´ìƒ ì´ë©´ ì‚¬ì´íŠ¸ê´€ë¦¬ìž 
 				$_auth['admin']=($_const['admin_level'] <= $_mb['mb_level']);
 			} else {
-				// ºñÁ¤»óÀûÀÎ Á¢±Ù, Â÷ÈÄ °ü¸®ÀÚ¿¡°Ô ¸ÞÀÏµîÀÇ Á¶Ãë¸¦ ÃëÇÒ¼ö ÀÖ´Ù.
+				// ë¹„ì •ìƒì ì¸ ì ‘ê·¼, ì°¨í›„ ê´€ë¦¬ìžì—ê²Œ ë©”ì¼ë“±ì˜ ì¡°ì·¨ë¥¼ ì·¨í• ìˆ˜ ìžˆë‹¤.
 				$ss_mb_id='';
 				$ss_mb_num='';
 				$ss_login_ok='';
@@ -157,12 +158,12 @@ ini_set("session.gc_maxlifetime", "86400");
 				unset($_SESSION['ss_login_ok']);
 				unset($_SESSION['ss_hash']);
 				$_mb=false;
-				rg_href("$site_url","´Ù¸¥°÷¿¡¼­ ·Î±×ÀÎ ÇÏ¼Ì½À´Ï´Ù.\nÃÊ±âÈ­¸éÀ¸·Î ÀÌµ¿ÇÕ´Ï´Ù.");
+				rg_href("$site_url","ë‹¤ë¥¸ê³³ì—ì„œ ë¡œê·¸ì¸ í•˜ì…¨ìŠµë‹ˆë‹¤.\nì´ˆê¸°í™”ë©´ìœ¼ë¡œ ì´ë™í•©ë‹ˆë‹¤.");
 			}
 		}
 	}
 
-	// »çÀÌÆ® ¼³Á¤
+	// ì‚¬ì´íŠ¸ ì„¤ì •
 	$rs->clear();
 	$rs->set_table($_table['setup']);
 	$rs->add_field("ss_content");
@@ -181,7 +182,7 @@ ini_set("session.gc_maxlifetime", "86400");
 	$_site_info = unserialize($tmp);
 	unset($tmp);
 	
-	// ·¹º§ Á¤º¸
+	// ë ˆë²¨ ì •ë³´
 	$rs->clear();
 	$rs->set_table($_table['setup']);
 	$rs->add_field("ss_content");

@@ -6,22 +6,20 @@
 </head>
 
 <body>
-<div><? include_once('./top.php'); ?></div>
+<?include_once 'top.php';?>
 <div style="height:52px"></div>
 <table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="223" valign="top"><embed src="../n_img/left_08.swf" width="223" height="400"></embed></td>
+    <td width="223" valign="top"><embed src="../n_img/left_04.swf" width="223" height="400"></embed></td>
     <td width="37">&nbsp;</td>
     <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td><img src="../n_img/8_6.jpg" width="720" height="250" /></td>
-      </tr>
-      <tr>
-        <td><iframe src="../newmember/modify.php" width="100%" height="1200" border="0" frameborder="no" scrolling="no" marginwidth="0" hspace="0" vspace="0"></iframe></td>
-      </tr>
+        <td>학원정보</td>
+      </tr> 
+      
     </table></td>
   </tr>
 </table>
-<div><? include_once('./footer.php'); ?></div>
+<div><iframe src="footer.html" width="100%" height="156" border="0" frameborder="no" scrolling="no" marginwidth="0" hspace="0" vspace="0"></iframe></div>
 </body>
 </html>

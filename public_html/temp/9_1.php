@@ -22,6 +22,6 @@
     </table></td>
   </tr>
 </table>
-<div><iframe src="footer.html" width="100%" height="156" border="0" frameborder="no" scrolling="no" marginwidth="0" hspace="0" vspace="0"></iframe></div>
+<div><? include_once('./footer.php'); ?></div>
 </body>
 </html>
