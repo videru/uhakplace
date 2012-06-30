@@ -1,5 +1,4 @@
 <?echo $title_img_path?>
-<div style="height:52px"></div><!-- 상단 div와 분리 -->
 
 <table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>

@@ -60,8 +60,6 @@ A.green:link, A.green:visited, A.green:active   { color:#69A80F; text-decoration
 A.green:hover   { color:#69A80F; text-decoration:none;}
 </style>
 
-<div style="height:52px"></div><!-- 상단 div와 분리 -->
-
 <table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="223" valign="top"><embed src="../n_img/left_06.swf" width="223" height="400"></embed></td>

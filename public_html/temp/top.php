@@ -29,5 +29,8 @@ function bookmark(){
     </table></td>
   </tr>
 </table>
+
+<div style="height:52px"></div><!--하단 div와 분리 -->
 </body>
 </html>
+

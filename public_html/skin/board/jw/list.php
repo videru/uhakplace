@@ -3,7 +3,6 @@
 #gall a:hover img{ border: 2px solid #4B9FBE;	}
 </style>
 
-<div style="height:52px"></div><!-- 상단 div와 분리 -->
 <table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="223" valign="top"><embed src="../n_img/left_06.swf" width="223" height="400"></embed></td>
