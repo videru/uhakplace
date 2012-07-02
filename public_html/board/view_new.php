@@ -6,8 +6,8 @@
 
 /* =====================================================
 
-  ÃÖÁ¾¼öÁ¤ÀÏ : 
-	2007-12-10 $bd_home XSSÃë¾àÁ¡ ¼öÁ¤
+  ï¿½ï¿½~ï¿½ï¿½dï¿½ï¿½ : 
+	2007-12-10 $bd_home XSSï¿½ï¿½ï¿½a ï¿½ï¿½d
  ===================================================== */
 	include_once("../include/lib.php");
 	include_once($_path['inc']."lib_bbs.php");
@@ -41,7 +41,7 @@
 	
 	$vcfg['input_name']=($_write_cfg['writer_modify'] <= $tmp_level || !$_mb);	
 	
-	$vreq['bc_pass']=($_mb)?'':'required'; // ·Î±×ÀÎÀüÀÌ¶ó¸é ¾ÏÈ£ ÇÊ¼öÀÔ·Â
+	$vreq['bc_pass']=($_mb)?'':'required'; // ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¶ï¿½ï¿½ ï¿½ï¿½È£ ï¿½Ê¼ï¿½ï¿½Ô·ï¿½
 	
 	if($_mb) {
 		switch($_write_cfg['writer_name']) {
@@ -61,7 +61,7 @@
 	if(file_exists($skin_path.'setup.php')) include($skin_path.'setup.php');
 	
 	if(!$validate->number_only($bd_num)) {
-		rg_href("list.php?$_get_param[3]");
+		rg_href("list_new.php?$_get_param[3]");
 		exit;
 	}
 
@@ -73,7 +73,7 @@
 	if($mode=='comment_delete') {
 		if($mode2!='select') {
 			if(!$validate->number_only($bc_num)) {
-				rg_href("list.php?$_get_param[3]");
+				rg_href("list_new.php?$_get_param[3]");
 				exit;
 			}
 		}
@@ -87,7 +87,7 @@
 	$rs->add_where("bd_num=$bd_num");
 	$data=$rs->fetch();	
 	if(!$data) {
-		rg_href("list.php?$_get_param[3]");
+		rg_href("list_new.php?$_get_param[3]");
 		exit;
 	}
 
@@ -104,7 +104,7 @@
 			include("msg.php");
 			exit;
 		}
-		// ÅõÇ¥¿©ºÎ
+		// ï¿½ï¿½Ç¥ï¿½ï¿½ï¿½ï¿½
 		$tmp=explode(',',$_COOKIE["vote_chk"]);
 		if(!in_array("{$_bbs_info['bbs_db_num']}:$bd_num",$tmp)){
 			$rs->clear();
@@ -118,7 +118,7 @@
 			$rs->update();
 			array_push($tmp, "{$_bbs_info['bbs_db_num']}:$bd_num");
 			$vote_chk = implode(',',$tmp);
-			setcookie("vote_chk", $vote_chk, time()+3600*24*30); // ÇÑ´Þ
+			setcookie("vote_chk", $vote_chk, time()+3600*24*30); // ï¿½Ñ´ï¿½
 		} else {
 			$_msg_type='vote_already';
 			include("msg.php");
@@ -127,7 +127,7 @@
 		unset($tmp);
 	
 		$rs->commit();
-		rg_href("view.php?$_get_param[4]");
+		rg_href("view_new.php?$_get_param[4]");
 	}
 	
 	if($mode=='comment_write' || $mode=='comment_delete') {
@@ -141,9 +141,9 @@
 				exit;
 			}
 			
-			if($vcfg['spam_chk']) { // ½ºÆÔÃ¼Å©·çÆ¾
+			if($vcfg['spam_chk']) { // ï¿½ï¿½ï¿½ï¿½Ã¼Å©ï¿½ï¿½Æ¾
 				$schk_code = $_SESSION["schk_".$spam_chk_code];
-				if($schk_code =='' || $schk_code != $spam_chk) { // ½ºÆÔ¹®ÀÚ ¸ÂÁö ¾ÊÀ½
+				if($schk_code =='' || $schk_code != $spam_chk) { // ï¿½ï¿½ï¿½Ô¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½=
 					$_msg_type='spam_chk';
 					include("msg.php");
 					exit;
@@ -193,13 +193,13 @@
 			
 			$rs->add_field("bc_write_ip",$_SERVER['REMOTE_ADDR']);
 			$rs->insert();
-			// Æ÷ÀÎÆ®
+			// ï¿½ï¿½ï¿½ï¿½Æ®
 			if($_bbs_info['point_comment'] > 0 && $_mb)
 				rg_set_point($_mb['mb_num'],$_po_type_code['bbs'],
-									$_bbs_info['point_comment'],'ÄÚ¸àÆ®ÀÛ¼º',$_bbs_info['bbs_name'],'');
+									$_bbs_info['point_comment'],'ï¿½Ú¸ï¿½Æ®ï¿½Û¼ï¿½',$_bbs_info['bbs_name'],'');
 		} else if($mode=='comment_delete') {
-			// ÄÚ¸àÆ®»èÁ¦ ·çÆ¾
-			if($mode2=='select') { // ¼±ÅÃ»èÁ¦
+			// ï¿½Ú¸ï¿½Æ®ï¿½ï¿½f ï¿½ï¿½Æ¾
+			if($mode2=='select') { // ï¿½ï¿½ï¿½Ã»ï¿½f
 				if(!$_auth['bbs_admin']) {
 					$_msg_type='comment_delete_no_auth_member';
 					include("msg.php");
@@ -210,28 +210,28 @@
 						$rs->add_where("bd_num=$bd_num");
 						$rs->add_where("bc_num IN ('".implode("','",$chk_cnums)."')");
 						while($data_comment=$rs->fetch()) {
-							// »èÁ¦½Ã Æ÷ÀÎÆ® Â÷°¨
+							// ï¿½ï¿½fï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½
 							if($_bbs_info['point_comment'] > 0 && $data_comment['mb_num'])
 								rg_set_point($data_comment['mb_num'],$_po_type_code['bbs'],
-													-$_bbs_info['point_comment'],'ÄÚ¸àÆ®»èÁ¦',$_bbs_info['bbs_name'],'');
+													-$_bbs_info['point_comment'],'ï¿½Ú¸ï¿½Æ®ï¿½ï¿½f',$_bbs_info['bbs_name'],'');
 						}
 						$rs->delete();
 					}
 				}
 			} else {
 				if(!$validate->number_only($bc_num)) {
-					rg_href("view.php?$_get_param[4]");
+					rg_href("view_new.php?$_get_param[4]");
 					exit;
 				}
 	/*
-	°ü¸®ÀÚ´Â È®ÀÎÈÄ »èÁ¦
-	·Î±×ÀÎµÇ¾î ÀÖ´Â °æ¿ì 
-		º»ÀÎÀÇ ±ÛÀÎ°æ¿ì È®ÀÎÈÄ »èÁ¦
-		¾ÏÈ£°¡ ÀÖ´Ù¸é ¾ÏÈ£ È®ÀÎÈÄ »èÁ¦
-		¾ÏÈ£°¡ ¾ø´Ù¸é »èÁ¦ºÒ°¡
-	·Î±×ÀÎ ¾ÈµÇ¾î ÀÖ´Ù¸é
-		¾ÏÈ£°¡ ÀÖ´Ù¸é È®ÀÎÈÄ »èÁ¦
-		¾ø´Ù¸é »èÁ¦ºÒ°¡
+	ï¿½ï¿½ï¿½Ú´ï¿½ È®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½f
+	ï¿½Î±ï¿½ï¿½ÎµÇ¾ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ 
+		ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î°ï¿½ï¿½ È®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½f
+		ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ö´Ù¸ï¿½ ï¿½ï¿½È£ È®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½f
+		ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½Ù¸ï¿½ ï¿½ï¿½fï¿½Ò°ï¿½
+	ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ÈµÇ¾ï¿½ ï¿½Ö´Ù¸ï¿½
+		ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ö´Ù¸ï¿½ È®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½f
+		ï¿½ï¿½Ù¸ï¿½ ï¿½ï¿½fï¿½Ò°ï¿½
 	
 	*/
 				$rs->clear();
@@ -247,7 +247,7 @@
 					}
 				} else {
 					if($_mb) {
-						// È¸¿ø·Î±×ÀÎµÈ °æ¿ì
+						// È¸ï¿½ï¿½Î±ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½
 						if($_mb['mb_num']==$data_comment['mb_num']) {
 							if($confirm!='ok') {
 								$_confirm_type='comment_delete_member';
@@ -255,24 +255,24 @@
 								exit;
 							}
 						} else {
-							// ÀÚ½ÅÀÌ ¾´±ÛÀÌ ¾Æ´Ï¸é
+							// ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ï¸ï¿½
 							if($data_comment['bc_pass']=='') {
-								// ±Û ¾ÏÈ£°¡ ¾ø´Ù¸é
+								// ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½Ù¸ï¿½
 								$_msg_type='comment_delete_no_auth_member';
 								include("msg.php");
 								exit;
 							} else {
-								// ±Û ¾ÏÈ£ ÀÖ´Ù¸é
-								if($old_pass=='') { // ÀÔ·ÂµÈ ¾ÏÈ£ ¾ø´Ù¸é
-									// ¾ÏÈ£ÀÔ·Â
+								// ï¿½ï¿½ ï¿½ï¿½È£ ï¿½Ö´Ù¸ï¿½
+								if($old_pass=='') { // ï¿½Ô·Âµï¿½ ï¿½ï¿½È£ ï¿½ï¿½Ù¸ï¿½
+									// ï¿½ï¿½È£ï¿½Ô·ï¿½
 									$_pass_type='comment_delete';
 									include("pass.php");
 									exit;
 								} else {
-									// ÀÔ·ÂµÈ ¾ÏÈ£ ÀÖ´Ù¸é ºñ±³
+									// ï¿½Ô·Âµï¿½ ï¿½ï¿½È£ ï¿½Ö´Ù¸ï¿½ ï¿½ï¿½
 									if($data_comment['bc_pass']!=rg_password_encode($old_pass)) {
-										// ¾ÏÈ£°¡ ´Ù¸£´Ù¸é
-										// ¿¡·¯ ¸Þ½ÃÁö Ç¥½Ã
+										// ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ù¸ï¿½ï¿½Ù¸ï¿½
+										// ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
 										$_msg_type='comment_delete_pass_error';
 										include("msg.php");
 										exit;
@@ -281,24 +281,24 @@
 							} // $data['bc_pass']==''
 						}				
 					} else {
-						// È¸¿ø·Î±×ÀÎ ¾ÈµÈ°æ¿ì
+						// È¸ï¿½ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ÈµÈ°ï¿½ï¿½
 						if($data_comment['bc_pass']=='') {
-							// ±Û ¾ÏÈ£°¡ ¾ø´Ù¸é
+							// ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½Ù¸ï¿½
 							$_msg_type='comment_delete_no_auth_guest';
 							include("msg.php");
 							exit;
 						} else {
-							// ±Û ¾ÏÈ£°¡ ÀÖ´Ù¸é
-							if($old_pass=='') { // ÀÔ·ÂµÈ ¾ÏÈ£ ¾ø´Ù¸é
-								// ¾ÏÈ£ÀÔ·Â
+							// ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ö´Ù¸ï¿½
+							if($old_pass=='') { // ï¿½Ô·Âµï¿½ ï¿½ï¿½È£ ï¿½ï¿½Ù¸ï¿½
+								// ï¿½ï¿½È£ï¿½Ô·ï¿½
 								$_pass_type='comment_delete';
 								include("pass.php");
 								exit;
 							} else {
-								// ÀÔ·ÂµÈ ¾ÏÈ£ ÀÖ´Ù¸é ºñ±³
+								// ï¿½Ô·Âµï¿½ ï¿½ï¿½È£ ï¿½Ö´Ù¸ï¿½ ï¿½ï¿½
 								if($data_comment['bc_pass']!=rg_password_encode($old_pass)) {
-									// ¾ÏÈ£°¡ ´Ù¸£´Ù¸é
-									// ¿¡·¯ ¸Þ½ÃÁö Ç¥½Ã
+									// ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ù¸ï¿½ï¿½Ù¸ï¿½
+									// ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
 									$_msg_type='comment_delete_pass_error';
 									include("msg.php");
 									exit;
@@ -316,10 +316,10 @@
 				$rs->add_where("bc_num=$bc_num");
 				$rs->delete();
 				
-				// »èÁ¦½Ã Æ÷ÀÎÆ® Â÷°¨
+				// ï¿½ï¿½fï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½
 				if($_bbs_info['point_comment'] > 0 && $data_comment['mb_num'])
 					rg_set_point($data_comment['mb_num'],$_po_type_code['bbs'],
-										-$_bbs_info['point_comment'],'ÄÚ¸àÆ®»èÁ¦',$_bbs_info['bbs_name'],'');
+										-$_bbs_info['point_comment'],'ï¿½Ú¸ï¿½Æ®ï¿½ï¿½f',$_bbs_info['bbs_name'],'');
 			}
 		}
 		$rs->clear();
@@ -334,13 +334,13 @@
 		$rs->add_where("bd_num=$bd_num");
 		$rs->update();
 
-		if($vcfg['spam_chk']) { // ½ºÆÔ¼¼¼Ç»èÁ¦
+		if($vcfg['spam_chk']) { // ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½Ç»ï¿½f
 			unset($_SESSION["schk_".$spam_chk_code]);
 			$_SESSION["schk_".$spam_chk_code]='';
 		}
 		$rs->commit();
 		
-		// ¸ÞÀÏ¹ß¼Û
+		// ï¿½ï¿½ï¿½Ï¹ß¼ï¿½
 		if( file_exists($skin_path."mail.php") && $mode=='comment_write' && 
 				(
 					($_write_cfg['use_reply_mail'] < 100) && $data['bd_reply_mail'] && ($data['bd_email'] != '') || 
@@ -349,14 +349,14 @@
 			$mail_title = $_site_info['site_name'];
 			if($mail_title!='') $mail_title .= " > ";
 			$mail_title .= $_bbs_info['bbs_name'];
-			$mail_title = "[{$mail_title}] ÄÚ¸àÆ®°¡ ¿Ã¶ó¿Ô½À´Ï´Ù.";
+			$mail_title = "[{$mail_title}] ï¿½Ú¸ï¿½Æ®ï¿½ï¿½ ï¿½Ã¶ï¿½Ô½4Ï´ï¿½.";
 			
 			$mail_subject = rg_get_text($data[bd_subject]);
 			$mail_from_name = rg_get_text($bc_name);
 			$mail_content = rg_conv_text($bc_content);
-			$mail_view_url = rg_get_current_url().'view.php?bbs_code='.$bbs_code.'&bd_num='.$bd_num;
+			$mail_view_url = rg_get_current_url().'view_new.php?bbs_code='.$bbs_code.'&bd_num='.$bd_num;
 	
-			// ÀÌ¸ÞÀÏ ÃßÃâÇÏ±â 
+			// ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ 
 			$email_list=array();
 			if($_bbs_info["mailing_mb_id"] !='') {
 				$tmp=explode (',', $_bbs_info["mailing_mb_id"]);
@@ -377,7 +377,7 @@
 				}				
 			}
 			
-			// ÀÀ´ä±Û..
+			// ï¿½4ï¿½ï¿½..
 			if($mode=='comment_write' && ($_write_cfg['use_reply_mail'] < 100) &&
 			 	 $data['bd_reply_mail'] && ($data['bd_email'] != ''))
 				$email_list[] = $data['bd_email'];
@@ -385,13 +385,13 @@
 			$email_list = array_unique($email_list);
 			
 			if(count($email_list)>0) {
-				// ¸ÞÀÏ ½ºÅ² Àû¿ë
+				// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å² ï¿½ï¿½ï¿½
 				ob_start();
 				include($skin_path."mail.php");
 				$mail_body = ob_get_contents(); 
 				ob_end_clean();
 				
-				// ¸ÞÀÏ ¹ß¼Û
+				// ï¿½ï¿½ï¿½ï¿½ ï¿½ß¼ï¿½
 				foreach ($email_list as $email) {
 					rg_mail($email,$mail_title,$mail_body,"$bc_name<{$bc_email}>");
 				}
@@ -399,28 +399,28 @@
 		}
 
 
-		rg_href("view.php?$_get_param[4]");
-	} // ÄÚ¸àÆ® °ü·Ã ¿©±â±îÁö
+		rg_href("view_new.php?$_get_param[4]");
+	} // ï¿½Ú¸ï¿½Æ® ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-	// ±ÇÇÑÃ¼Å©	
-	// ºñ¹Ð±ÛÀÌ¶ó¸é
+	// ï¿½ï¿½ï¿½ï¿½Ã¼Å©	
+	// ï¿½ï¿½Ð±ï¿½ï¿½Ì¶ï¿½ï¿½
 	if($bd_secret > 0) {
-		if(!($_auth['bbs_admin'] || $_bbs_auth['secret'])) { // ±ÇÇÑ ¾øÀ¸¸é
-			if(!$_mb || $mb_num!=$_mb['mb_num']) { // ·Î±×ÀÎ ¾ÈµÇ¾î ÀÖ°í ÀÚ½ÅÀÇ ±Û ¾Æ´Ï¶ó¸é
-				if($bd_pass=='') { // ¾ÏÈ£°¡ ¾ø´Ù¸é
-					// ¿¡·¯ ¸Þ½ÃÁö Ç¥½Ã
+		if(!($_auth['bbs_admin'] || $_bbs_auth['secret'])) { // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½8ï¿½ï¿½
+			if(!$_mb || $mb_num!=$_mb['mb_num']) { // ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ÈµÇ¾ï¿½ ï¿½Ö°ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Æ´Ï¶ï¿½ï¿½
+				if($bd_pass=='') { // ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½Ù¸ï¿½
+					// ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
 					$_msg_type='view_secret_error';
 					include("msg.php");
 					exit;
 				} else {
-					if($old_pass=='') { // ¾ÏÈ£ÀÔ·Â
-						// ¾ÏÈ£ÀÔ·Â
+					if($old_pass=='') { // ï¿½ï¿½È£ï¿½Ô·ï¿½
+						// ï¿½ï¿½È£ï¿½Ô·ï¿½
 						$_pass_type='view_secret';
 						include("pass.php");
 						exit;
 					} else {
 						if($bd_pass!=rg_password_encode($old_pass)) {
-							// ¿¡·¯ ¸Þ½ÃÁö Ç¥½Ã
+							// ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
 							$_msg_type='view_secret_pass_error';
 							include("msg.php");
 							exit;
@@ -429,7 +429,7 @@
 				}
 			}
 		}
-	} else if(!$_bbs_auth['view']) { // ÀÏ¹Ý±ÛÀÌ¶ó¸é
+	} else if(!$_bbs_auth['view']) { // ï¿½Ï¹Ý±ï¿½ï¿½Ì¶ï¿½ï¿½
 		if($_mb)
 			$_msg_type='view_no_auth_member';
 		else
@@ -438,17 +438,17 @@
 		exit;
 	}
 	
-	// »èÁ¦±ÛÀÌ¶ó¸é
+	// ï¿½ï¿½fï¿½ï¿½ï¿½Ì¶ï¿½ï¿½
 	if($bd_delete > 0) {
-		if(!$_auth['bbs_admin']) { // °ü¸®ÀÚ°¡ ¾Æ´Ï¶ó¸é
-			// ¿¡·¯ ¸Þ½ÃÁö Ç¥½Ã
+		if(!$_auth['bbs_admin']) { // ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½Æ´Ï¶ï¿½ï¿½
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
 			$_msg_type='view_delete_error';
 			include("msg.php");
 			exit;
 		}
 	}
 	
-	// ±Û³»¿ë ºÐ¼® ½ÃÀÛ ºÎºÐ
+	// ï¿½Û³ï¿½ï¿½ï¿½ ï¿½Ð¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½
 	$tmp=unserialize($bd_ext1); if(is_array($tmp)) $bd_ext1=$tmp;
 	$tmp=unserialize($bd_ext2); if(is_array($tmp)) $bd_ext2=$tmp;
 	$tmp=unserialize($bd_ext3); if(is_array($tmp)) $bd_ext3=$tmp;
@@ -486,7 +486,7 @@
 	$open_profile='';
 	$open_memo='';
 	$mb_icon='';
-	if($mb_num) { // È¸¿øÀÌ ¾´ ±Û
+	if($mb_num) { // È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½
 		$rs->clear();
 		$rs->set_table($_table['member']);
 		$rs->add_where("mb_num=$mb_num");
@@ -511,23 +511,23 @@
 		}
 	}
 
-	if($vcfg['view_signature']<100 && $mb_data) { // ¼­¸í Ç¥½Ã¿©ºÎ
-		// ÀÛ¼ºÀÚ Á¤º¸ °¡Á®¿À±â
+	if($vcfg['view_signature']<100 && $mb_data) { // ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½Ã¿ï¿½ï¿½ï¿½
+		// ï¿½Û¼ï¿½ï¿½ï¿½ dï¿½ï¿½ ï¿½ï¿½nï¿½1ï¿½
 		$mb_signature=rg_conv_text($mb_data['mb_signature']);
 		$mb_level=$mb_data['mb_level'];
-		// ±×·ì·¹º§
+		// ï¿½×·ì·¹ï¿½ï¿½
 		if($_group_info['gr_level_type']=='1') {
-		// ±×·ì·¹º§ Àû¿ë
+		// ï¿½×·ì·¹ï¿½ï¿½ ï¿½ï¿½ï¿½
 			$rs->clear();
 			$rs->set_table($_table["gmember"]);
 			$rs->add_field("gm_level");
 			$rs->add_where("gr_num={$_bbs_info['gr_num']}");
 			$rs->add_where("gm_state=1");
 			$rs->add_where("mb_num={$_mb['mb_num']}");
-			$rs->fetch("gm_level"); // ÇØ´ç È¸¿øÀÌ ÀÖ´Ù¸é ÀÐ¾î¿Â´Ù
+			$rs->fetch("gm_level"); // ï¿½Ø´ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Ù¸ï¿½ ï¿½Ð¾ï¿½Â´ï¿½
 			$tmp_level=$gm_level;
 		} else {
-		// »çÀÌÆ®·¹º§ Àû¿ë
+		// ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			$tmp_level=$mb_level;
 		}
 		if($tmp_level=='') $tmp_level=0;
@@ -541,14 +541,14 @@
 	$url_delete="write.php?$_get_param[3]&bd_num=$bd_num&mode=delete";
 	$url_reply="write.php?$_get_param[3]&bd_num=$bd_num&mode=reply";
 	$url_list=$url_list_org."&bd_num=$bd_num";
-	$url_vote_yes="view.php?$_get_param[3]&bd_num=$bd_num&mode=vote_yes";
-	$url_vote_no="view.php?$_get_param[3]&bd_num=$bd_num&mode=vote_no";
+	$url_vote_yes="view_new.php?$_get_param[3]&bd_num=$bd_num&mode=vote_yes";
+	$url_vote_no="view_new.php?$_get_param[3]&bd_num=$bd_num&mode=vote_no";
 
 	if($is_admin) {
 		$bd_content = rg_conv_text($bd_content,$bd_html);
 	} else {
-		if($bd_html != '0') { // °ü¸®ÀÚ°¡ ¾´±ÛÀÌ ¾Æ´Ï°í HTML ±ÛÀÌ¸é
-		//  write ¿¡¼­ º¯È¯ÇØ¼­ ÀúÀåµÊ ÇÑ¹ø´õ Ã¼Å©
+		if($bd_html != '0') { // ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ï°ï¿½ HTML ï¿½ï¿½ï¿½Ì¸ï¿½
+		//  write ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¹ï¿½ï¿½ Ã¼Å©
 			$bd_content = rg_script_conv($_bbs_info['deny_html'],$bd_content);
 		}
 		$bd_content = rg_conv_text($bd_content,$bd_html);
@@ -561,13 +561,13 @@
 	$bc_name=$s_bc_name;
 	$bd_write_date=rg_date($bd_write_date,$vcfg['date_format']);
 	if($cat_num)
-		$cat_name=$_category_name_array[$cat_num];	// Ä«Å×°í¸®¸í
+		$cat_name=$_category_name_array[$cat_num];	// Ä«ï¿½×°?ï¿½ï¿½
 	else
 		$cat_name='';
 		
 	if(!$_auth['bbs_admin']) $bd_write_ip = rg_hidden_ip($bd_write_ip);
 	if(!$_auth['bbs_admin']) $bd_modify_ip = rg_hidden_ip($bd_modify_ip);
-	// ±Û³»¿ë ºÐ¼® ³¡ ºÎºÐ
+	// ï¿½Û³ï¿½ï¿½ï¿½ ï¿½Ð¼ï¿½ ï¿½ï¿½ ï¿½Îºï¿½
 	
 	if($vcfg['btn_prev_next']) {
 		include("list_where.php");
@@ -604,7 +604,7 @@
 				$prev_data['bd_subject'] = rg_get_text($prev_data['bd_subject']);
 			}
 //			$prev_data['bd_content'] = rg_conv_text($prev_data['bd_content'],$prev_data['bd_html']);
-			$url_view_prev="view.php?$_get_param[3]&bd_num={$prev_data['bd_num']}";
+			$url_view_prev="view_new.php?$_get_param[3]&bd_num={$prev_data['bd_num']}";
 		}	else {
 			$url_view_prev="";
 		}
@@ -616,13 +616,13 @@
 				$next_data['bd_subject'] = rg_get_text($next_data['bd_subject']);
 			}
 //			$next_data['bd_content'] = rg_conv_text($next_data['bd_content'],$next_data['bd_html']);
-			$url_view_next="view.php?$_get_param[3]&bd_num={$next_data['bd_num']}";
+			$url_view_next="view_new.php?$_get_param[3]&bd_num={$next_data['bd_num']}";
 		}	else {
 			$url_view_next="";
 		}
 	}	
 	
-	// ±Û Á¶È¸¼ö ¿Ã¸®±â 
+	// ï¿½ï¿½ vÈ¸ï¿½ï¿½ ï¿½Ã¸ï¿½ï¿½ï¿½ 
 //	if($data[mb_num] == '0' || $_mb[mb_num] != $data[mb_num]) {
 		$tmp=explode(',',$_COOKIE["view_chk"]);
 	//	if(!in_array("{$_bbs_info['bbs_db_num']}:$bd_num",$tmp)){
@@ -634,12 +634,12 @@
 			$rs->update();
 			array_push($tmp, "{$_bbs_info['bbs_db_num']}:$bd_num");
 			$view_chk = implode(',',$tmp);
-			setcookie("view_chk", $view_chk, time()+3600*24*30); // ÇÑ´Þ
+			setcookie("view_chk", $view_chk, time()+3600*24*30); // ï¿½Ñ´ï¿½
 //		}
 		unset($tmp);
 //	}
 
-	if($vcfg['spam_chk']) { // ½ºÆÔÃ¼Å©·çÆ¾
+	if($vcfg['spam_chk']) { // ï¿½ï¿½ï¿½ï¿½Ã¼Å©ï¿½ï¿½Æ¾
 //		$spam_chk_code=substr(md5(uniqid(rand(), true)),-5);
 		$spam_chk_code='12345';
 		if($_SESSION["schk_".$spam_chk_code]=='')
@@ -653,7 +653,8 @@
 	$bd_name_layer=
 		rg_name_layer($mb_id,$bd_name,$mb_icon,$open_profile,$open_memo,$bbs_code,$bd_num,$bd_home,$bd_email);
 		
-	include("../temp/top.php");
+	include_once("../temp/top.php");
+ include_once("../temp/nav.php");
 	if(file_exists($skin_path."view.php")) include($skin_path."view.php");
-	include('../temp/footer.php');
+	include_once('../temp/footer.php');
 ?>
