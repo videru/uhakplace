@@ -11,23 +11,10 @@
 <input type="hidden" name="form_mode" value="member_login_ok">
 <input type="hidden" name="ret_url" value="<?=$ret_url?>">	
 	<tr>
-		<td width="32" ><img src="../img/top_id.gif" align="absmiddle"></td>
-		<td width="5">&nbsp;</td>		
-		<td width="53" ><input type="text" class="input" name="mb_id" size="10" maxlength="12" hname="아이디" required tabindex="111"></td>
-		<td width="10">&nbsp;</td>			
-		<td width="42" ><img src="../img/top_pass.gif" align="absmiddle"></td>
-		<td width="5">&nbsp;</td>		
-		<td width="45" ><input name="mb_pass" type="password" class="input" size="12" required hname="암호" tabindex="112"></td>
-		<td width="10">&nbsp;</td>		
-		<td width="50" ><input src="../img/btn_login.gif" type="image" /></td>		
-		<td width="40">&nbsp;</td>		
-		<td width="58"><a href="../main/"><img src="../img/btn_home.gif" border="0"></a></td>		
-		<td width="6">&nbsp;</td>
-		<td width="48"><a href="<?=$join_url?>"><img src="../img/btn_top_join.gif" border="0"></a></td>	
-		<td width="6">&nbsp;</td>
-		<td width="48"><a href="../member/modify.php"><img src="../img/top_modify.gif" border="0"></a></td>
-		<td width="6">&nbsp;</td>
-		<td width="66"><a href="../member/regi_list.php"><img src="../img/btn_top_cs.gif" border="0"></a></td>
+		<a href="http://www.uhakplace.co.kr/new" target="_parent" onFocus="blur();"><img src="../n_img/main_03.jpg" width="48" height="17" border="0" /></a>	
+		<a href="http://www.uhakplace.co.kr/temp/login.php" target="_parent" onFocus="blur();"><img src="../n_img/main_04.jpg" width="55" height="17" border="0" /></a>
+    	<a href="http://www.uhakplace.co.kr/temp/8_2.php" target="_parent" onFocus="blur();"><img src="../n_img/main_05.jpg" width="63" height="17" border="0" /></a>
+    	<a href="javascript:bookmark();" onFocus="blur();"><img src="../n_img/main_06.jpg" width="64" height="17" border="0" /></a>
 	</tr>
 </form>	
 </table>

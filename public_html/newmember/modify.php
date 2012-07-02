@@ -173,7 +173,8 @@
 	}
 	}
 ?>
-<? include_once('_header.php'); ?>
+<? include_once('../temp/top.php'); ?>
+<? include_once('../temp/nav.php'); ?>
 <table width="720" align="center" border="0" cellpadding="0" cellspacing="0">
 	<tr>
 		<td>
@@ -202,3 +203,4 @@
 		</td>
 	</tr>
 </table>
+<? include_once('../temp/footer.php'); ?>

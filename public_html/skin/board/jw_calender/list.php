@@ -190,7 +190,7 @@ else $today_bg='';
 ?>
 </td>
 							<td align="right" width="<?=$width2?>" bgcolor="<?=$bgcolor?>" style="color:<?=$fontcolor?>">
-								<? if($_bbs_auth['write']) { ?><a href="write.php?<?=$_get_param[3]?>&book=<?=$book?>"><?}?>
+								<? if($_bbs_auth['write']) { ?><a href="write_new.php?<?=$_get_param[3]?>&book=<?=$book?>"><?}?>
 								<?=$day?><?=($_bbs_auth['write'])?'</a>':''?>&nbsp;
 							</td>
 						  </tr>
@@ -224,7 +224,7 @@ if ($offset != 6) {
 				<tr>
 					<td>
 <? if($_bbs_auth['write']) { ?>
-					<img src="<?=$skin_url?>images/write.gif" onclick="location.href='write.php?<?=$_get_param[3]?>'" style="cursor:pointer" align="absmiddle">
+					<img src="<?=$skin_url?>images/write.gif" onclick="location.href='write_new.php?<?=$_get_param[3]?>'" style="cursor:pointer" align="absmiddle">
 <? } ?>
 <? if($_bbs_auth['admin']) { ?>
 <script>

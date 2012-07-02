@@ -14,10 +14,10 @@
 
 <table align=right border="0" cellpadding="0" cellspacing="0">
 	<tr>
-		<td align="right"><b><?=$_mb['mb_name']?>(<?=$mb_id?>)</b> <? if($mb_level>'9') { ?><a href="../admin/" target="_blank">[ADMIN]</a><? } ?><td >
-		<td width="6">&nbsp;</td>
-		<td width="49"><a href="<?=$logout_url?>"><img src="../img/top_logout.gif"  border="0"></td>
-		<td width="6">&nbsp;</td>
-		<td width="48"><a href="<?=$modify_url?>"><img src="../img/top_modify.gif" border="0"></a></td>
+		
+		<a href="http://www.uhakplace.co.kr/new" target="_parent" onFocus="blur();"><img src="../n_img/main_03.jpg" width="48" height="17" border="0" /></a>	
+		<a href="<?=$logout_url?>" onFocus="blur();"><img src="../n_img/main_04_1.jpg" width="55" height="17" border="0" /></a><td align="right"><? if($mb_level>'9') { ?><a href="../admin/" target="_blank">[ADMIN]</a><? } ?><td >
+    	<a href="http://www.uhakplace.co.kr/newmember/modify.php" target="_parent" onFocus="blur();"><img src="../n_img/main_05_1.jpg" width="63" height="17" border="0" /></a>
+    	<a href="javascript:bookmark();" onFocus="blur();"><img src="../n_img/main_06.jpg" width="64" height="17" border="0" /></a>
 	</tr>
 </table>

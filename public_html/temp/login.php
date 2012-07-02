@@ -1,151 +1,201 @@
 <?
 /* =====================================================
 
-  ìµœì¢…ìˆ˜ì •ì¼ : 
- ===================================================== */
-	include_once("../include/lib.php");
-	
-	if(isset($logout)) {
-		$ss_mb_id='';
-		$ss_mb_num='';
-		$ss_login_ok='';
-		$ss_hash='';
-		$_SESSION['ss_mb_id']=$ss_mb_id;
-		$_SESSION['ss_mb_num']=$ss_mb_num;
-		$_SESSION['ss_login_ok']=$ss_login_ok;
-		$_SESSION['ss_hash']=$ss_hash;
-		unset($_SESSION['ss_mb_id']);
-		unset($_SESSION['ss_mb_num']);
-		unset($_SESSION['ss_login_ok']);
-		unset($_SESSION['ss_hash']);
-		if($ret_url=='') $ret_url='../main/index.php';
-			rg_href($ret_url);
+ÃÖÁ¾¼öÁ¤ÀÏ :
+===================================================== */
+include_once("../include/lib.php");
+
+if(isset($logout)) {
+	$ss_mb_id='';
+	$ss_mb_num='';
+	$ss_login_ok='';
+	$ss_hash='';
+	$_SESSION['ss_mb_id']=$ss_mb_id;
+	$_SESSION['ss_mb_num']=$ss_mb_num;
+	$_SESSION['ss_login_ok']=$ss_login_ok;
+	$_SESSION['ss_hash']=$ss_hash;
+	unset($_SESSION['ss_mb_id']);
+	unset($_SESSION['ss_mb_num']);
+	unset($_SESSION['ss_login_ok']);
+	unset($_SESSION['ss_hash']);
+	if($ret_url=='') $ret_url='../main/index.php';
+	rg_href($ret_url);
+}
+
+if($_SESSION['ss_login_ok']) {
+	if($ret_url=='') $ret_url='../main/index.php';
+	rg_href($ret_url);
+}
+
+if($_SERVER['REQUEST_METHOD']=='POST' && $form_mode=='member_login_ok') {
+	$mb_id=strtolower($mb_id);
+	if($ret_url_login=='')
+		$ret_url_login='?ret_url=' . urlencode($ret_url);
+
+	if(!$validate->userid($mb_id))
+		rg_href($ret_url_login,'¾ÆÀÌµð¸¦ È®ÀÎÇØÁÖ¼¼¿ä.');
+		
+	if(!$validate->strlen_chk($mb_pass,4,12))
+		rg_href($ret_url_login,'¾ÏÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.');
+
+	$mb_pass = rg_password_encode($mb_pass);
+
+	$rs->clear();
+	$rs->set_table($_table['member']);
+	$rs->add_where("mb_id='".$dbcon->escape_string($mb_id)."'");
+	$rs->select();
+	if(!$rs->num_rows()) //
+		rg_href($ret_url_login,'°¡ÀÔµÇÁö ¾ÊÀº ¾ÆÀÌµð ÀÔ´Ï´Ù.');
+
+	$data=$rs->fetch();
+	if($data['mb_pass']!=$mb_pass) {
+		rg_href($ret_url_login,'¾ÏÈ£¸¦ Á¤È®È÷ ÀÔ·ÂÇÏ¼¼¿ä.');
 	}
 
-	if($_SESSION['ss_login_ok']) {
-		if($ret_url=='') $ret_url='../main/index.php';
-		rg_href($ret_url);
+	switch($data['mb_state']) {
+		case 1 : // ½ÂÀÎµÈ ¾ÆÀÌµð
+			break;
+		case '0' :
+			rg_href($ret_url_login,'½ÂÀÎ´ë±âÁßÀÔ´Ï´Ù.');
+			break;
+		case '2' :
+			rg_href($ret_url_login,'¹Ì½ÂÀÎµÈ ¾ÆÀÌµð ÀÔ´Ï´Ù.');
+			break;
+		case '3' :
+			rg_href($ret_url_login,'Å»ÅðµÈ ¾ÆÀÌµðÀÔ´Ï´Ù.\nÀç°¡ÀÔÀ» ¿øÇÒ°æ¿ì °ü¸®ÀÚ¿¡°Ô ¸ÞÀÏÁÖ½Ê½Ã¿ä.');
+			break;
+		default :
+			rg_href($ret_url_login,'¾Ë¼ö¾ø´Â ¿À·ù °ü¸®ÀÚ¿¡°Ô ¿¬¶ô ¹Ù¶ø´Ï´Ù.');
+			break;
 	}
-	
-	if($_SERVER['REQUEST_METHOD']=='POST' && $form_mode=='member_login_ok') {
-		$mb_id=strtolower($mb_id);
-		if($ret_url_login=='')
-			$ret_url_login='?ret_url=' . urlencode($ret_url);
-		
-		if(!$validate->userid($mb_id))
-			rg_href($ret_url_login,'ì•„ì´ë””ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”.');
-			
-		if(!$validate->strlen_chk($mb_pass,4,12))
-			rg_href($ret_url_login,'ì•”í˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”.');
-		
-		$mb_pass = rg_password_encode($mb_pass);
-		
-		$rs->clear();
-		$rs->set_table($_table['member']);
-		$rs->add_where("mb_id='".$dbcon->escape_string($mb_id)."'");
-		$rs->select();
-		if(!$rs->num_rows()) //
-			rg_href($ret_url_login,'ê°€ìž…ë˜ì§€ ì•Šì€ ì•„ì´ë”” ìž…ë‹ˆë‹¤.');			
-		
-		$data=$rs->fetch();
-		if($data['mb_pass']!=$mb_pass) {
-			rg_href($ret_url_login,'ì•”í˜¸ë¥¼ ì •í™•ížˆ ìž…ë ¥í•˜ì„¸ìš”.');
-		}
+	$login_date=time();
+	$rs->clear();
+	$rs->set_table($_table['member']);
+	$rs->add_field("login_count",$data['login_count']+1);
+	$rs->add_field("login_date",$login_date);
+	$rs->add_field("login_ip",$_SERVER['REMOTE_ADDR']);
+	$rs->add_where("mb_num={$data['mb_num']}");
+	$rs->update();
 
-		switch($data['mb_state']) {
-			case 1 : // ìŠ¹ì¸ëœ ì•„ì´ë””
-				break;
-			case '0' : 
-				rg_href($ret_url_login,'ìŠ¹ì¸ëŒ€ê¸°ì¤‘ìž…ë‹ˆë‹¤.');		
-				break;
-			case '2' : 
-				rg_href($ret_url_login,'ë¯¸ìŠ¹ì¸ëœ ì•„ì´ë”” ìž…ë‹ˆë‹¤.');		
-				break;
-			case '3' : 
-				rg_href($ret_url_login,'íƒˆí‡´ëœ ì•„ì´ë””ìž…ë‹ˆë‹¤.\nìž¬ê°€ìž…ì„ ì›í• ê²½ìš° ê´€ë¦¬ìžì—ê²Œ ë©”ì¼ì£¼ì‹­ì‹œìš”.');	
-				break;
-			default :
-				rg_href($ret_url_login,'ì•Œìˆ˜ì—†ëŠ” ì˜¤ë¥˜ ê´€ë¦¬ìžì—ê²Œ ì—°ë½ ë°”ëžë‹ˆë‹¤.');	
-				break;
-		}
-		$login_date=time();
-		$rs->clear();
-		$rs->set_table($_table['member']);
-		$rs->add_field("login_count",$data['login_count']+1);
-		$rs->add_field("login_date",$login_date);
-		$rs->add_field("login_ip",$_SERVER['REMOTE_ADDR']);
-		$rs->add_where("mb_num={$data['mb_num']}");
-		$rs->update();
+	// Áö³­ ·Î±×ÀÎ ³¯ÀÚ¿Í ÇöÀç ·Î±×ÀÎ ³¯ÀÚ°¡ ´Ù¸£´Ù¸é ·Î±×ÀÎ Æ÷ÀÎÆ® ¿Ã¸°´Ù.
+	if(floor($data['login_date']/86400) < floor(time()/86400))
+		rg_set_point($data['mb_num'],$_po_type_code['etc'],
+				$_site_info['login_point'],'·Î±×ÀÎ','·Î±×ÀÎÆ÷ÀÎÆ®','');
 		
-		// ì§€ë‚œ ë¡œê·¸ì¸ ë‚ ìžì™€ í˜„ìž¬ ë¡œê·¸ì¸ ë‚ ìžê°€ ë‹¤ë¥´ë‹¤ë©´ ë¡œê·¸ì¸ í¬ì¸íŠ¸ ì˜¬ë¦°ë‹¤. 
-		if(floor($data['login_date']/86400) < floor(time()/86400))
-			rg_set_point($data['mb_num'],$_po_type_code['etc'],
-								$_site_info['login_point'],'ë¡œê·¸ì¸','ë¡œê·¸ì¸í¬ì¸íŠ¸','');
-			
-		$ss_mb_id = $data['mb_id'];
-		$ss_mb_num = $data['mb_num'];
-		$ss_login_ok = 'ok';
-		// ë¡œê·¸ì¸ ì²´í¬ë°©ë²• í•´ì‰¬ë°ì´íƒ€ ë¡œê·¸ì¸ì‹œê°„,ì•„ì´ë””,íšŒì›ë²ˆí˜¸ë¡œ ì²´í¬
-//		$ss_hash = md5($data['login_ip'].$data['mb_id'].$data['mb_num']);
-//		$ss_hash = md5($data['join_date'].$data['mb_id'].$data['mb_num']);
-		$ss_hash = md5($login_date.$data['mb_id'].$data['mb_num']);
-		$_SESSION['ss_mb_id']=$ss_mb_id;
-		$_SESSION['ss_mb_num']=$ss_mb_num;
-		$_SESSION['ss_login_ok']=$ss_login_ok;
-		$_SESSION['ss_hash']=$ss_hash;
-		$rs->commit();
-		if($ret_url=='') $ret_url='../main/index.php';
-			rg_href($ret_url);
-	}
+	$ss_mb_id = $data['mb_id'];
+	$ss_mb_num = $data['mb_num'];
+	$ss_login_ok = 'ok';
+	// ·Î±×ÀÎ Ã¼Å©¹æ¹ý ÇØ½¬µ¥ÀÌÅ¸ ·Î±×ÀÎ½Ã°£,¾ÆÀÌµð,È¸¿ø¹øÈ£·Î Ã¼Å©
+	//		$ss_hash = md5($data['login_ip'].$data['mb_id'].$data['mb_num']);
+	//		$ss_hash = md5($data['join_date'].$data['mb_id'].$data['mb_num']);
+	$ss_hash = md5($login_date.$data['mb_id'].$data['mb_num']);
+	$_SESSION['ss_mb_id']=$ss_mb_id;
+	$_SESSION['ss_mb_num']=$ss_mb_num;
+	$_SESSION['ss_login_ok']=$ss_login_ok;
+	$_SESSION['ss_hash']=$ss_hash;
+	$rs->commit();
+	if($ret_url=='') $ret_url='../main/index.php';
+	rg_href($ret_url);
+}
 ?>
-<div><? include_once('./top.php'); ?></div>
 
-<table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
- <div style="height:52px"></div>
-  <tr>
-    <td width="223" valign="top"><embed src="../n_img/left_08.swf" width="223" height="400"></embed></td>
-    <td width="37">&nbsp;</td>
-    <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td><img src="../n_img/8_1.jpg" width="720" height="250" /></td>
-      </tr>
-      <tr>
-        <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td width="284" height="323" align="left" valign="top"><img src="../n_img/login_01.jpg" width="284" height="323" /></td>
-            <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td align="left" valign="top"><img src="../n_img/login_03.jpg" width="412" height="85" /></td>
-              </tr>
-              <tr>
-                <td style="background-repeat:no-repeat" height="59" align="left" background="../n_img/login_05.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <td width="108" height="59" rowspan="2"><img src="../n_img/login_04.jpg" width="108" height="59" /></td>
-                    <td width="188" height="30"><input type="text" class="input" name="mb_id" size="20" maxlength="12" hname="ì•„ì´ë””" required tabindex="101"></td>
-                    <td height="59" rowspan="2"><a href="#"><img src="../n_img/login_06.png" width="64" height="56" border="0" /></a></td>
-                  </tr>
-                  <tr>
-                    <td width="188"><input name="mb_pass" type="password" class="input" size="20" required hname="ì•”í˜¸" tabindex="102">
-                    </form></td>
-                    </tr>
-                </table></td>
-              </tr>
-              <tr>
-                <td align="left" valign="top"><img src="../n_img/login_02.jpg" width="412" height="179" border="0" usemap="#Map" /></td>
-              </tr>
-        </table></td>
-          </tr>
-    </table></td>
-      </tr>
-    </table></td>
-  </tr>
+<div>
+	<? include_once('./top.php'); ?>
+</div>
+
+<div style="height: 52px"></div>
+
+
+
+<table width="980" border="0" align="center" cellpadding="0"
+	cellspacing="0">
+	<tr>
+		<td width="223" valign="top"><embed src="../n_img/left_08.swf"
+				width="223" height="400"></embed></td>
+		<td width="37">&nbsp;</td>
+		<td valign="top"><table width="100%" border="0" cellspacing="0"
+				cellpadding="0">
+				<tr>
+					<td><img src="../n_img/8_1.jpg" width="720" height="250" /></td>
+				</tr>
+				<tr>
+					<td valign="top"><table width="100%" border="0" cellspacing="0"
+							cellpadding="0">
+							<tr>
+								<td width="284" height="323" align="left" valign="top"><img
+									src="../n_img/login_01.jpg" width="284" height="323" /></td>
+								<td valign="top"><table width="100%" border="0" cellspacing="0"
+										cellpadding="0">
+										<tr>
+											<td align="left" valign="top"><img
+												src="../n_img/login_03.jpg" width="412" height="85" /></td>
+										</tr>
+										<tr>
+											<td style="background-repeat: no-repeat" height="59"
+												align="left" background="../n_img/login_05.jpg">
+												<table width="100%" border="0" cellspacing="0"
+													cellpadding="0">
+													<form  name="skin_login_form" method="post" action="<?=$login_action?>" onSubmit="return validate(this)" enctype='multipart/form-data'>
+													<input type="hidden" name="form_mode" value="member_login_ok">
+													<input type="hidden" name="ret_url" value="<?=$ret_url?>">	
+													<tr>
+														<td width="108" height="59" rowspan="2"><img
+															src="../n_img/login_04.jpg" width="108" height="59" /></td>
+														<td width="188" height="30"><input type="text"
+															class="input" name="mb_id" size="20" maxlength="12"
+															hname="¾ÆÀÌµð" required tabindex="101"></td>
+														<td height="59" rowspan="2"><input type="image"
+															src="../n_img/login_06.png" class="border" tabindex="3">
+														</td>
+													</tr>
+													<tr>
+														<td width="188">
+														<input name="mb_pass" type="password"
+															class="input" size="20" required hname="¾ÏÈ£"
+															tabindex="102">
+															
+														</td>
+													</tr>
+													
+													</form>
+												</table>
+											</td>
+										</tr>
+										<tr>
+											<td align="left" valign="top"><img
+												src="../n_img/login_02.jpg" width="412" height="179"
+												border="0" usemap="#Map" /></td>
+										</tr>
+									</table></td>
+							</tr>
+						</table></td>
+				</tr>
+			</table></td>
+	</tr>
 </table>
-<div style="height:100px"></div>
-<div><? include_once('./footer.php'); ?></div>
+
+
+<div style="height: 100px"></div>
+<div>
+	<? include_once('./footer.php'); ?>
+</div>
+
+
+<script language='Javascript'>
+	if(typeof(document.login_form.mb_id) != "undefined")
+		document.login_form.mb_id.focus();
+</script>
+
 <map name="Map" id="Map">
-  <area shape="rect" coords="249,55,370,85" href="http://www.uhakplace.co.kr/temp/8_3.html" target="_parent" onfocus="blur();">
-  <area shape="rect" coords="248,85,372,110" href="http://www.uhakplace.co.kr/temp/8_4.html" target="_parent" onfocus="blur();">
-  <area shape="rect" coords="249,110,373,139" href="http://www.uhakplace.co.kr/temp/8_2.html" target="_parent" onfocus="blur();">
+	<area shape="rect" coords="249,55,370,85"
+		href="http://www.uhakplace.co.kr/temp/8_3.html" target="_parent"
+		onfocus="blur();">
+	<area shape="rect" coords="248,85,372,110"
+		href="http://www.uhakplace.co.kr/temp/8_4.html" target="_parent"
+		onfocus="blur();">
+	<area shape="rect" coords="249,110,373,139"
+		href="http://www.uhakplace.co.kr/temp/8_2.html" target="_parent"
+		onfocus="blur();">
 </map>
 </body>
 </html>

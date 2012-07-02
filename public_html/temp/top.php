@@ -2,13 +2,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
 <title>필리핀 전문 포털 필사과</title>
-
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+<script src="../js/common.js"></script>
+<script src="../js/lib.validate.js"></script>
 <script language="JavaScript"> 
-<!--  
-function bookmark(){
-   window.external.AddFavorite('http://www.uhakplace.co.kr/', '유학플레이스')
+function bookmark() {
+	var title= '유학플레이스';
+	var url ='http://www.uhakplace.co.kr/';
+	
+	//document.write("userAgent : " + navigator.userAgent + "<br>");
+	if(navigator.userAgent.indexOf("MSIE") > 0 ){
+		window.external.AddFavorite(url, title)
+	}
+	else if(navigator.userAgent.indexOf("Firefox") > 0 ){
+	 //document.write("Firefox");
+	 window.sidebar.addPanel(title, url, ""); 
+	}
+	else if(window.opera && window.print)
+	{
+	  var elem = document.createElement('a'); 
+      elem.setAttribute('href',url); 
+      elem.setAttribute('title',title); 
+      elem.setAttribute('rel','sidebar'); 
+      elem.click(); 
+	}
+	else if(navigator.userAgent.indexOf("Chrome") > 0 ){
+	 alert("해당 브라우저에서는 지원되지 않습니다.");
+	}
 }
-//-->
 </script>
 </head>
 <?
@@ -16,16 +37,13 @@ function bookmark(){
 ?>
 <? include_once('../phil/_header_new.php'); ?>
 
-<body onLoad="javascript:addfavorites();">
+<body >
 <div style="height:35px;"></div>
 <table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr align="right">
     <td>
     	<?=rg_outlogin('jw_top')?>
-    	<a href="http://www.uhakplace.co.kr/new" target="_parent" onFocus="blur();"><img src="../n_img/main_03.jpg" width="48" height="17" border="0" /></a>
-    	<a href="http://www.uhakplace.co.kr/temp/login.php" target="_parent" onFocus="blur();"><img src="../n_img/main_04.jpg" width="55" height="17" border="0" /></a>
-    	<a href="http://www.uhakplace.co.kr/temp/8_2.php" target="_parent" onFocus="blur();"><img src="../n_img/main_05.jpg" width="63" height="17" border="0" /></a>
-    	<a href="javascript:bookmark();" onFocus="blur();"><img src="../n_img/main_06.jpg" width="64" height="17" border="0" /></a>
+    	
     </td>
   </tr>
   <tr>

@@ -709,7 +709,7 @@
 			}
 			
 			$mail_content = rg_conv_text($mail_content,$bd_html);
-			$mail_view_url = rg_get_current_url().'view.php?bbs_code='.$bbs_code.'&bd_num='.$bd_num;
+			$mail_view_url = rg_get_current_url().'view_new.php?bbs_code='.$bbs_code.'&bd_num='.$bd_num;
 	
 			// 이메일 추출하기 
 			$email_list=array();
