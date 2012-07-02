@@ -18,15 +18,14 @@ if(isset($logout)) {
 	unset($_SESSION['ss_mb_num']);
 	unset($_SESSION['ss_login_ok']);
 	unset($_SESSION['ss_hash']);
-	if($ret_url=='') $ret_url='../main/index.php';
+	if($ret_url=='') $ret_url='../phil/index_new.php';
 	rg_href($ret_url);
 }
 
 if($_SESSION['ss_login_ok']) {
-	if($ret_url=='') $ret_url='../main/index.php';
+	if($ret_url=='') $ret_url='../phil/index_new.php';
 	rg_href($ret_url);
 }
-
 if($_SERVER['REQUEST_METHOD']=='POST' && $form_mode=='member_login_ok') {
 	$mb_id=strtolower($mb_id);
 	if($ret_url_login=='')
@@ -94,8 +93,9 @@ if($_SERVER['REQUEST_METHOD']=='POST' && $form_mode=='member_login_ok') {
 	$_SESSION['ss_login_ok']=$ss_login_ok;
 	$_SESSION['ss_hash']=$ss_hash;
 	$rs->commit();
-	if($ret_url=='') $ret_url='../main/index.php';
+	if($ret_url=='') $ret_url='../phil/index_new.php';
 	rg_href($ret_url);
+	
 }
 ?>
 
@@ -135,9 +135,10 @@ if($_SERVER['REQUEST_METHOD']=='POST' && $form_mode=='member_login_ok') {
 												align="left" background="../n_img/login_05.jpg">
 												<table width="100%" border="0" cellspacing="0"
 													cellpadding="0">
-													<form  name="skin_login_form" method="post" action="<?=$login_action?>" onSubmit="return validate(this)" enctype='multipart/form-data'>
+													<form  name="skin_login_form" method="post" action="<?
+													echo "login.php"?>" onSubmit="return validate(this)" enctype='multipart/form-data'>
 													<input type="hidden" name="form_mode" value="member_login_ok">
-													<input type="hidden" name="ret_url" value="<?=$ret_url?>">	
+													<input type="hidden" name="ret_url" value="<??>">	
 													<tr>
 														<td width="108" height="59" rowspan="2"><img
 															src="../n_img/login_04.jpg" width="108" height="59" /></td>

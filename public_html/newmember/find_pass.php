@@ -71,7 +71,7 @@
 			$mail_message=str_replace('../','http://'.$_SERVER['HTTP_HOST'].'/',$mail_message);
 			
 			$rs->commit();
-			if($ret_url=='') $ret_url='../main/index.php';
+			if($ret_url=='') $ret_url='../phil/index_new.php';
 			if(rg_mail($mail_to,$mail_subject,$mail_message,$mail_from,$mail_return)) {
 				rg_href($ret_url,'이메일 전송에 성공 했습니다.\n이메일을 확인 하신후 로그인 하세요.');
 			} else {
@@ -174,7 +174,7 @@
 		<td>
 		<form name="search_id_form" method="post" action="?" onSubmit="return validate(this)" enctype='multipart/form-data'>
 		<input type="hidden" name="form_mode" value="find_pass_ok">
-		<input type="hidden" name="ret_url" value="../main/index.php">
+		<input type="hidden" name="ret_url" value='../phil/index_new.php'>
 		<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
 			<!--<tr>
 				<td height="3" bgcolor="#07472c"><img width="1" height="1"></td>

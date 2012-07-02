@@ -203,13 +203,14 @@
 		// 가입완료 파일이 없다면 바로 다음으로 넘기고 
 //				if (!file_exists($skin_site_path."mb_join_ok.php")) 
 		$rs->commit();
-		if($ret_url=='') $ret_url='../main/index.php';
+		if($ret_url=='') $ret_url='../phil/index_new.php';
 		rg_href($ret_url);
 	}
 
 ?>
-<? include_once('_header.php'); 
-?>
+<div>
+	<? include_once('../temp/top.php'); ?>
+</div>
 <table width="720" align="center" border="0" cellpadding="0" cellspacing="0">
 	<tr>
 		<td>
@@ -222,7 +223,7 @@
 		</table>
 		<form name="member_form" method="post" action="?" onsubmit="return validate(this)" enctype='multipart/form-data'>
 		<input type="hidden" name="form_mode" value="member_join_ok">
-		<input type="hidden" name="ret_url" value="../main/index.php">
+		<input type="hidden" name="ret_url" value="../phil/index_new.php">
 		<? include('member_form.php') ?>
 		<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
 			<tr>

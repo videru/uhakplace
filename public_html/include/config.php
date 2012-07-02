@@ -2,7 +2,7 @@
 <?
 /* =====================================================
 
-  ìµœì¢…ìˆ˜ì •ì¼ : 
+  ÃÖÁ¾¼öÁ¤ÀÏ : 
  ===================================================== */
 
 	if(isset($_REQUEST['site_path']) || isset($_REQUEST['site_url'])) exit;
@@ -10,163 +10,164 @@
 	if(!isset($site_url)) $site_url='../';
 	if(!isset($site_path) || preg_match("/:\/\//",$site_path)) $site_path='../';	
 	
-	$_table									= array(); // í…Œì´ë¸”ëª… ë°°ì—´
-	$_table['prefix']				= 'rg4_';	// í…Œì´ë¸”ëª… ì ‘ë‘ì–´
-	$_table['member']				= $_table['prefix'].'member';	// íšŒì›
-	$_table['group']				= $_table['prefix'].'group';	//	ê·¸ë£¹
-	$_table['gmember']			= $_table['prefix'].'gmember';	//	ê·¸ë£¹íšŒì›
-	$_table['bbs_cfg']			= $_table['prefix'].'bbs_cfg';	//	ê²Œì‹œíŒì„¤ì •
-	$_table['bbs_body']			= $_table['prefix'].'bbs_body';	//	ê²Œì‹œíŒ ë³¸ë¬¸
-	$_table['bbs_comment']	= $_table['prefix'].'bbs_comment';	//	ê²Œì‹œíŒ ì½”ë©˜íŠ¸
-	$_table['bbs_category']	= $_table['prefix'].'bbs_category';	//	ê²Œì‹œíŒ ì¹´í…Œê³ ë¦¬
-	$_table['setup']				= $_table['prefix'].'setup';	//	ì‚¬ì´íŠ¸ì„¤ì •
-	$_table['point']				= $_table['prefix'].'point';	//	í¬ì¸íŠ¸ë‚´ì—­
-	$_table['note']					= $_table['prefix'].'note';	//	ìª½ì§€
-	$_table['zip']					= $_table['prefix'].'zip';	//	ìš°íŽ¸ë²ˆí˜¸
+	$_table									= array(); // Å×ÀÌºí¸í ¹è¿­
+	$_table['prefix']				= 'rg4_';	// Å×ÀÌºí¸í Á¢µÎ¾î
+	$_table['member']				= $_table['prefix'].'member';	// È¸¿ø
+	$_table['group']				= $_table['prefix'].'group';	//	±×·ì
+	$_table['gmember']			= $_table['prefix'].'gmember';	//	±×·ìÈ¸¿ø
+	$_table['bbs_cfg']			= $_table['prefix'].'bbs_cfg';	//	°Ô½ÃÆÇ¼³Á¤
+	$_table['bbs_body']			= $_table['prefix'].'bbs_body';	//	°Ô½ÃÆÇ º»¹®
+	$_table['bbs_comment']	= $_table['prefix'].'bbs_comment';	//	°Ô½ÃÆÇ ÄÚ¸àÆ®
+	$_table['bbs_category']	= $_table['prefix'].'bbs_category';	//	°Ô½ÃÆÇ Ä«Å×°í¸®
+	$_table['setup']				= $_table['prefix'].'setup';	//	»çÀÌÆ®¼³Á¤
+	$_table['point']				= $_table['prefix'].'point';	//	Æ÷ÀÎÆ®³»¿ª
+	$_table['note']					= $_table['prefix'].'note';	//	ÂÊÁö
+	$_table['zip']					= $_table['prefix'].'zip';	//	¿ìÆí¹øÈ£
 
-	$_table['school']				= $_table['prefix'].'school';	//	í•™êµ
-	$_table['school_cost']				= $_table['prefix'].'school_cost';	//	í•™êµ
-	$_table['pre_regi']			    	= $_table['prefix'].'pre_regi';	//	ë“±í˜¹í˜„í™©
-	$_table['regi']			    	= $_table['prefix'].'regi';	//	ë“±í˜¹í˜„í™©
-	$_table['relaship']			   	= $_table['prefix'].'relaship';	//	ì—°ê³„ì—°ìˆ˜
-	$_table['online']			   	= $_table['prefix'].'online';	//	ìƒë‹´ì‹ ì²­
-    $_table['real_regi']          	= $_table['prefix'].'real_regi';	//	ë©”ì¼ìˆ˜ì†í˜„í™©
-    $_table['ger_sangdam']          	= $_table['prefix'].'ger_sangdam';	//	ë…ì¼ìƒë‹´í˜„í™©
-    $_table['consult']          	= $_table['prefix'].'consult';	//	ì œíœ´ë¬¸ì˜
-    $_table['cf']          	= $_table['prefix'].'cf';	//	ê´‘ê³ ë¬¸ì˜
-    $_table['working']          	= $_table['prefix'].'working';	//	ì¼ì •ê´€ë¦¬
-    $_table['today_work']          	= $_table['prefix'].'today_work';	//	ì£¼ìš”ì¼ì •
-	$_table['camp_regi']					= $_table['prefix'].'camp_regi';	//	ìº í”„ë“±ë¡
-	$_table['exchange']					= $_table['prefix'].'exchange';	//	í™˜ìœ¨
-	$_table['account_kyejung']					= $_table['prefix'].'account_kyejung';	//	íšŒê³„	
-	$_table['account']					= $_table['prefix'].'account';	//	íšŒê³„	
-	$_table['st_account']					= $_table['prefix'].'st_account';	//	íšŒê³„	
-	$_table['regi_account']					= $_table['prefix'].'regi_account';	//	ìˆ˜ì†íšŒê³„		
-	$_table['camp']					= $_table['prefix'].'camp';	//	ìº í”„ë“±ë¡
-	$_table['ju_school']					= $_table['prefix'].'ju_school';	//	ìº í”„ë“±ë¡
- 	$_table['young']					= $_table['prefix'].'young';	//	ìº í”„ë“±ë¡
- 	$_table['intern']					= $_table['prefix'].'intern';	//	ìº í”„ë“±ë¡
- 	$_table['hp_site']					= $_table['prefix'].'hp_site';	//	ìº í”„ë“±ë¡
- 	$_table['consult']					= $_table['prefix'].'consult';	//	ìº í”„ë“±ë¡
- 	$_table['cafe_member']					= $_table['prefix'].'cafe_member';	//	ìº í”„ë“±ë¡
+	$_table['school']				= $_table['prefix'].'school';	//	ÇÐ±³
+	$_table['school_cost']				= $_table['prefix'].'school_cost';	//	ÇÐ±³
+	$_table['pre_regi']			    	= $_table['prefix'].'pre_regi';	//	µîÈ¤ÇöÈ²
+	$_table['regi']			    	= $_table['prefix'].'regi';	//	µîÈ¤ÇöÈ²
+	$_table['relaship']			   	= $_table['prefix'].'relaship';	//	¿¬°è¿¬¼ö
+	$_table['online']			   	= $_table['prefix'].'online';	//	»ó´ã½ÅÃ»
+    $_table['real_regi']          	= $_table['prefix'].'real_regi';	//	¸ÞÀÏ¼ö¼ÓÇöÈ²
+    $_table['ger_sangdam']          	= $_table['prefix'].'ger_sangdam';	//	µ¶ÀÏ»ó´ãÇöÈ²
+    $_table['consult']          	= $_table['prefix'].'consult';	//	Á¦ÈÞ¹®ÀÇ
+    $_table['cf']          	= $_table['prefix'].'cf';	//	±¤°í¹®ÀÇ
+    $_table['working']          	= $_table['prefix'].'working';	//	ÀÏÁ¤°ü¸®
+    $_table['today_work']          	= $_table['prefix'].'today_work';	//	ÁÖ¿äÀÏÁ¤
+	$_table['camp_regi']					= $_table['prefix'].'camp_regi';	//	Ä·ÇÁµî·Ï
+	$_table['exchange']					= $_table['prefix'].'exchange';	//	È¯À²
+	$_table['account_kyejung']					= $_table['prefix'].'account_kyejung';	//	È¸°è	
+	$_table['account']					= $_table['prefix'].'account';	//	È¸°è	
+	$_table['st_account']					= $_table['prefix'].'st_account';	//	È¸°è	
+	$_table['regi_account']					= $_table['prefix'].'regi_account';	//	¼ö¼ÓÈ¸°è		
+	$_table['camp']					= $_table['prefix'].'camp';	//	Ä·ÇÁµî·Ï
+	$_table['ju_school']					= $_table['prefix'].'ju_school';	//	Ä·ÇÁµî·Ï
+ 	$_table['young']					= $_table['prefix'].'young';	//	Ä·ÇÁµî·Ï
+ 	$_table['intern']					= $_table['prefix'].'intern';	//	Ä·ÇÁµî·Ï
+ 	$_table['hp_site']					= $_table['prefix'].'hp_site';	//	Ä·ÇÁµî·Ï
+ 	$_table['consult']					= $_table['prefix'].'consult';	//	Ä·ÇÁµî·Ï
+ 	$_table['cafe_member']					= $_table['prefix'].'cafe_member';	//	Ä·ÇÁµî·Ï
     $_table['ca_mem_comm']		= $_table['prefix'].'ca_mem_comm';	
-	$_table['alim']					= $_table['prefix'].'alim';	//	ìš°íŽ¸ë²ˆí˜¸	
- 	$_table['cafe_online']					= $_table['prefix'].'cafe_online';	//	ìº í”„ë“±ë¡
-	$_table['sms']					= $_table['prefix'].'sms';	//	ìš°íŽ¸ë²ˆí˜¸
-	$_table['main_regi']					= $_table['prefix'].'main_regi';	//	ìš°íŽ¸ë²ˆí˜¸
+	$_table['alim']					= $_table['prefix'].'alim';	//	¿ìÆí¹øÈ£	
+ 	$_table['cafe_online']					= $_table['prefix'].'cafe_online';	//	Ä·ÇÁµî·Ï
+	$_table['sms']					= $_table['prefix'].'sms';	//	¿ìÆí¹øÈ£
+	$_table['main_regi']					= $_table['prefix'].'main_regi';	//	¿ìÆí¹øÈ£
 
 
-	$_path							= array(); // ì„œë²„ìƒì˜ ê²½ë¡œ
-	$_path['site']			= $site_path;	// ê¸°ë³¸ê²½ë¡œ
-	// ì‚¬ì´íŠ¸ PATH
-	$_path['bbs']				= $_path['site'].'board/';	// ê²Œì‹œíŒ
-	$_path['css']				= $_path['site'].'css/';	// ìŠ¤íƒ€ì¼ì‹œíŠ¸
-	$_path['member']		= $_path['site'].'member/';	// íšŒì›
-	$_path['js']				= $_path['site'].'js/';	// ìŠ¤í¬ë¦½íŠ¸
-	$_path['admin']			= $_path['site'].'admin/';	// ê´€ë¦¬ìž
-	$_path['counter']		= $_path['site'].'counter/';	// ì¹´ìš´í„°
-	$_path['inc']				= $_path['site'].'include/';	// ë¼ì´ë¸ŒëŸ¬ë¦¬ë“±
-	$_path['mail_form']	= $_path['site'].'mail/';	// ì´ë©”ì¼ì£¼ì†Œê²½ë¡œ
-	$_path['skin']			= $_path['site'].'skin/';	// ìŠ¤í‚¨ê²½ë¡œ
-	// ìŠ¤í‚¨ PATH
-	$_path['bbs_skin']	= $_path['skin'].'board/';	// ê²Œì‹œíŒ ìŠ¤í‚¨
-	$_path['login_skin']= $_path['skin'].'login/';	// ë¡œê·¸ì¸ ìŠ¤í‚¨
-	$_path['last_skin']	= $_path['skin'].'last/';	// ìµœê·¼ê¸€ ìŠ¤í‚¨
-	// ë°ì´íƒ€ PATH
-	$_path['data']			= $_path['site'].'data/';	// ë°ì´íƒ€íŒŒì¼
-	$_path['member_data']	= $_path['data'].'member/';	// íšŒì› ë°ì´íƒ€íŒŒì¼
-	$_path['bbs_data']	= $_path['data'].'board/';	// ê²Œì‹œíŒ ì²¨ë¶€íŒŒì¼
-	$_path['session']		= $_path['data'].'session/';	// ì„¸ì…˜
+	$_path							= array(); // ¼­¹ö»óÀÇ °æ·Î
+	$_path['site']			= $site_path;	// ±âº»°æ·Î
+	// »çÀÌÆ® PATH
+	$_path['bbs']				= $_path['site'].'board/';	// °Ô½ÃÆÇ
+	$_path['css']				= $_path['site'].'css/';	// ½ºÅ¸ÀÏ½ÃÆ®
+	$_path['member']		= $_path['site'].'member/';	// È¸¿ø
+	$_path['js']				= $_path['site'].'js/';	// ½ºÅ©¸³Æ®
+	$_path['admin']			= $_path['site'].'admin/';	// °ü¸®ÀÚ
+	$_path['counter']		= $_path['site'].'counter/';	// Ä«¿îÅÍ
+	$_path['inc']				= $_path['site'].'include/';	// ¶óÀÌºê·¯¸®µî
+	$_path['mail_form']	= $_path['site'].'mail/';	// ÀÌ¸ÞÀÏÁÖ¼Ò°æ·Î
+	$_path['skin']			= $_path['site'].'skin/';	// ½ºÅ²°æ·Î
+	// ½ºÅ² PATH
+	$_path['bbs_skin']	= $_path['skin'].'board/';	// °Ô½ÃÆÇ ½ºÅ²
+	$_path['login_skin']= $_path['skin'].'login/';	// ·Î±×ÀÎ ½ºÅ²
+	$_path['last_skin']	= $_path['skin'].'last/';	// ÃÖ±Ù±Û ½ºÅ²
+	// µ¥ÀÌÅ¸ PATH
+	$_path['data']			= $_path['site'].'data/';	// µ¥ÀÌÅ¸ÆÄÀÏ
+	$_path['member_data']	= $_path['data'].'member/';	// È¸¿ø µ¥ÀÌÅ¸ÆÄÀÏ
+	$_path['bbs_data']	= $_path['data'].'board/';	// °Ô½ÃÆÇ Ã·ºÎÆÄÀÏ
+	$_path['session']		= $_path['data'].'session/';	// ¼¼¼Ç
 
-	$_url								= array(); // URL ì›¹ê²½ë¡œ
-	$_url['site']				= $site_url;	// ê¸°ë³¸ê²½ë¡œ
-	// ì‚¬ì´íŠ¸ URL
-	$_url['bbs']				= $_url['site'].'board/';	// ê²Œì‹œíŒ
-	$_url['css']				= $_url['site'].'css/';	// ìŠ¤íƒ€ì¼ì‹œíŠ¸
-	$_url['member']			= $_url['site'].'member/';	// íšŒì›
-	$_url['js']					= $_url['site'].'js/';	// ìŠ¤í¬ë¦½íŠ¸
-	$_url['admin']			= $_url['site'].'admin/';	// ê´€ë¦¬ìž
-	$_url['counter']		= $_url['site'].'counter/';	// ì¹´ìš´í„°
-	$_url['mail_form']	= $_url['site'].'mail/';	// ì´ë©”ì¼ì£¼ì†Œê²½ë¡œ
-	$_url['skin']				= $_url['site'].'skin/';	// ìŠ¤í‚¨ê²½ë¡œ
-	// ìŠ¤í‚¨ URL
-	$_url['bbs_skin']		= $_url['skin'].'board/';	// ê²Œì‹œíŒ ìŠ¤í‚¨
-	$_url['login_skin']	= $_url['skin'].'login/';	// ë¡œê·¸ì¸ ìŠ¤í‚¨
-	$_url['last_skin']	= $_url['skin'].'last/';	// ìµœê·¼ê¸€ ìŠ¤í‚¨
+	$_url								= array(); // URL À¥°æ·Î
+	$_url['site']				= $site_url;	// ±âº»°æ·Î
+	// »çÀÌÆ® URL
+	$_url['bbs']				= $_url['site'].'board/';	// °Ô½ÃÆÇ
+	$_url['css']				= $_url['site'].'css/';	// ½ºÅ¸ÀÏ½ÃÆ®
+	$_url['member']			= $_url['site'].'member/';	// È¸¿ø
+	$_url['newmember']			= $_url['site'].'newmember/';	// È¸¿ø
+	$_url['js']					= $_url['site'].'js/';	// ½ºÅ©¸³Æ®
+	$_url['admin']			= $_url['site'].'admin/';	// °ü¸®ÀÚ
+	$_url['counter']		= $_url['site'].'counter/';	// Ä«¿îÅÍ
+	$_url['mail_form']	= $_url['site'].'mail/';	// ÀÌ¸ÞÀÏÁÖ¼Ò°æ·Î
+	$_url['skin']				= $_url['site'].'skin/';	// ½ºÅ²°æ·Î
+	// ½ºÅ² URL
+	$_url['bbs_skin']		= $_url['skin'].'board/';	// °Ô½ÃÆÇ ½ºÅ²
+	$_url['login_skin']	= $_url['skin'].'login/';	// ·Î±×ÀÎ ½ºÅ²
+	$_url['last_skin']	= $_url['skin'].'last/';	// ÃÖ±Ù±Û ½ºÅ²
 
-	// ìƒìˆ˜ì •ì˜
+	// »ó¼öÁ¤ÀÇ
 	$_const = array();
-	$_const['member_states']		= array(0=>'ëŒ€ê¸°',1=>'ìŠ¹ì¸',2=>'ë¯¸ìŠ¹ì¸',3=>'íƒˆí‡´'); // íšŒì›ìƒíƒœ
-	$_const['group_states']			= array(0=>'ëŒ€ê¸°',1=>'ìŠ¹ì¸',2=>'ë¯¸ìŠ¹ì¸',3=>'íì‡„');	// ê·¸ë£¹ìƒíƒœ
-	$_const['group_level_type']	= array(0=>'íšŒì›ë ˆë²¨',1=>'ê·¸ë£¹ë ˆë²¨');	// ê·¸ë£¹ë ˆë²¨ ì ìš©ë°©ì‹
+	$_const['member_states']		= array(0=>'´ë±â',1=>'½ÂÀÎ',2=>'¹Ì½ÂÀÎ',3=>'Å»Åð'); // È¸¿ø»óÅÂ
+	$_const['group_states']			= array(0=>'´ë±â',1=>'½ÂÀÎ',2=>'¹Ì½ÂÀÎ',3=>'Æó¼â');	// ±×·ì»óÅÂ
+	$_const['group_level_type']	= array(0=>'È¸¿ø·¹º§',1=>'±×·ì·¹º§');	// ±×·ì·¹º§ Àû¿ë¹æ½Ä
 
-	$_const['admin_level']			= 90;	// ìµœê³  ê´€ë¦¬ìž ë ˆë²¨
-	$_const['group_admin_level']= 50;	// ê·¸ë£¹ ê´€ë¦¬ìž ë ˆë²¨
-	$_const['sex']							= array('M'=>'ë‚¨ìž','F'=>'ì—¬ìž'); // ì„±ë³„
+	$_const['admin_level']			= 90;	// ÃÖ°í °ü¸®ÀÚ ·¹º§
+	$_const['group_admin_level']= 50;	// ±×·ì °ü¸®ÀÚ ·¹º§
+	$_const['sex']							= array('M'=>'³²ÀÚ','F'=>'¿©ÀÚ'); // ¼ºº°
 
-	$_const['member_form_state'] = array(0=>'ì‚¬ìš©ì•ˆí•¨',1=>'ì„ íƒ',2=>'í•„ìˆ˜');
+	$_const['member_form_state'] = array(0=>'»ç¿ë¾ÈÇÔ',1=>'¼±ÅÃ',2=>'ÇÊ¼ö');
 	$_const['member_forms'] = array(
-		'mb_name' => 'ì´ë¦„',
-		'mb_nick' => 'ë‹‰ë„¤ìž„',
-		'mb_email' => 'ì´ë©”ì¼',
-		'mb_jumin' => 'ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸',
-		'mb_tel1' => 'ì „í™”ë²ˆí˜¸',
-		'mb_tel2' => 'í•¸ë“œí°ë²ˆí˜¸',
-		'mb_address' => 'ì£¼ì†Œ',
-		'mb_signature' => 'ì„œëª…',
-		'mb_introduce' => 'ìžê¸°ì†Œê°œ',
-		'photo1' => 'ì‚¬ì§„',
-		'icon1' => 'íšŒì›ì•„ì´ì½˜'
+		'mb_name' => 'ÀÌ¸§',
+		'mb_nick' => '´Ð³×ÀÓ',
+		'mb_email' => 'ÀÌ¸ÞÀÏ',
+		'mb_jumin' => 'ÁÖ¹Îµî·Ï¹øÈ£',
+		'mb_tel1' => 'ÀüÈ­¹øÈ£',
+		'mb_tel2' => 'ÇÚµåÆù¹øÈ£',
+		'mb_address' => 'ÁÖ¼Ò',
+		'mb_signature' => '¼­¸í',
+		'mb_introduce' => 'ÀÚ±â¼Ò°³',
+		'photo1' => '»çÁø',
+		'icon1' => 'È¸¿ø¾ÆÀÌÄÜ'
 	);
 
 
-	$_const['national']			= array('1'=>'ë‰´ì§ˆëžœë“œ','2'=>'í˜¸ì£¼','3'=>'í•„ë¦¬í•€','4'=>'ì˜êµ­','5'=>'ìºë‚˜ë‹¤'); // ë‚˜ë¼
-	$_const['national01']			= array('1'=>'ë‰´ì§ˆëžœë“œ','2'=>'í˜¸ì£¼','3'=>'í•„ë¦¬í•€','4'=>'ì˜êµ­','5'=>'ìºë‚˜ë‹¤','6'=>'ë¯¸êµ­'); // ë‚˜ë¼
-	$_const_uhak['national']	= array('6'=>'ë¯¸êµ­','2'=>'í˜¸ì£¼','1'=>'ë‰´ì§ˆëžœë“œ','3'=>'í•„ë¦¬í•€','5'=>'ìºë‚˜ë‹¤'); // ë‚˜ë¼
+	$_const['national']			= array('1'=>'´ºÁú·£µå','2'=>'È£ÁÖ','3'=>'ÇÊ¸®ÇÉ','4'=>'¿µ±¹','5'=>'Ä³³ª´Ù'); // ³ª¶ó
+	$_const['national01']			= array('1'=>'´ºÁú·£µå','2'=>'È£ÁÖ','3'=>'ÇÊ¸®ÇÉ','4'=>'¿µ±¹','5'=>'Ä³³ª´Ù','6'=>'¹Ì±¹'); // ³ª¶ó
+	$_const_uhak['national']	= array('6'=>'¹Ì±¹','2'=>'È£ÁÖ','1'=>'´ºÁú·£µå','3'=>'ÇÊ¸®ÇÉ','5'=>'Ä³³ª´Ù'); // ³ª¶ó
 
-	$_const_main['national']	= array('1'=>'í•„ë¦¬í•€','2'=>'í˜¸ì£¼','3'=>'ìºë‚˜ë‹¤'); // ë‚˜ë¼
+	$_const_main['national']	= array('1'=>'ÇÊ¸®ÇÉ','2'=>'È£ÁÖ','3'=>'Ä³³ª´Ù'); // ³ª¶ó
 
-	$_camp_list['camp']	= array('1'=>'í•„ë¦¬í•€ ì„¸ë¶€ ì˜ì–´/ìˆ˜í•™ ìº í”„','2'=>'í•„ë¦¬í•€ ì¼ë¡œì¼ë¡œ ì˜ì–´ ì§‘ì¤‘ ìº í”„'); // ìº í”„
+	$_camp_list['camp']	= array('1'=>'ÇÊ¸®ÇÉ ¼¼ºÎ ¿µ¾î/¼öÇÐ Ä·ÇÁ','2'=>'ÇÊ¸®ÇÉ ÀÏ·ÎÀÏ·Î ¿µ¾î ÁýÁß Ä·ÇÁ'); // Ä·ÇÁ
 	
-	$_camp_s_list['camp']	= array('1'=>'ì„¸ë¶€','2'=>'ì¼ë¡œì¼ë¡œ'); // ìº í”„
+	$_camp_s_list['camp']	= array('1'=>'¼¼ºÎ','2'=>'ÀÏ·ÎÀÏ·Î'); // Ä·ÇÁ
 
-	$_const['area1']			= array('1'=>'ì˜¤í´ëžœë“œ','2'=>'í¬ë¼ì´ìŠ¤íŠ¸ì³ì¹˜','3'=>'ì›°ë§í„´','4'=>'ê¸°íƒ€'); // ë‰´ì§ˆëžœë“œì§€ì—­	
-	$_const['area2']			= array('1'=>'ì‹œë“œë‹ˆ','2'=>'ë¸Œë¦¬ìŠ¤ë²ˆ','3'=>'í¼ìŠ¤','4'=>'ë©œë²ˆ','5'=>'í˜¸ë°”íŠ¸','6'=>'ì¼€ì–¸ì¦ˆ','7'=>'ê¸°íƒ€ì§€ì—­'); // í˜¸ì£¼ì§€ì—­
-	$_const['area3']			= array('1'=>'ë§ˆë‹ë¼','2'=>'ì„¸ë¶€','3'=>'ë°”ê¸°ì˜¤','4'=>'ì¼ë¡œì¼ë¡œ','5'=>'ë°”ì½œë¡œë“œ','6'=>'ê¸°íƒ€ì§€ì—­'); // í•„ë¦¬í•€ì§€ì—­	
-	$_const['area4']			= array('1'=>'ëŸ°ë˜','2'=>'ë¸Œë¦¬ìŠ¤í‹€','3'=>'ì˜¥ìŠ¤í¬ë“œ','4'=>'ìº ë¸Œë¦¿ì§€','5'=>'ë³¸ë¨¸ìŠ¤','6'=>'ê¸°íƒ€ì§€ì—­'); // ì˜êµ­ì§€ì—­
-	$_const['area5']			= array('1'=>'','2'=>'','3'=>'','4'=>'','5'=>'','6'=>'ê¸°íƒ€ì§€ì—­'); // ìºë‚˜ë‹¤ì§€ì—­
+	$_const['area1']			= array('1'=>'¿ÀÅ¬·£µå','2'=>'Å©¶óÀÌ½ºÆ®ÃÄÄ¡','3'=>'À£¸µÅÏ','4'=>'±âÅ¸'); // ´ºÁú·£µåÁö¿ª	
+	$_const['area2']			= array('1'=>'½Ãµå´Ï','2'=>'ºê¸®½º¹ø','3'=>'ÆÛ½º','4'=>'¸á¹ø','5'=>'È£¹ÙÆ®','6'=>'ÄÉ¾ðÁî','7'=>'±âÅ¸Áö¿ª'); // È£ÁÖÁö¿ª
+	$_const['area3']			= array('1'=>'¸¶´Ò¶ó','2'=>'¼¼ºÎ','3'=>'¹Ù±â¿À','4'=>'ÀÏ·ÎÀÏ·Î','5'=>'¹ÙÄÝ·Îµå','6'=>'±âÅ¸Áö¿ª'); // ÇÊ¸®ÇÉÁö¿ª	
+	$_const['area4']			= array('1'=>'·±´ø','2'=>'ºê¸®½ºÆ²','3'=>'¿Á½ºÆ÷µå','4'=>'Ä·ºê¸´Áö','5'=>'º»¸Ó½º','6'=>'±âÅ¸Áö¿ª'); // ¿µ±¹Áö¿ª
+	$_const['area5']			= array('1'=>'','2'=>'','3'=>'','4'=>'','5'=>'','6'=>'±âÅ¸Áö¿ª'); // Ä³³ª´ÙÁö¿ª
 
-     $_const['root']  = array('1'=>'ë„¤ì´ë²„ ë‰´ì§ˆëžœë“œ','2'=>'ë„¤ì´ë²„ í˜¸ì£¼','3'=>'ë„¤ì´ë²„ ì˜êµ­','4'=>'ë„¤ì´ë²„ ìºë‚˜ë‹¤','5'=>'ë„¤ì´ë²„ í•„ë¦¬í•€','6'=>'ë‹¤ìŒ í˜¸ì£¼&ë‰´ì§ˆëžœë“œ','7'=>'ì „í™”','8'=>'ë©”ì‹ ì €','9'=>'í™ˆíŽ˜ì´ì§€','10'=>'ê¸°íƒ€'); // ì ‘ì†ê²½ë¡œ
-	$_regi['rgi']			= array('1'=>'ì¹´íŽ˜','2'=>'í™ˆíŽ˜ì´ì§€'); // ì§€ì‚¬
+     $_const['root']  = array('1'=>'³×ÀÌ¹ö ´ºÁú·£µå','2'=>'³×ÀÌ¹ö È£ÁÖ','3'=>'³×ÀÌ¹ö ¿µ±¹','4'=>'³×ÀÌ¹ö Ä³³ª´Ù','5'=>'³×ÀÌ¹ö ÇÊ¸®ÇÉ','6'=>'´ÙÀ½ È£ÁÖ&´ºÁú·£µå','7'=>'ÀüÈ­','8'=>'¸Þ½ÅÀú','9'=>'È¨ÆäÀÌÁö','10'=>'±âÅ¸'); // Á¢¼Ó°æ·Î
+	$_regi['rgi']			= array('1'=>'Ä«Æä','2'=>'È¨ÆäÀÌÁö'); // Áö»ç
 
-	$_const['section']			= array('1'=>'ì–´í•™ì—°ìˆ˜','2'=>'ì •ê·œìœ í•™'); // ë‚˜ë¼
+	$_const['section']			= array('1'=>'¾îÇÐ¿¬¼ö','2'=>'Á¤±ÔÀ¯ÇÐ'); // ³ª¶ó
 
-	$_regi['national']			= array('1'=>'í•„ë¦¬í•€','2'=>'ìºë‚˜ë‹¤','3'=>'í˜¸ì£¼','4'=>'ë…ì¼','5'=>'í•„ë¦¬í•€+í˜¸ì£¼','6'=>'í•„ë¦¬í•€+ìºë‚˜ë‹¤','7'=>'í•„ë¦¬í•€+í˜¸ì£¼','8'=>'í•„ë¦¬í•€+ë…ì¼'); // ë‚˜ë¼
-	$_regi['chain']			= array('1'=>'ê°•ë‚¨','2'=>'ë¶€ì‚°'); // ì§€ì‚¬
+	$_regi['national']			= array('1'=>'ÇÊ¸®ÇÉ','2'=>'Ä³³ª´Ù','3'=>'È£ÁÖ','4'=>'µ¶ÀÏ','5'=>'ÇÊ¸®ÇÉ+È£ÁÖ','6'=>'ÇÊ¸®ÇÉ+Ä³³ª´Ù','7'=>'ÇÊ¸®ÇÉ+È£ÁÖ','8'=>'ÇÊ¸®ÇÉ+µ¶ÀÏ'); // ³ª¶ó
+	$_regi['chain']			= array('1'=>'°­³²','2'=>'ºÎ»ê'); // Áö»ç
 
-	$_reserv['transaction']			= array('1'=>'ì˜ˆì•½ëŒ€ê¸°','2'=>'ì „í™”ìƒë‹´','3'=>'ì˜ˆì•½ì™„ë£Œ','4'=>'ì˜ˆì•½ì—°ê¸°'); // ë°©ë¬¸ìƒë‹´ì˜ˆì•½
+	$_reserv['transaction']			= array('1'=>'¿¹¾à´ë±â','2'=>'ÀüÈ­»ó´ã','3'=>'¿¹¾à¿Ï·á','4'=>'¿¹¾à¿¬±â'); // ¹æ¹®»ó´ã¿¹¾à
 
-	$_reserv['sangdam']			= array('1'=>'ì²˜ë¦¬ëŒ€ê¸°','2'=>'ìƒë‹´ëŒ€ê¸°','3'=>'ìƒë‹´ì™„ë£Œ'); // ë°©ë¬¸ìƒë‹´ì˜ˆì•½
+	$_reserv['sangdam']			= array('1'=>'Ã³¸®´ë±â','2'=>'»ó´ã´ë±â','3'=>'»ó´ã¿Ï·á'); // ¹æ¹®»ó´ã¿¹¾à
 
-	$_reserv['sang']			= array('1'=>'ìƒë‹´ëŒ€ê¸°','2'=>'ìƒë‹´ì™„ë£Œ'); // ë°©ë¬¸ìƒë‹´ì˜ˆì•½
+	$_reserv['sang']			= array('1'=>'»ó´ã´ë±â','2'=>'»ó´ã¿Ï·á'); // ¹æ¹®»ó´ã¿¹¾à
 
     
-	$_reserv['regi_state']     = array('1'=>'ìˆ˜ì†ë“±ë¡ì „','2'=>'ìˆ˜ì†ë“±ë¡ì™„ë£Œ'); // ë“±ë¡ì—¬ë¶€
+	$_reserv['regi_state']     = array('1'=>'¼ö¼Óµî·ÏÀü','2'=>'¼ö¼Óµî·Ï¿Ï·á'); // µî·Ï¿©ºÎ
 
-	$_process['process_state']     = array('1'=>'ë“±ë¡ëŒ€ê¸°','2'=>'ì—¬ê¶Œ/ë¹„ìž í™•ì¸','3'=>'ìž…í•™ê¸ˆ ìž…ê¸ˆ','4'=>'ì–´í•™êµ ë“±ë¡','5'=>'í•­ê³µ ì˜ˆì•½','6'=>'í•­ê³µë¹„ ì™„ë‚©','7'=>'í•­ê³µê¶Œ ë°œê¸‰','8'=>'í•™ë¹„ìž…ê¸ˆ','9'=>'í•™ë¹„ì†¡ê¸ˆ','10'=>'ì¶œêµ­ O/T','11'=>'ì¶œêµ­'); // ë“±ë¡ì§„í–‰ìƒí™©
+	$_process['process_state']     = array('1'=>'µî·Ï´ë±â','2'=>'¿©±Ç/ºñÀÚ È®ÀÎ','3'=>'ÀÔÇÐ±Ý ÀÔ±Ý','4'=>'¾îÇÐ±³ µî·Ï','5'=>'Ç×°ø ¿¹¾à','6'=>'Ç×°øºñ ¿Ï³³','7'=>'Ç×°ø±Ç ¹ß±Þ','8'=>'ÇÐºñÀÔ±Ý','9'=>'ÇÐºñ¼Û±Ý','10'=>'Ãâ±¹ O/T','11'=>'Ãâ±¹'); // µî·ÏÁøÇà»óÈ²
 
-	$_relaship['national']			= array('1'=>'í•„ë¦¬í•€+í˜¸ì£¼','2'=>'í•„ë¦¬í•€+ìºë‚˜ë‹¤','3'=>'í•„ë¦¬í•€+ë…ì¼'); // ì—°ê³„ì—°ìˆ˜
+	$_relaship['national']			= array('1'=>'ÇÊ¸®ÇÉ+È£ÁÖ','2'=>'ÇÊ¸®ÇÉ+Ä³³ª´Ù','3'=>'ÇÊ¸®ÇÉ+µ¶ÀÏ'); // ¿¬°è¿¬¼ö
 
-    $_const['section']        = array('1'=>'ëŒ€í•™ë¶€ì„¤','2'=>'ì‚¬ì„¤'); // í•™êµêµ¬ë¶„
+    $_const['section']        = array('1'=>'´ëÇÐºÎ¼³','2'=>'»ç¼³'); // ÇÐ±³±¸ºÐ
     
-	$_const['section2']        = array('1'=>'ì •ê·œëŒ€í•™','3'=>'ì´ˆ.ì¤‘ê³ ë“± ê³µë¦½','4'=>'ì´ˆ.ì¤‘ê³ ë“± ì‚¬ì„¤',); // í•™êµêµ¬ë¶„
+	$_const['section2']        = array('1'=>'Á¤±Ô´ëÇÐ','3'=>'ÃÊ.Áß°íµî °ø¸³','4'=>'ÃÊ.Áß°íµî »ç¼³',); // ÇÐ±³±¸ºÐ
 
-    $_const['in_out_comm']        = array('1'=>'ìž…ê¸ˆ','2'=>'ì¶œê¸ˆ',); // í•™êµêµ¬ë¶„
+    $_const['in_out_comm']        = array('1'=>'ÀÔ±Ý','2'=>'Ãâ±Ý',); // ÇÐ±³±¸ºÐ
 
-	$_const['money_type']			= array('1'=>'êµ­ë‚´ë‚©ë¶€','2'=>'í˜„ì§€ë‚©ë¶€'); // ì§€ì‚¬
-    $_const['money']	= array('1'=>'ì›','2'=>'íŽ˜ì†Œ','3'=>'ë‹¬ëŸ¬'); // ì§€ì‚¬
+	$_const['money_type']			= array('1'=>'±¹³»³³ºÎ','2'=>'ÇöÁö³³ºÎ'); // Áö»ç
+    $_const['money']	= array('1'=>'¿ø','2'=>'Æä¼Ò','3'=>'´Þ·¯'); // Áö»ç
 
-    $_const['sc_type']	= array('1'=>'ìŠ¤íŒŒë¥´íƒ€ì–´í•™ì›','2'=>'ì‹œì„¤ ì¢‹ì€ ì–´í•™ì›','3'=>'ì£¼ë³€í™˜ê²½ ì§± ì–´í•™ì›','4'=>'ì˜ì–´ê¸°ìˆ™ì‚¬ ìžˆëŠ” ì–´í•™ì›','5'=>'1ëŒ€1ìˆ˜ì—…5ì‹œê°„ì´ìƒ ì–´í•™ì›','6'=>'ì €ë ´í•œ ì–´í•™ì›','7'=>'ì¤‘,ì†Œê·œëª¨ì–´í•™ì›','8'=>'ëŒ€ê·œëª¨ì–´í•™ì›','9'=>'êµ­ì ë¹„ìœ¨ì´ ì¢‹ì€ ì–´í•™ì›','10'=>'ëŒ€í•™ë¶€ì„¤ ì–´í•™ì›','11'=>'ë‹¤ì–‘í•œ ì½”ìŠ¤','12'=>'IELTS'); 
+    $_const['sc_type']	= array('1'=>'½ºÆÄ¸£Å¸¾îÇÐ¿ø','2'=>'½Ã¼³ ÁÁÀº ¾îÇÐ¿ø','3'=>'ÁÖº¯È¯°æ Â¯ ¾îÇÐ¿ø','4'=>'¿µ¾î±â¼÷»ç ÀÖ´Â ¾îÇÐ¿ø','5'=>'1´ë1¼ö¾÷5½Ã°£ÀÌ»ó ¾îÇÐ¿ø','6'=>'Àú·ÅÇÑ ¾îÇÐ¿ø','7'=>'Áß,¼Ò±Ô¸ð¾îÇÐ¿ø','8'=>'´ë±Ô¸ð¾îÇÐ¿ø','9'=>'±¹ÀûºñÀ²ÀÌ ÁÁÀº ¾îÇÐ¿ø','10'=>'´ëÇÐºÎ¼³ ¾îÇÐ¿ø','11'=>'´Ù¾çÇÑ ÄÚ½º','12'=>'IELTS'); 
 
    $_const[year]       = array('2010'=>'2010','2011'=>'2011','2012'=>'2012','2013'=>'2013','2014'=>'2014'); 
    $_const[month]       = array('1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5','6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'10','11'=>'11','12'=>'12'); 
@@ -177,31 +178,31 @@
 
    $_const[rate]       = array('0'=>'0%','1'=>'10%','2'=>'30%','3'=>'50%','4'=>'70%','5'=>'90%'); 
   
-   $_const[camp_type]       = array('1'=>'ì£¼ë‹ˆì–´ìº í”„','2'=>'ê°€ì¡±ìº í”„'); 
+   $_const[camp_type]       = array('1'=>'ÁÖ´Ï¾îÄ·ÇÁ','2'=>'°¡Á·Ä·ÇÁ'); 
 
 
-   $_const[camp_type2]     = array('1'=>'ì£¼ë‹ˆì–´ì—°ìˆ˜','2'=>'ê°€ì¡±ì—°ìˆ˜'); 
+   $_const[camp_type2]     = array('1'=>'ÁÖ´Ï¾î¿¬¼ö','2'=>'°¡Á·¿¬¼ö'); 
 
 
-    $_const['tel']	= array('1'=>'010','2'=>'011','3'=>'016','4'=>'019','5'=>'017','6'=>'018'); // ì§€ì‚¬
+    $_const['tel']	= array('1'=>'010','2'=>'011','3'=>'016','4'=>'019','5'=>'017','6'=>'018'); // Áö»ç
 
 
-   $_cafe[class_type]       = array('1'=>'í•„ë¦¬í•€ì–´í•™ì—°ìˆ˜','2'=>'í•„ë¦¬í•€+ì—°ê³„ì—°ìˆ˜(í˜¸ì£¼, ë‰´ì§ˆëžœë“œ, ì˜êµ­, ìºë‚˜ë‹¤)','3'=>'í˜¸ì£¼, ë‰´ì§ˆëžœë“œ, ì˜êµ­, ìºë‚˜ë‹¤ ì—°ìˆ˜'); 
+   $_cafe[class_type]       = array('1'=>'ÇÊ¸®ÇÉ¾îÇÐ¿¬¼ö','2'=>'ÇÊ¸®ÇÉ+¿¬°è¿¬¼ö(È£ÁÖ, ´ºÁú·£µå, ¿µ±¹, Ä³³ª´Ù)','3'=>'È£ÁÖ, ´ºÁú·£µå, ¿µ±¹, Ä³³ª´Ù ¿¬¼ö'); 
 
-   $_cafe[gigan]       = array('1'=>'3ê°œì›”ì´í•˜','2'=>'3ê°œì›”~6ê°œì›”','3'=>'6ê°œì›”~12ê°œì›”','4'=>'12ê°œì›”ì´ìƒ'); 
+   $_cafe[gigan]       = array('1'=>'3°³¿ùÀÌÇÏ','2'=>'3°³¿ù~6°³¿ù','3'=>'6°³¿ù~12°³¿ù','4'=>'12°³¿ùÀÌ»ó'); 
 
 	
-	// ë””ë¹„ í˜•íƒœ
+	// µðºñ ÇüÅÂ
 	$_const['db_type']					= array();
 	$_const['db_type']['MYSQL']	= array('code'=>'MYSQL','name'=>'Mysql','hname'=>'Mysql','default_port'=>'3306');
-	$_const['db_type']['CUBRID']= array('code'=>'CUBRID','name'=>'Cubrid','hname'=>'íë¸Œë¦¬ë“œ','default_port'=>'33000');
-	$_const['db_type']['ORACLE']= array('code'=>'ORACLE','name'=>'Oracle','hname'=>'ì˜¤ë¼í´','default_port'=>'1521');
+	$_const['db_type']['CUBRID']= array('code'=>'CUBRID','name'=>'Cubrid','hname'=>'Å¥ºê¸®µå','default_port'=>'33000');
+	$_const['db_type']['ORACLE']= array('code'=>'ORACLE','name'=>'Oracle','hname'=>'¿À¶óÅ¬','default_port'=>'1521');
 
-	// í¬ì¸íŠ¸í˜•íƒœ
+	// Æ÷ÀÎÆ®ÇüÅÂ
 	$_po_type_code		= array('etc'=>'0','bbs'=>'1','shop'=>'2','admin'=>'10');
-	$_po_type_name		= array('0'=>'ê¸°íƒ€','1'=>'ê²Œì‹œíŒ','2'=>'ì‡¼í•‘ëª°','10'=>'ê´€ë¦¬ìž');
+	$_po_type_name		= array('0'=>'±âÅ¸','1'=>'°Ô½ÃÆÇ','2'=>'¼îÇÎ¸ô','10'=>'°ü¸®ÀÚ');
 	
-	$_auth=false;			// ê¶Œí•œ ì´ˆê¸°í™”
-	$_bbs_auth=false;	// ê²Œì‹œíŒ ê¶Œí•œ ì´ˆê¸°í™”
-	$_mb=false;				// íšŒì›ì •ë³´ì´ˆê¸°í™”
+	$_auth=false;			// ±ÇÇÑ ÃÊ±âÈ­
+	$_bbs_auth=false;	// °Ô½ÃÆÇ ±ÇÇÑ ÃÊ±âÈ­
+	$_mb=false;				// È¸¿øÁ¤º¸ÃÊ±âÈ­
 ?>

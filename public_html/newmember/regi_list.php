@@ -8,7 +8,7 @@
 	<script>
 	(function(){
 	 alert("로그인 하세요");
-	 document.location = "http://uhakplace.co.kr/temp/login.html"; 
+	 document.location = "http://uhakplace.co.kr/temp/login.php"; 
 	})();
 	</script>
 		
