@@ -5,7 +5,7 @@
   최종수정일 : 
  ===================================================== */
 
-$_const['area6'] = array('1'=>'Los Angeles','2'=>'San Diego','3'=>'San Francisco','4'=>'Chicago',); // 미국 지역
+$name = array('1'=>'Los Angeles','2'=>'San Diego','3'=>'San Francisco','4'=>'Chicago',); // 미국 지역
 
 $_const['state'] = array('1'=>array()//뉴질랜드
                         ,'2'=>array()//호주

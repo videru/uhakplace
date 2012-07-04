@@ -1,10 +1,20 @@
+<?
+include_once("../include/lib.php");
+
+if(isset($_REQUEST['site_path']) || isset($_REQUEST['site_url'])) exit;
+if(!isset($site_path)) $site_path='../';
+if(!isset($site_url)) $site_url='../';
+if(!isset($site_path) || preg_match("/:\/\//",$site_path)) $site_path='../';
+
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 <script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script language="javascript" type="text/javascript" src="../temp/search_school.js?20120627_9"></script>
+<script language="javascript" type="text/javascript" src="../temp/search_school.js?20120704_1"></script>
 </head>
 
 <body onload="MM_preloadImages('../n_img/power_such/btn_6 (2).jpg','../n_img/power_such/btn_2.jpg','../n_img/power_such/btn_4.jpg','../n_img/power_such/btn_7.jpg','../n_img/power_such/btn_9.jpg','../n_img/power_such/btn_11.jpg')"><table width="527" border="0" cellspacing="0" cellpadding="0">
@@ -41,22 +51,23 @@
                   <tr >
                     <td height="24">
                     	<form id="stateform" name="form1" method="post" action="">
-                      <select name="jumpMenu" id="stateselect" "width="20px"  onchange="MM_jumpMenu('parent',this,0)">
-                      	<option value="-1" selected="selected">-주-</option>
+                      <select name="jumpMenu" id="stateselect" "width="20px"  onchange="MM_selectMenu(0)">
+                      	<option value="0" selected="selected">-주-</option>
+                      	<?=rg_html_option($state_list,$data['jumpMenu'])?>
                       </select>
                     </form></td>
                   </tr>
                   <tr>
                     <td height="24"><form id="cityform" name="form2" method="post" action="">
-                      <select name="jumpMenu2" id="cityselect" onchange="MM_jumpMenu('parent',this,0)">
-                      	<option value="-1" selected="selected">-도시-</option>
+                      <select name="jumpMenu2" id="cityselect" onchange="MM_selectMenu(1)">
+                      	<option value="0" selected="selected">-도시-</option>
                       </select>
                     </form></td>
                   </tr>
                   <tr>
                     <td>
-                      <select name="jumpMenu3" id="schoolselect" onchange="MM_jumpMenu('parent',this,0)">
-                      	<option value="-1" selected="selected">-학교-</option>
+                      <select name="jumpMenu3" id="schoolselect" onchange="MM_selectMenu(2)">
+                      	<option value="0" selected="selected">-학교-</option>
                       </select>
                     </td>
                   </tr>

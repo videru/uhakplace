@@ -15,6 +15,10 @@
      $ss_list = $_const['area3']; //필리핀지역
     }elseif($national=="4") {
      $ss_list = $_const['area4']; // 영국지역
+    }elseif($national=="5") {
+    	$ss_list = $_const['area5']; // 캐나다지역
+    }elseif($national=="6") {
+    	$ss_list = $_const['area6']; // 미국지역
     }
 
 	if($mode=='modify' || $mode=='delete') {
