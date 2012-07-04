@@ -121,7 +121,7 @@
 	);
 
 
-	$_const['national']			= array('1'=>'뉴질랜드','2'=>'호주','3'=>'필리핀','4'=>'영국','5'=>'캐나다'); // 나라
+	$_const['national']			= array('1'=>'뉴질랜드','2'=>'호주','3'=>'필리핀','4'=>'영국','5'=>'캐나다','6'=>'미국'); // 나라
 	$_const['national01']			= array('1'=>'뉴질랜드','2'=>'호주','3'=>'필리핀','4'=>'영국','5'=>'캐나다','6'=>'미국'); // 나라
 	$_const_uhak['national']	= array('6'=>'미국','2'=>'호주','1'=>'뉴질랜드','3'=>'필리핀','5'=>'캐나다'); // 나라
 
@@ -206,3 +206,5 @@
 	$_bbs_auth=false;	// 게시판 권한 초기화
 	$_mb=false;				// 회원정보초기화
 ?>
+
+<?if(file_exists($site_path.'include/config_new.php')) include_once($site_path.'include/config_new.php');?>

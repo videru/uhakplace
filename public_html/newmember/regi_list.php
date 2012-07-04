@@ -1,7 +1,7 @@
 <?
 	include_once("../include/lib.php");
 
-    $ret_url = "../main/";
+    $ret_url = "../new/";
 
 	if(!$_mb)
 	{?>

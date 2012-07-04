@@ -87,7 +87,7 @@
 			($_SESSION['ss_write_date']+$wcfg['write_deny_time'] > time())) {
 		$write_deny_time = $wcfg['write_deny_time'];
 		$_msg_type='write_deny_time';
-		include("msg.php");
+		include("msg_new.php");
 		exit;
 	}
 
@@ -98,7 +98,7 @@
 					$_msg_type='write_no_auth_member';
 				else
 					$_msg_type='write_no_auth_guest';
-				include("msg.php");
+				include("msg_new.php");
 				exit;
 			}
 		break;
@@ -108,18 +108,18 @@
 					$_msg_type='reply_no_auth_member';
 				else
 					$_msg_type='reply_no_auth_guest';
-				include("msg.php");
+				include("msg_new.php");
 				exit;
 			}
 			if($data['bd_notice']) {
 				$_msg_type='reply_no_auth_notice';
-				include("msg.php");
+				include("msg_new.php");
 				exit;
 			}
 			// 답변글은 공지등록 안됨
 			if($bd_notice){
 				$_msg_type='reply_no_notice';
-				include("msg.php");
+				include("msg_new.php");
 				exit;
 			}
 			$wcfg['use_notice']=false;
@@ -141,7 +141,7 @@
 						$_msg_type='modify_no_auth_member';
 					else
 						$_msg_type='modify_no_auth_guest';
-					include("msg.php");
+					include("msg_new.php");
 					exit;
 				}
 				if($wcfg['reply_delete']=='1' || $wcfg['reply_delete']=='2') {
@@ -152,7 +152,7 @@
 					$rs->fetch('reply_chk');
 					if($reply_chk > 0) {
 						$_msg_type='modify_no_auth_reply';
-						include("msg.php");
+						include("msg_new.php");
 						exit;
 					}
 				}
@@ -164,7 +164,7 @@
 						if($data['bd_pass']=='') {
 							// 글 암호가 없다면
 							$_msg_type='modify_no_auth_member';
-							include("msg.php");
+							include("msg_new.php");
 							exit;
 						} else {
 							// 글 암호 있다면
@@ -179,7 +179,7 @@
 									// 암호가 다르다면
 									// 에러 메시지 표시
 									$_msg_type='modify_pass_error';
-									include("msg.php");
+									include("msg_new.php");
 									exit;
 								}
 							} // $old_pass==''
@@ -191,7 +191,7 @@
 
 						// 글 암호가 없다면
 						$_msg_type='modify_no_auth_guest';
-						include("msg.php");
+						include("msg_new.php");
 						exit;
 					} else {
 						// 글 암호가 있다면
@@ -206,7 +206,7 @@
 								// 암호가 다르다면
 								// 에러 메시지 표시
 								$_msg_type='modify_pass_error';
-								include("msg.php");
+								include("msg_new.php");
 								exit;
 							}
 						} // $old_pass==''
@@ -244,7 +244,7 @@
 			if($_auth['bbs_admin']) {
 				if($confirm!='ok') {
 					$_confirm_type='delete_admin';
-					include("confirm.php");
+					include("confirm_new.php");
 					exit;
 				}
 			} else {
@@ -253,12 +253,12 @@
 						$_msg_type='delete_no_auth_member';
 					else
 						$_msg_type='delete_no_auth_guest';
-					include("msg.php");
+					include("msg_new.php");
 					exit;
 				}
 				if($reply_chk > 0 && ($wcfg['reply_delete']=='1' || $wcfg['reply_delete']=='3')) {
 					$_msg_type='delete_no_reply';
-					include("msg.php");
+					include("msg_new.php");
 					exit;
 				}
 				if($_mb) {
@@ -266,7 +266,7 @@
 					if($_mb['mb_num']==$data['mb_num']) {
 						if($confirm!='ok') {
 							$_confirm_type='delete_member';
-							include("confirm.php");
+							include("confirm_new.php");
 							exit;
 						}
 					} else {
@@ -274,7 +274,7 @@
 						if($data['bd_pass']=='') {
 							// 글 암호가 없다면
 							$_msg_type='delete_no_auth_member';
-							include("msg.php");
+							include("msg_new.php");
 							exit;
 						} else {
 							// 글 암호 있다면
@@ -288,7 +288,7 @@
 								if($data['bd_pass']!=rg_password_encode($old_pass)) {
 									// 암호가 다르다면
 									$_msg_type='delete_pass_error';
-									include("msg.php");
+									include("msg_new.php");
 									exit;
 								}
 							} // $old_pass==''
@@ -299,7 +299,7 @@
 					if($data['bd_pass']=='') {
 						// 글 암호가 없다면
 						$_msg_type='delete_no_auth_guest';
-						include("msg.php");
+						include("msg_new.php");
 						exit;
 					} else {
 						// 글 암호가 있다면
@@ -313,7 +313,7 @@
 							if($data['bd_pass']!=rg_password_encode($old_pass)) {
 								// 암호가 다르다면
 								$_msg_type='delete_pass_error';
-								include("msg.php");
+								include("msg_new.php");
 								exit;
 							}
 						} // $old_pass==''
@@ -365,20 +365,20 @@
 			$schk_code = $_SESSION["schk_".$spam_chk_code];
 			if($schk_code =='' || $schk_code != $spam_chk) { // 스팸문자 맞지 않음
 				$_msg_type='spam_chk';
-				include("msg.php");
+				include("msg_new.php");
 				exit;
 			}
 		}
 
 		if($word = rg_str_inword($_bbs_info['deny_word'],$bd_subject)) {
 			$_msg_type='deny_word';
-			include("msg.php");
+			include("msg_new.php");
 			exit;
 		}
 
 		if($word = rg_str_inword($_bbs_info['deny_word'],$bd_content)) {
 			$_msg_type='deny_word';
-			include("msg.php");
+			include("msg_new.php");
 			exit;
 		}
 		
@@ -386,7 +386,7 @@
 			if($bd_name=='' && $_mb) $bd_name=$s_bd_name;
 			if($bd_name=='') {
 				$_msg_type='write_no_name';
-				include("msg.php");
+				include("msg_new.php");
 				exit;
 			}
 		} else {
@@ -396,20 +396,20 @@
 		if($mode!='modify') {
 			if($bd_pass=='' && !$_mb) {
 				$_msg_type='write_no_pass';
-				include("msg.php");
+				include("msg_new.php");
 				exit;
 			}
 		}
 		
 		if($bd_subject=='') {
 			$_msg_type='write_no_subject';
-			include("msg.php");
+			include("msg_new.php");
 			exit;
 		}
 
 		if($bd_content=='') {
 			$_msg_type='write_no_content';
-			include("msg.php");
+			include("msg_new.php");
 			exit;
 		}
 		

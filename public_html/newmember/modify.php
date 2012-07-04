@@ -174,7 +174,17 @@
 	}
 ?>
 <? include_once('../temp/top.php'); ?>
-<? include_once('../temp/nav.php'); ?>
+<table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
+   <div style="height:52px"></div>
+  <tr>
+    <td width="223" valign="top"><embed src="../n_img/left_08.swf" width="223" height="400"></embed></td>
+    <td width="37">&nbsp;</td>
+    <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><img src="../n_img/8_1.jpg" width="720" height="250" /></td>
+      </tr>
+<tr>
+ <td>
 <table width="720" align="center" border="0" cellpadding="0" cellspacing="0">
 	<tr>
 		<td>

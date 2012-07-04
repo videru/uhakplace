@@ -17,7 +17,7 @@
         <td><img src="../n_img/8_8.jpg" width="720" height="250" /></td>
       </tr>
       <tr>
-        <td><iframe src="online.php" width="100%" height="1200" border="0" frameborder="no" scrolling="no" marginwidth="0" hspace="0" vspace="0"></iframe></td>
+        <td><? include_once('./online.php.php'); ?></td>
       </tr>
     </table></td>
   </tr>

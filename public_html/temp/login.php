@@ -189,13 +189,13 @@ if($_SERVER['REQUEST_METHOD']=='POST' && $form_mode=='member_login_ok') {
 
 <map name="Map" id="Map">
 	<area shape="rect" coords="249,55,370,85"
-		href="http://www.uhakplace.co.kr/temp/8_3.html" target="_parent"
+		href="http://www.uhakplace.co.kr/temp/8_3.php" target="_parent"
 		onfocus="blur();">
 	<area shape="rect" coords="248,85,372,110"
-		href="http://www.uhakplace.co.kr/temp/8_4.html" target="_parent"
+		href="http://www.uhakplace.co.kr/temp/8_4.php" target="_parent"
 		onfocus="blur();">
 	<area shape="rect" coords="249,110,373,139"
-		href="http://www.uhakplace.co.kr/temp/8_2.html" target="_parent"
+		href="http://www.uhakplace.co.kr/temp/8_2.php" target="_parent"
 		onfocus="blur();">
 </map>
 </body>
