@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
-<title>ÇÊ¸®ÇÉ Àü¹® Æ÷ÅÐ ÇÊ»ç°ú</title>
+<title>í•™ì›ì •ë³´</title>
 </head>
 
 <body>
@@ -14,7 +14,7 @@
     <td width="37">&nbsp;</td>
     <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td>ÇÐ¿øÁ¤º¸</td>
+        <td><? include_once('../phil/school_list_new.php'); ?></td>
       </tr> 
       
     </table></td>

@@ -14,7 +14,7 @@ if(!isset($site_path) || preg_match("/:\/\//",$site_path)) $site_path='../';
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 <script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script language="javascript" type="text/javascript" src="../temp/search_school.js?20120704_1"></script>
+<script language="javascript" type="text/javascript" src="../temp/search_school.js?20120704_2"></script>
 </head>
 
 <body onload="MM_preloadImages('../n_img/power_such/btn_6 (2).jpg','../n_img/power_such/btn_2.jpg','../n_img/power_such/btn_4.jpg','../n_img/power_such/btn_7.jpg','../n_img/power_such/btn_9.jpg','../n_img/power_such/btn_11.jpg')"><table width="527" border="0" cellspacing="0" cellpadding="0">
@@ -72,7 +72,7 @@ if(!isset($site_path) || preg_match("/:\/\//",$site_path)) $site_path='../';
                     </td>
                   </tr>
                 </table></td>
-                <td align="left"><a href="#"><img src="../n_img/power_such/btn_such.jpg" width="80" height="22" border="0" /></a></td>
+                <td align="left"><a href="javascript:searchschool()"><img src="../n_img/power_such/btn_such.jpg" width="80" height="22" border="0" /></a></td>
               </tr>
             </table></td>
             </tr>

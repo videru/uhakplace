@@ -86,7 +86,7 @@ if (ereg(",",$data[sc_type])) {
 <table width="692" align="center" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td >
-<table width="692" border="0" cellspacing="0" cellpadding="0">
+<table width="692" border="0" cellspacing="0" cellpadding="0" align="center" >
   <tr>
     <td class="a_sub_title2" background="../img/school_view_title_bg.gif" height="36" ><?=$data['s_title']?> (<?=$data['title']?>)</td>
   </tr>

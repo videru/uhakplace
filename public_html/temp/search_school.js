@@ -46,6 +46,7 @@ var state_city =
 
 var nationalcode;//선택된 국가
 var statecode=0;//선택된 주
+var citycode=0;//선택된 주
 
 function MM_preloadImages() { //v3.0
 	var d=document; if(d.images){
@@ -76,7 +77,9 @@ function MM_swapImage() { //v3.0
 		if ((x=MM_findObj(a[i]))!=null){
 		document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];
 	}
-
+	nationalcode = null;
+	statecode =null;
+	citycode =null;
 	$('#stateselect').empty();
 	$('#cityselect').empty();
 	$('#schoolselect').empty();
@@ -90,33 +93,56 @@ function MM_swapImage() { //v3.0
 
 		//팔리핀의 경우에는 주가 없고 나머지는 있음
 		if(a[3] ==3)
+		{
 			$("#stateselect").attr("disabled",'disabled');
-		else $("#stateselect").removeAttr("disabled");
 
-		$('#stateselect').append('<option value="'+0+'" selected="selected">-주-</option>');
-		$.get("http://uhakplace.co.kr/temp/state.php?nationalcode="+nationalcode,function(msg)
-				{
-					reg=msg;
-					var jsc = new Array();
-					
-					jsc =reg.split("--__--");
-		
-					for( var idx in jsc)
+			//필리핀은 주가 없음
+
+			$.getJSON("http://uhakplace.co.kr/temp/state.php?nationalcode="+nationalcode,function(msg)
 					{
-						//-- 주 추가
-						if(jsc[idx])
-						{
-							var temp = idx*1+1;
-							$('#stateselect').append('<option value="'+temp+'">'+jsc[idx]+'</option>');
-						}
-					}
 
-					 $("#stateselect").hide(0);
-					 $("#stateselect").show(0);
-				});
+						var cities =msg.cities;
+						for( var idx in cities)
+						{
+							//-- 주 추가
+							if(cities[idx])
+								$('#cityselect').append('<option value="'+cities[idx].index+'">'+cities[idx].name+'</option>');
+						}
+	
+
+						 $("#cityselect").hide(0);
+						 $("#cityselect").show(0);
+					});
+			
+		}
+		else
+		{
+			$("#stateselect").removeAttr("disabled");
+
+			$('#stateselect').append('<option value="'+0+'" selected="selected">-주-</option>');
+			$.get("http://uhakplace.co.kr/temp/state.php?nationalcode="+nationalcode,function(msg)
+					{
+						reg=msg;
+						var jsc = new Array();
+						
+						jsc =reg.split("--__--");
+			
+						for( var idx in jsc)
+						{
+							//-- 주 추가
+							if(jsc[idx])
+							{
+								var temp = idx*1+1;
+								$('#stateselect').append('<option value="'+temp+'">'+jsc[idx]+'</option>');
+							}
+						}
+	
+						 $("#stateselect").hide(0);
+						 $("#stateselect").show(0);
+					});
 	
 				
-
+		}
 	
 	}
 }
@@ -147,6 +173,8 @@ function MM_selectMenu(type)
 	switch(type)
 	{
 		case 0://주선택
+			citycode=null;
+			
 			$('#cityselect').empty();
 			$('#schoolselect').empty();
 			$('#schoolselect').append('<option value="'+0+'" selected="selected">-학교-</option>');
@@ -173,9 +201,28 @@ function MM_selectMenu(type)
 
 			break;
 		case 1://도시선택
+			
 			$('#schoolselect').empty();
+			citycode=$("#cityselect option:selected")[0].value* 1;
 			
 			$('#schoolselect').append('<option value="'+0+'" selected="selected">-학교-</option>');
+			$.getJSON("http://uhakplace.co.kr/temp/state.php?nationalcode="+nationalcode+"&state="+statecode+"&city="+citycode
+					,function(result)
+					{
+					
+						var schools =result.schools;
+						for( var idx in schools)
+						{
+							//-- 학교 추가
+							if(schools[idx])
+								$('#schoolselect').append('<option value="'+schools[idx].num+'">'+schools[idx].title+'</option>');
+						}
+
+						 $("#schoolselect").hide(0);
+						 $("#schoolselect").show(0);
+					});
+			
+			
 			
 			 $("#schoolselect").hide(0);
 			 $("#schoolselect").show(0);
@@ -185,4 +232,11 @@ function MM_selectMenu(type)
 			break;
 	}
 
+}
+
+function searchschool()
+{
+	var nationalcode;//선택된 국가
+	var statecode;//선택된 주
+	var citycode;//선택된 주
 }
