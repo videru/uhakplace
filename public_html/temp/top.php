@@ -39,14 +39,14 @@ function bookmark() {
 
 <body >
 <div style="height:35px;"></div>
-<table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
+<table width="980" border="0" cellpadding="0" cellspacing="0" align="center">
   <tr align="right">
-    <td>
+    <td align="right">
     	<?=rg_outlogin('jw_top')?>
     	
     </td>
   </tr>
-  <tr>
+  <tr align="center" >
     <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td><a href="http://uhakplace.co.kr" target="_parent" onFocus="blur();"><img src="../n_img/main_07.jpg" width="274" height="61" border="0" /></a></td>

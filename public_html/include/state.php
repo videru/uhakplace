@@ -12,7 +12,7 @@ $state = $_GET['state'];
 $city = $_GET['city'];
 
 if ($nationalcode==1) {
-	$area = $_const['area1']; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿?
+	$area = $_const['area1']; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 }elseif($nationalcode==2) {
 	$area = $_const['area2']; // È£ï¿½ï¿½ï¿½ï¿½
 }elseif($nationalcode==3) {
@@ -70,8 +70,8 @@ if($nationalcode)
 					if($_const['area3'][$i])
 					{
 						$name=$_const['area3'][$i];
-						$str.="{".'"index"'.":".($i).",".'"name"'.":".'"'.$name.'"'."}";
-						if($i != sizeof($_const['area3']))
+						$str.="{".'"index"'.":".($i+1).",".'"name"'.":".'"'.$name.'"'."}";
+						if($i != sizeof($_const['area3'])-1)
 							$str.=",";
 					}
 				

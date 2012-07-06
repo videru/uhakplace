@@ -4,7 +4,7 @@
   최종수정일 : 
  ===================================================== */
 	include_once("../include/lib.php");
-	include_once($_path['inc']."lib_bbs.php");
+	include_once($_path['inc']."lib_bbs_new.php");
 	
 	$mode='list';
 	

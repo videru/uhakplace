@@ -70,12 +70,12 @@ $national=$data['national'] ;
 			$num=$rs->get_insert_id();		
 		}
 	     	$rs->commit();	
-		   rg_href("../index.php","상담 문의가 접수되었습니다.");
+		   rg_href("../phil/index_new.php","상담 문의가 접수되었습니다.");
 
 }
 ?>
 
-<? include('header.php'); ?>
+
 
 <form name="regi_form" method="post" width="720" action="?<?=$_get_param[3]?>" onSubmit="return validate(this)" enctype="multipart/form-data">
 

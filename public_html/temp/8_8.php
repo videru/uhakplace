@@ -17,7 +17,7 @@
         <td><img src="../n_img/8_8.jpg" width="720" height="250" /></td>
       </tr>
       <tr>
-        <td><? include_once('./online.php.php'); ?></td>
+        <td><? include_once('./online.php'); ?></td>
       </tr>
     </table></td>
   </tr>

@@ -171,7 +171,7 @@
 							if($old_pass=='') { // 입력된 암호 없다면
 								// 암호입력
 								$_pass_type='modify';
-								include("pass.php");
+								include("pass_new.php");
 								exit;
 							} else {
 								// 입력된 암호 있다면 비교
@@ -198,7 +198,7 @@
 						if($old_pass=='') { // 입력된 암호 없다면
 							// 암호입력
 							$_pass_type='modify';
-							include("pass.php");
+							include("pass_new.php");
 							exit;
 						} else {
 							// 입력된 암호 있다면 비교
@@ -281,7 +281,7 @@
 							if($old_pass=='') { // 입력된 암호 없다면
 								// 암호입력
 								$_pass_type='delete';
-								include("pass.php");
+								include("pass_new.php");
 								exit;
 							} else {
 								// 입력된 암호 있다면 비교
@@ -306,7 +306,7 @@
 						if($old_pass=='') { // 입력된 암호 없다면
 							// 암호입력
 							$_pass_type='delete';
-							include("pass.php");
+							include("pass_new.php");
 							exit;
 						} else {
 							// 입력된 암호 있다면 비교

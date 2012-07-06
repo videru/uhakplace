@@ -14,7 +14,7 @@ if(!isset($site_path) || preg_match("/:\/\//",$site_path)) $site_path='../';
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 <script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script language="javascript" type="text/javascript" src="../temp/search_school.js?20120704_2"></script>
+<script language="javascript" type="text/javascript" src="../temp/search_school.js?20120704_3"></script>
 </head>
 
 <body onload="MM_preloadImages('../n_img/power_such/btn_6 (2).jpg','../n_img/power_such/btn_2.jpg','../n_img/power_such/btn_4.jpg','../n_img/power_such/btn_7.jpg','../n_img/power_such/btn_9.jpg','../n_img/power_such/btn_11.jpg')"><table width="527" border="0" cellspacing="0" cellpadding="0">
@@ -27,12 +27,12 @@ if(!isset($site_path) || preg_match("/:\/\//",$site_path)) $site_path='../';
       <tr>
         <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td><a href="#" onfocus="blur();" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image7','','../n_img/power_such/btn_7.jpg',1)"><img src="../n_img/power_such/btn_6.jpg" name="Image7" width="88" height="31" border="0" id="Image7" /></a></td><!--1-->	
-            <td><a href="#" onfocus="blur();" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image6','','../n_img/power_such/btn_6 (2).jpg',2)"><img src="../n_img/power_such/btn_5.jpg" name="Image6" width="77" height="31" border="0" id="Image6" /></a></td><!--2-->
-            <td><a href="#" onfocus="blur();" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image9','','../n_img/power_such/btn_11.jpg',3)"><img src="../n_img/power_such/btn_10.jpg" name="Image9" width="88" height="31" border="0" id="Image9" /></a></td><!--3-->	
-            <td><a href="#" onfocus="blur();" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image8','','../n_img/power_such/btn_9.jpg',4)"><img src="../n_img/power_such/btn_8.jpg" name="Image8" width="77" height="31" border="0" id="Image8" /></a></td><!--4-->	
-            <td><a href="#" onfocus="blur();" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image5','','../n_img/power_such/btn_4.jpg',5)"><img src="../n_img/power_such/btn_3.jpg" name="Image5" width="77" height="31" border="0" id="Image5" /></a></td><!--5-->	
-            <td><a href="#" onfocus="blur();" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image4','','../n_img/power_such/btn_2.jpg',6)"><img src="../n_img/power_such/btn_1.jpg" name="Image4" width="84" height="31" border="0" id="Image4" /></a></td><!--6-->	
+            <td><a href="javascript:MM_swapImage('Image7','','../n_img/power_such/btn_7.jpg',1)" onfocus="blur();" ><img src="../n_img/power_such/btn_6.jpg" name="Image7" width="88" height="31" border="0" id="Image7" /></a></td><!--1-->	
+            <td><a href="javascript:MM_swapImage('Image6','','../n_img/power_such/btn_6 (2).jpg',2)" onfocus="blur();" ><img src="../n_img/power_such/btn_5.jpg" name="Image6" width="77" height="31" border="0" id="Image6" /></a></td><!--2-->
+            <td><a href="javascript:MM_swapImage('Image9','','../n_img/power_such/btn_11.jpg',3)" onfocus="blur();" ><img src="../n_img/power_such/btn_10.jpg" name="Image9" width="88" height="31" border="0" id="Image9" /></a></td><!--3-->	
+            <td><a href="javascript:MM_swapImage('Image8','','../n_img/power_such/btn_9.jpg',4)" onfocus="blur();" ><img src="../n_img/power_such/btn_8.jpg" name="Image8" width="77" height="31" border="0" id="Image8" /></a></td><!--4-->	
+            <td><a href="javascript:MM_swapImage('Image5','','../n_img/power_such/btn_4.jpg',5)" onfocus="blur();"  ><img src="../n_img/power_such/btn_3.jpg" name="Image5" width="77" height="31" border="0" id="Image5" /></a></td><!--5-->	
+            <td><a href="javascript:MM_swapImage('Image4','','../n_img/power_such/btn_2.jpg',6)" onfocus="blur();" ><img src="../n_img/power_such/btn_1.jpg" name="Image4" width="84" height="31" border="0" id="Image4" /></a></td><!--6-->	
           </tr>
         </table></td>
       </tr>

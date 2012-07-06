@@ -73,6 +73,7 @@ function MM_findObj(n, d) { //v4.01
 }
 
 function MM_swapImage() { //v3.0
+	MM_swapImgRestore();
 	var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
 		if ((x=MM_findObj(a[i]))!=null){
 		document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];
@@ -228,7 +229,8 @@ function MM_selectMenu(type)
 			 $("#schoolselect").show(0);
 			break;
 		case 2://학교 선택
-				
+		    var  schoolcode=$("#schoolselect option:selected")[0].value* 1;
+				window.location="http://uhakplace.co.kr/phil/school_view_new.php?num="+ schoolcode +"&national="+nationalcode;
 			break;
 	}
 
@@ -236,7 +238,22 @@ function MM_selectMenu(type)
 
 function searchschool()
 {
-	var nationalcode;//선택된 국가
-	var statecode;//선택된 주
-	var citycode;//선택된 주
+
+	
+	if(nationalcode)
+	{
+	    if(statecode !=0 && citycode == 0)
+	    {
+	        alert("도시를 선택하세요");
+	        return;
+	    }
+	    if( citycode !=0)
+	    {
+	       window.location="http://uhakplace.co.kr/phil/school_list_new.php?national="+nationalcode+"&area="+citycode;//국가도시 선택
+	    }
+	    else window.location="http://uhakplace.co.kr/phil/school_list_new.php?national="+nationalcode;//국가만 선택
+	}
+	
+	
+	
 }

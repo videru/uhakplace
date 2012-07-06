@@ -4,17 +4,68 @@
 
   최종수정일 : 
  ===================================================== */
- $_const['area1']			= array('1'=>'오클랜드','2'=>'크라이스트쳐치','3'=>'웰링턴','4'=>'기타'); // 뉴질랜드지역	
-	$_const['area2']			= array('1'=>'시드니','2'=>'브리스번','3'=>'퍼스','4'=>'멜번','5'=>'호바트','6'=>'케언즈','7'=>'기타지역' ,'8'=>'애들레이드','9'=>'골드코스트'); // 호주지역
-	$_const['area3']			= array('1'=>'Manila','2'=>'Cebu','3'=>'바기오','4'=>'Iloilo','5'=>'Bacolod','6'=>'기타지역','7'=>'Clark','8'=>'Davao','9'=>'Bagio','10'=>'Subic','11'=>'Tarlac','12'=>'Tagaytay'); // 필리핀지역	
-	$_const['area4']			= array('1'=>'런던','2'=>'브리스틀','3'=>'옥스포드','4'=>'캠브릿지','5'=>'본머스','6'=>'기타지역','7'=>'Eastbourne','8'=>'Manchester'); // 영국지역
-	$_const['area5']			= array('1'=>'Calgary','2'=>'Halifax','3'=>'Montreal','4'=>'Ottawa','5'=>'Surrey','6'=>'Toronto','7'=>'Vancouver','8'=>'Victoria','9'=>'Whistler'); //캐나다
- 
-$_const['area6'] = array('1'=>'Los Angeles','2'=>'San Diego','3'=>'San Francisco','4'=>'Chicago','5'=>'Boston','6'=>'New York City','7'=>'Seattle'); // 미국 지역
-
+ $_const['area1']			= array('1'=>'Auckland'
+                                   ,'2'=>'Christchurch'
+								   ,'3'=>'Wellington'
+								   ,'4'=>'기타'
+								   ); // 뉴질랜드지역	
+	$_const['area2']		= array('1'=>'Sydney'
+	                               ,'2'=>'Brisbane'
+								   ,'3'=>'Perth'
+								   ,'4'=>'Melbourne'
+								   ,'5'=>'Hobart'
+								   ,'6'=>'Cairns'
+								   ,'7'=>'기타지역'
+								   ,'8'=>'Adelaide'
+								   ,'9'=>'Gold coast'); // 호주지역
+	$_const['area3']		= array('1'=>'Manila'
+	                               ,'2'=>'Cebu'
+								   ,'3'=>'바기오'
+								   ,'4'=>'Iloilo'
+								   ,'5'=>'Bacolod'
+								   ,'6'=>'기타지역'
+								   ,'7'=>'Clark'
+								   ,'8'=>'Davao'
+								   ,'9'=>'Bagio'
+								   ,'10'=>'Subic'
+								   ,'11'=>'Tarlac'
+								   ,'12'=>'Tagaytay'
+								   ); // 필리핀지역	
+	$_const['area4']		= array('1'=>'런던'
+	                               ,'2'=>'브리스틀'
+								   ,'3'=>'옥스포드'
+								   ,'4'=>'캠브릿지'
+								   ,'5'=>'본머스'
+								   ,'6'=>'기타지역'
+								   ,'7'=>'Eastbourne'
+								   ,'8'=>'Manchester'
+								   ); // 영국지역
+	$_const['area5']		= array('1'=>'Calgary'
+	                               ,'2'=>'Halifax'
+								   ,'3'=>'Montreal'
+								   ,'4'=>'Ottawa'
+								   ,'5'=>'Surrey'
+								   ,'6'=>'Toronto'
+								   ,'7'=>'Vancouver'
+								   ,'8'=>'Victoria'
+								   ,'9'=>'Whistler'
+								   ); //캐나다 
+$_const['area6']			 = array('1'=>'Los Angeles'
+                                    ,'2'=>'San Diego'
+									,'3'=>'San Francisco'
+									,'4'=>'Chicago'
+									,'5'=>'Boston'
+									,'6'=>'New York City'
+									,'7'=>'Seattle'
+									); // 미국 지역
+									
+									
+									
+									
+									
 $_const['state'] = array('1'=>array('1'=>'남섬'
 						           ,'2'=>'북섬'												
-                         )//뉴질랜드
+                        			 )//뉴질랜드
                         ,'2'=>array('1'=>'ACT'
 					               ,'2'=>'NSW'
 								   ,'3'=>'NT'
@@ -23,7 +74,7 @@ $_const['state'] = array('1'=>array('1'=>'남섬'
 								   ,'6'=>'TSA'
 							       ,'7'=>'VIC'
 								   ,'8'=>'WA'	
-						)//호주
+									)//호주
                         ,'3'=>array()//필리핀
                         ,'4'=>array('1'=>'Bournemouth'
 					               ,'2'=>'Brighton'
@@ -100,17 +151,54 @@ $_const['state'] = array('1'=>array('1'=>'남섬'
                         		   )//미국
                         ); //  
 
-$_const['statecitynum'] = array('1'=>array('1'=>array()//남섬
-											,'2'=>array(1)//북섬
+$_const['statecitynum'] = array('1'=>array('1'=>array('2')//남섬
+										  ,'2'=>array('1','3')//북섬
 
 								)//뉴질랜드
-                        		,'2'=>array('1'=>array()//Canberra
-								           ,'2'=>array()//기타지역
-										   ,'3'=>array(1)//Sydney	
+                        		,'2'=>array('1'=>array()//ACT
+								           ,'2'=>array('1')//NSW
+										   ,'3'=>array()//NT
+										   ,'4'=>array('2','6','9')//QLD
+										   ,'5'=>array('8')//SA
+										   ,'6'=>array()//TSA
+										   ,'7'=>array('4')//VIC	
+										   ,'8'=>array('3')//WA	
 								)//호주
-		                        ,'3'=>array('1'=>array('1','2','3','4','5','6'))//필리핀
-		                        ,'4'=>array()//영국
-		                        ,'5'=>array()//캐나다
+		                        ,'3'=>array('1'=>array('1')//Manila
+								           ,'2'=>array('2')//Cebu
+										   ,'3'=>array('3')//바기오
+										   ,'4'=>array('4')//Iloilo
+										   ,'5'=>array('5')//Bacolod
+										   ,'6'=>array('6')//기타지역
+										   ,'7'=>array('7')//Clark
+										   ,'8'=>array('8')//Davao
+										   ,'9'=>array('9')//Bagio
+										   ,'10'=>array('10')//Subic
+										   ,'11'=>array('11')//Tarlac
+										   ,'12'=>array('12')//Tagaytay
+											)//필리핀
+		                        ,'4'=>array('1'=>array('1')//Bournemouth
+							               ,'2'=>array('2')//Brighton
+									       ,'3'=>array('3')//Cambridge
+										   ,'4'=>array('4')//Eastbourne
+										   ,'5'=>array('5')//London
+										   ,'6'=>array('6')//Manchester
+										   ,'7'=>array('7')//Oxford		
+								)//영국
+		                        ,'5'=>array('1'=>array('1')//Alberta
+							               ,'2'=>array('2')//British Columbia
+									       ,'3'=>array('3')//Manitoba
+										   ,'4'=>array('4')//New Brunswick
+										   ,'5'=>array('5')//Newfoundland
+										   ,'6'=>array('6')//Northwest Territories
+										   ,'7'=>array('7')//Nova Scotia	
+										   ,'8'=>array('8')//Nunavut	
+										   ,'9'=>array('9')//Ontario	
+										   ,'10'=>array('10')//Prince Edward Island	
+										   ,'11'=>array('11')//Quebec	
+										   ,'12'=>array('12')//Saskatchewan	
+										   ,'13'=>array('13')//Yukon Territory	
+										   )//캐나다
 		                        ,'6'=>array('1'=>array()//Alrabama(AL)
 		                        		          ,'2'=>array()//Arizona(AZ)
 		                        		          ,'3'=>array()//Arkansas(AR)

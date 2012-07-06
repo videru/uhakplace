@@ -32,12 +32,3 @@ function MM_swapImage() { //v3.0
 }
 -->
 </style>
-
-<body onLoad="MM_preloadImages('img/main_phi_sch2-1.gif','img/main_phi_sch4-1.gif','img/main_phi_sch5-1.gif','img/main_phi_sch6-1.gif','img/main_phi_sch7-1.gif','img/main_phi_sch8-1.gif','img/main_phi_sch9-1.gif','img/main_phi_sch10-1.gif','img/main_phi_sch11-1.gif','img/main_phi_sch12-1.gif','../img/main_phi_sch1-1.gif','../img/main_phi_sch2-1.gif','../img/main_phi_sch4-1.gif','../img/main_phi_sch5-1.gif','../img/main_phi_sch6-1.gif','../img/main_phi_sch7-1.gif','../img/main_phi_sch8-1.gif','../img/main_phi_sch9-1.gif','../img/main_phi_sch10-1.gif','../img/main_phi_sch11-1.gif','../img/main_phi_sch12-1.gif')">
-
-<table width="954" border="0" cellspacing="0" cellpadding="0" align="center">
-  <tr>
-    <td width="520" valign="top">
-     <table width="520" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td>

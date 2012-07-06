@@ -5,7 +5,7 @@
 	2007-12-10 $bd_home XSS취약점 수정
  ===================================================== */
 	include_once("../include/lib.php");
-	include_once($_path['inc']."lib_bbs.php");
+	include_once($_path['inc']."lib_bbs_new.php");
 	
 	$tmp_level=$_gmb_info['gm_level'];
 	if($tmp_level=='') $tmp_level=0;
@@ -261,7 +261,7 @@
 								if($old_pass=='') { // 입력된 암호 없다면
 									// 암호입력
 									$_pass_type='comment_delete';
-									include("pass.php");
+									include("pass_new.php");
 									exit;
 								} else {
 									// 입력된 암호 있다면 비교
@@ -287,7 +287,7 @@
 							if($old_pass=='') { // 입력된 암호 없다면
 								// 암호입력
 								$_pass_type='comment_delete';
-								include("pass.php");
+								include("pass_new.php");
 								exit;
 							} else {
 								// 입력된 암호 있다면 비교
@@ -411,7 +411,7 @@
 					if($old_pass=='') { // 암호입력
 						// 암호입력
 						$_pass_type='view_secret';
-						include("pass.php");
+						include("pass_new.php");
 						exit;
 					} else {
 						if($bd_pass!=rg_password_encode($old_pass)) {

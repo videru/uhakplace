@@ -22,11 +22,30 @@ $_confirm_type : 게시판에서 넘어오는 입력유형
 			
 		}
 ?>
-<?=$msg?>
+ <table border="0" cellpadding="5" cellspacing="0" align="center">
 <form name="pass_form" action="?<?=$_get_param[4]?>" method="post">
-암호를 입력해주세요.<br>
 <input type="hidden" name="mode" value="<?=$mode?>">
-<input type="password" name="old_pass" class="input2">
-<input type="image" src="../../cobra/img/confirm.gif" align="absmiddle"> 
-<img src="../../cobra/img/cancel.gif" onClick="history.back();" style="cursor:pointer" align="absmiddle">
+<tr bgcolor="#f7f7f7">
+<td align="center">
+<table border="0" cellpadding="10" cellspacing="0" bgcolor="#ffffff">
+<tr>
+<td align="center" colspan="2">
+<img src="<?=$skin_url?>images/img_pass.gif" align="absmiddle" border="0">
+<br />
+<?=$msg?>
+<br />
+<br />
+</td>
+</tr>
+<tr>
+<td align="right">
+<input type="password" name="old_pass" class="input">
+</td>
+<td>
+<input type="image" src="<?=$skin_url?>images/confirm.gif" align="absmiddle">
+<img src="<?=$skin_url?>images/cancel.gif" onClick="history.back();" style="cursor:pointer" align="absmiddle">
+</td></tr>
+</table>
+</td></tr>
 </form>
+</table>

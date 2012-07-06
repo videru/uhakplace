@@ -5,15 +5,11 @@
 
 
 <body >
-
+ <div><? include_once('../temp/top.php'); ?></div> 
+ 
 
 <table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
-	
-   
-   
-<tr>
-	<td><? include_once('../temp/top.php'); ?></td>
-</tr>
+
   <tr>
     <td><embed src="../n_img/main_flash.swf" width="980" height="361"></embed></td>
   </tr>

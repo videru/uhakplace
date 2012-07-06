@@ -82,6 +82,14 @@ if (ereg(",",$data[sc_type])) {
 
 ?>
 <? include("../temp/top.php"); ?>
+<div style="height:52px"></div>
+<table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="223" valign="top"><embed src="../n_img/left_04.swf" width="223" height="400"></embed></td>
+    <td width="37">&nbsp;</td>
+    <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td>
 <!-- 학교 정보 표시 부분 -->
 <table width="692" align="center" border="0" cellspacing="0" cellpadding="0">
   <tr>
@@ -245,9 +253,9 @@ if (ereg(",",$data[sc_type])) {
         <td>&nbsp;</td>
         <td align="right" width="76" ><a href="#" onClick="cost();"><img src="../img/btn_or_cost.gif" border="0"  align="absmiddle"/></a></td>
         <td>&nbsp;</td>
-        <td align="right" width="76" ><a href="../board/online.php?num=<?=$num?>"><img src="../img/btn_or_online.gif" border="0"   align="absmiddle"/></a></td>
+        <td align="right" width="76" ><a href="../temp/8_8.php?num=<?=$num?>"><img src="../img/btn_or_online.gif" border="0"   align="absmiddle"/></a></td>
         <td>&nbsp;</td>
-        <td align="right" width="76" ><a href="../phil/school_list.php"><img src="../img/btn_or_list.gif" border="0"   align="absmiddle"/></a></td>
+        <td align="right" width="76" ><a href="../phil/school_list_new.php"><img src="../img/btn_or_list.gif" border="0"   align="absmiddle"/></a></td>
       </tr>
     </table>	
         </td>	
@@ -401,9 +409,9 @@ if (ereg(",",$data[sc_type])) {
         <td>&nbsp;</td>
         <td align="right" width="76" ><a href="#" onClick="cost();"><img src="../img/btn_or_cost.gif" border="0"  align="absmiddle"/></a></td>
         <td>&nbsp;</td>
-        <td align="right" width="76" ><a href="../board/online.php?num=<?=$num?>"><img src="../img/btn_or_online.gif" border="0"   align="absmiddle"/></a></td>
+        <td align="right" width="76" ><a href="../temp/8_8.php?num=<?=$num?>"><img src="../img/btn_or_online.gif" border="0"   align="absmiddle"/></a></td>
         <td>&nbsp;</td>
-        <td align="right" width="76" ><a href="../phil/school_list.php"><img src="../img/btn_or_list.gif" border="0"   align="absmiddle"/></a></td>
+        <td align="right" width="76" ><a href="../phil/school_list_new.php"><img src="../img/btn_or_list.gif" border="0"   align="absmiddle"/></a></td>
       </tr>
     </table>	
         </td>	
