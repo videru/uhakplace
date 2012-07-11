@@ -11,13 +11,31 @@ if(!isset($site_path) || preg_match("/:\/\//",$site_path)) $site_path='../';
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
 <title>Untitled Document</title>
 <script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script language="javascript" type="text/javascript" src="../temp/search_school.js?20120704_3"></script>
+<script language="javascript" type="text/javascript" src="../temp/search_school.js?20120704_4"></script>
+<style type="text/css">
+#stateselect {
+	font-size: 12px;
+	height: 10px;
+	width: 174px;margin-bottom:5px;
+}
+#cityselect {
+	font-size: 12px;
+	height: 10px;
+	width: 174px;margin-bottom:5px;
+}
+#schoolselect {
+	font-size: 12px;
+	height: 10px;
+	width: 174px;
+	margin-bottom:5px;
+}
+</style>
 </head>
 
-<body onload="MM_preloadImages('../n_img/power_such/btn_6 (2).jpg','../n_img/power_such/btn_2.jpg','../n_img/power_such/btn_4.jpg','../n_img/power_such/btn_7.jpg','../n_img/power_such/btn_9.jpg','../n_img/power_such/btn_11.jpg')"><table width="527" border="0" cellspacing="0" cellpadding="0">
+<body onload="MM_preloadImages('../n_img/power_such/btn_6 (2).jpg','../n_img/power_such/btn_2.jpg','../n_img/power_such/btn_4.jpg','../n_img/power_such/btn_7.jpg','../n_img/power_such/btn_9.jpg','../n_img/power_such/btn_11.jpg')"><table width="527" height="338" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="18"><img src="../n_img/power_such/left_bg.jpg" width="18" height="375" /></td>
     <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -44,35 +62,35 @@ if(!isset($site_path) || preg_match("/:\/\//",$site_path)) $site_path='../';
             <td width="1" rowspan="3" bgcolor="#a4b79f"></td>
           </tr>
           <tr>
-            <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <td><table width="100%" height="76" border="0" cellspacing="0" cellpadding="0">
               <tr bgcolor="#fcfcfc">
                 <td width="132" height="73"><img src="../n_img/power_such/text_bg.jpg" width="132" height="73" /></td>
-                <td width="173" valign="top"><table width="100" border="0" cellspacing="0" cellpadding="0">
+                <td width="173" height="76"><table width="100" border="0" cellspacing="0" cellpadding="0"  height="76">
                   <tr >
-                    <td height="24">
-                    	<form id="stateform" name="form1" method="post" action="">
+                    <td>
+                    	
                       <select name="jumpMenu" id="stateselect" "width="20px"  onchange="MM_selectMenu(0)">
-                      	<option value="0" selected="selected">-주-</option>
+                      	<option value="0" selected="selected">-??-</option>
                       	<?=rg_html_option($state_list,$data['jumpMenu'])?>
                       </select>
-                    </form></td>
+                    </td>
                   </tr>
                   <tr>
-                    <td height="24"><form id="cityform" name="form2" method="post" action="">
+                    <td>
                       <select name="jumpMenu2" id="cityselect" onchange="MM_selectMenu(1)">
-                      	<option value="0" selected="selected">-도시-</option>
+                      	<option value="0" selected="selected">-????-</option>
                       </select>
-                    </form></td>
+                    </td>
                   </tr>
                   <tr>
                     <td>
                       <select name="jumpMenu3" id="schoolselect" onchange="MM_selectMenu(2)">
-                      	<option value="0" selected="selected">-학교-</option>
+                      	<option value="0" selected="selected">-?б?-</option>
                       </select>
                     </td>
                   </tr>
                 </table></td>
-                <td align="left"><a href="javascript:searchschool()"><img src="../n_img/power_such/btn_such.jpg" width="80" height="22" border="0" /></a></td>
+                <td align="left"><a href="javascript:searchschool()">&nbsp;&nbsp;<img src="../n_img/power_such/btn_such.jpg" width="80" height="22" border="0" /></a></td>
               </tr>
             </table></td>
             </tr>

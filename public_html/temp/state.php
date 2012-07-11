@@ -31,7 +31,7 @@ if ($nationalcode==1) {
 
 if($nationalcode)
 {
-	if($nationalcode == 3)//�ʸ���
+	if($nationalcode == 3 || $nationalcode == 4)//�ʸ���
 	{
 		
 		if($city != null)//�б� ã��
@@ -39,12 +39,8 @@ if($nationalcode)
 			$rs_list = new $rs_class($dbcon);
 			$rs_list->clear();
 			$rs_list->set_table($_table['school']);
-			if($nationalcode==3){
-				$rs_list->add_where("national = 3");
-			}else{
-				$rs_list->add_where("national = $nationalcode" );
-			}
-				
+			
+			$rs_list->add_where("national = $nationalcode" );
 				
 			if($city){
 					
@@ -63,15 +59,15 @@ if($nationalcode)
 		}else
 		{
 			$str='{"cities":[';
-			for($i=0;$i<=sizeof($_const['area3']);$i++)
+			for($i=0;$i<=sizeof($area);$i++)
 			{
 				
 				
-					if($_const['area3'][$i])
+					if($area[$i])
 					{
-						$name=$_const['area3'][$i];
+						$name=$area[$i];
 						$str.="{".'"index"'.":".($i).",".'"name"'.":".'"'.$name.'"'."}";
-						if($i != sizeof($_const['area3']))
+						if($i != sizeof($area))
 							$str.=",";
 					}
 				
@@ -99,11 +95,8 @@ if($nationalcode)
 				$rs_list = new $rs_class($dbcon);
 				$rs_list->clear();
 				$rs_list->set_table($_table['school']);
-				if($nationalcode==3){
-					$rs_list->add_where("national = 3");
-				}else{
-					$rs_list->add_where("national = $nationalcode" );
-				}
+				$rs_list->add_where("national = $nationalcode" );
+				
 				
 				
 				if($city){

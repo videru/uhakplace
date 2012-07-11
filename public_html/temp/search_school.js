@@ -8,41 +8,6 @@ img_national[4] = "../n_img/power_such/england.jpg";//4
 img_national[5] = "../n_img/power_such/canada.jpg";//5
 img_national[6] = "../n_img/power_such/usa.jpg";//6
 
-var national_state =
-[
-[],//빈나라 위의 0에 해당
-[ "남섬",
-"북섬"
-]
-,  // 뉴질랜드
-[   "ACT" ],  // 호추
-[ ],  // 필리핀
-[ "England" ],  // 영국
-[  "Alberta"
-],// 캐나다
-[  "Alabama",
-"Alaska",
-"Arizona",
-"Arkansas"
-]   // 미국
-];
-
-var state_city =
-[
-[],//빈나라 위의 0에 해당
-[
-]
-,  // 뉴질랜드
-[   8, 396, 299,  95 ],  // 호추
-[  66,  73,  86,   0 ],  // 필리핀
-[ 116,  26, 586,  42 ],  // 영국
-[  84,   7,  41,  11
-],// 캐나다
-[
-[],//Alabama
-[]
-]   // 미국
-];
 
 var nationalcode;//선택된 국가
 var statecode=0;//선택된 주
@@ -92,8 +57,8 @@ function MM_swapImage() { //v3.0
 		$("#national")[0].src=img_national[a[3]];
 		nationalcode = a[3];
 
-		//팔리핀의 경우에는 주가 없고 나머지는 있음
-		if(a[3] ==3)
+		//팔리핀,영국의 경우에는 주가 없고 나머지는 있음
+		if(a[3] ==3 || a[3] ==4)
 		{
 			$("#stateselect").attr("disabled",'disabled');
 

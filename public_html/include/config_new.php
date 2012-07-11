@@ -20,7 +20,7 @@
 								   ,'9'=>'Gold coast'); // 호주지역
 	$_const['area3']		= array('1'=>'Manila'
 	                               ,'2'=>'Cebu'
-								   ,'3'=>'바기오'
+								   ,'3'=>'Baguio'
 								   ,'4'=>'Iloilo'
 								   ,'5'=>'Bacolod'
 								   ,'6'=>'기타지역'
@@ -31,14 +31,16 @@
 								   ,'11'=>'Tarlac'
 								   ,'12'=>'Tagaytay'
 								   ); // 필리핀지역	
-	$_const['area4']		= array('1'=>'런던'
-	                               ,'2'=>'브리스틀'
-								   ,'3'=>'옥스포드'
-								   ,'4'=>'캠브릿지'
-								   ,'5'=>'본머스'
+	$_const['area4']		= array('1'=>'london '
+	                               ,'2'=>'Bristol '
+								   ,'3'=>'oxford'
+								   ,'4'=>'Cambridge'
+								   ,'5'=>'Bournemouth'
 								   ,'6'=>'기타지역'
 								   ,'7'=>'Eastbourne'
 								   ,'8'=>'Manchester'
+								   ,'9'=>'Wales'
+								   ,'10'=>'Torbay'
 								   ); // 영국지역
 	$_const['area5']		= array('1'=>'Calgary'
 	                               ,'2'=>'Halifax'
@@ -76,14 +78,7 @@ $_const['state'] = array('1'=>array('1'=>'남섬'
 								   ,'8'=>'WA'	
 									)//호주
                         ,'3'=>array()//필리핀
-                        ,'4'=>array('1'=>'Bournemouth'
-					               ,'2'=>'Brighton'
-								   ,'3'=>'Cambridge'
-								   ,'4'=>'Eastbourne'
-								   ,'5'=>'London'
-								   ,'6'=>'Manchester'
-								   ,'7'=>'Oxford'
-						)//영국
+                        ,'4'=>array()//영국
                         ,'5'=>array('1'=>'Alberta'
 						            ,'2'=>'British Columbia'
 									,'3'=>'Manitoba'
@@ -177,13 +172,16 @@ $_const['statecitynum'] = array('1'=>array('1'=>array('2')//남섬
 										   ,'11'=>array('11')//Tarlac
 										   ,'12'=>array('12')//Tagaytay
 											)//필리핀
-		                        ,'4'=>array('1'=>array('1')//Bournemouth
-							               ,'2'=>array('2')//Brighton
-									       ,'3'=>array('3')//Cambridge
-										   ,'4'=>array('4')//Eastbourne
-										   ,'5'=>array('5')//London
-										   ,'6'=>array('6')//Manchester
-										   ,'7'=>array('7')//Oxford		
+		                        ,'4'=>array('1'=>array('1')//london
+							               ,'2'=>array('2')//Bristol
+									       ,'3'=>array('3')//oxford
+										   ,'4'=>array('4')//Cambridge
+										   ,'5'=>array('5')//Bournemout
+										   ,'6'=>array('6')//기타지역
+										   ,'7'=>array('7')//Eastbourne	
+										   ,'8'=>array('8')//Manchester
+										   ,'9'=>array('9')//Wales
+										   ,'10'=>array('10')//Torbay	
 								)//영국
 		                        ,'5'=>array('1'=>array('1')//Alberta
 							               ,'2'=>array('2')//British Columbia

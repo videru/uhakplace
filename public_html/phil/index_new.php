@@ -42,7 +42,7 @@
             <td height="16"></td>
           </tr> 
           <tr>
-            <td><a href="http://www.uhakplace.co.kr/temp/8_9.php" target="_self" onFocus="blur();"><img src="../n_img/main_27.jpg" width="223" height="134" border="0" /></a></td>
+            <td><a href="http://www.uhakplace.co.kr/temp/9_2.php" target="_self" onFocus="blur();"><img src="../n_img/main_27.jpg" width="223" height="134" border="0" /></a></td>
           </tr>
           <tr>
             <td height="16"></td>
@@ -76,31 +76,23 @@
         </table></td>
         <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#3e3e3e">
           <tr valign="top">
-            <td><img src="../n_img/main_12.jpg" width="230" height="178" /></td>
+            <td><img src="../n_img/main_12.jpg" width="230" height="175" /></td>
           </tr>
+          
           <tr>
-            <td><img src="../n_img/main_13.jpg" width="230" height="25" border="0" usemap="#Map3" /></td>
+            <td width="230" height="112" valign="top"><a href="http://www.uhakplace.co.kr/temp/6_2.php" target="_self" onFocus="blur();"><img src="../n_img/main_14.jpg" width="230" height="163" border="0" /></a></td>
           </tr>
+          
           <tr>
-            <td width="230" height="112" valign="top"><a href="http://www.uhakplace.co.kr/temp/6_2.php" target="_self" onFocus="blur();"><img src="../n_img/main_14.jpg" width="230" height="112" border="0" /></a></td>
+            <td width="230" height="113" valign="top"><!--<a href="http://www.uhakplace.co.kr/temp/6_1.html" target="_self" onfocus="blur();">  --><a href="http://www.uhakplace.co.kr/board/list_new.php?bbs_code=jw_notice" target="_self" onFocus="blur();"><img src="../n_img/main_17.jpg" width="230" height="138" border="0" /></a></td>
           </tr>
+          
           <tr>
-            <td><img src="../n_img/main_16.jpg" width="230" height="25" border="0" usemap="#Map4" /></td>
+            <td width="230" height="114" valign="top"><a href="http://www.uhakplace.co.kr/temp/6_3.php" target="_self" onFocus="blur();"><img src="../n_img/main_20.jpg" width="230" height="139" border="0" /></a></td>
           </tr>
+          
           <tr>
-            <td width="230" height="113" valign="top"><!--<a href="http://www.uhakplace.co.kr/temp/6_1.html" target="_self" onfocus="blur();">  --><a href="http://www.uhakplace.co.kr/board/list_new.php?bbs_code=jw_notice" target="_self" onFocus="blur();"><img src="../n_img/main_17.jpg" width="230" height="113" border="0" /></a></td>
-          </tr>
-          <tr>
-            <td><img src="../n_img/main_19.jpg" width="230" height="25" border="0" usemap="#Map5" /></td>
-          </tr>
-          <tr>
-            <td width="230" height="114" valign="top"><a href="http://www.uhakplace.co.kr/temp/6_3.php" target="_self" onFocus="blur();"><img src="../n_img/main_20.jpg" width="230" height="114" border="0" /></a></td>
-          </tr>
-          <tr>
-            <td><img src="../n_img/main_21.jpg" width="230" height="25" border="0" usemap="#Map6" /></td>
-          </tr>
-          <tr>
-            <td width="230" height="113" valign="top"><a href="http://www.uhakplace.co.kr/temp/8_9.php" target="_self" onFocus="blur();"><img src="../n_img/main_25.jpg" width="230" height="113" border="0" /></a></td>
+            <td width="230" height="113" valign="top"><a href="http://www.uhakplace.co.kr/temp/8_9.php" target="_self" onFocus="blur();"><img src="../n_img/main_25.jpg" width="230" height="115" border="0" /></a></td>
           </tr>
     </table></td>
       </tr>
