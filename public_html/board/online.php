@@ -123,7 +123,7 @@ $national=$data['national'] ;
 	<tr>
 		<td bgcolor="#FFFFFF" class="a_text_title" style="padding:5pt 2pt 2pt 5pt">±¹°¡</td>
 		<td colspan="2"><select name="national" class="select2">
-<?=rg_html_option($_const['national'],$national)?>
+			<?=rg_html_option($_const['national'],$national)?>
 		</select></td>
 	</tr>
     <tr>

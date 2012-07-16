@@ -1,14 +1,35 @@
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>í•„ë¦¬í•€ ì „ë¬¸ í¬í„¸ í•„ì‚¬ê³¼</title>
-
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+<title>ÇÊ¸®ÇÉ Àü¹® Æ÷ÅÐ ÇÊ»ç°ú</title>
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+<script src="../js/common.js"></script>
+<script src="../js/lib.validate.js"></script>
 <script language="JavaScript"> 
-<!--  
-function bookmark(){
-   window.external.AddFavorite('http://www.uhakplace.co.kr/', 'ìœ í•™í”Œë ˆì´ìŠ¤')
+function bookmark() {
+	var title= 'À¯ÇÐÇÃ·¹ÀÌ½º';
+	var url ='http://www.uhakplace.co.kr/';
+	
+	//document.write("userAgent : " + navigator.userAgent + "<br>");
+	if(navigator.userAgent.indexOf("MSIE") > 0 ){
+		window.external.AddFavorite(url, title)
+	}
+	else if(navigator.userAgent.indexOf("Firefox") > 0 ){
+	 //document.write("Firefox");
+	 window.sidebar.addPanel(title, url, ""); 
+	}
+	else if(window.opera && window.print)
+	{
+	  var elem = document.createElement('a'); 
+      elem.setAttribute('href',url); 
+      elem.setAttribute('title',title); 
+      elem.setAttribute('rel','sidebar'); 
+      elem.click(); 
+	}
+	else if(navigator.userAgent.indexOf("Chrome") > 0 ){
+	 alert("ÇØ´ç ºê¶ó¿ìÀú¿¡¼­´Â Áö¿øµÇÁö ¾Ê½À´Ï´Ù.");
+	}
 }
-//-->
 </script>
 </head>
 <?
@@ -16,29 +37,26 @@ function bookmark(){
 ?>
 <? include_once('../phil/_header_new.php'); ?>
 
-<body onload="javascript:addfavorites();">
+<body >
 <div style="height:35px;"></div>
-<table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
+<table width="980" border="0" cellpadding="0" cellspacing="0" align="center">
   <tr align="right">
-    <td>
+    <td align="right">
     	<?=rg_outlogin('jw_top')?>
-    	<a href="http://www.uhakplace.co.kr/new" target="_parent" onfocus="blur();"><img src="../n_img/main_03.jpg" width="48" height="17" border="0" /></a>
-    	<a href="http://www.uhakplace.co.kr/temp/login.php" target="_parent" onfocus="blur();"><img src="../n_img/main_04.jpg" width="55" height="17" border="0" /></a>
-    	<a href="http://www.uhakplace.co.kr/temp/8_2.php" target="_parent" onfocus="blur();"><img src="../n_img/main_05.jpg" width="63" height="17" border="0" /></a>
-    	<a href="javascript:bookmark();" onfocus="blur();"><img src="../n_img/main_06.jpg" width="64" height="17" border="0" /></a>
+    	
     </td>
   </tr>
-  <tr>
+  <tr align="center" >
     <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td><a href="http://uhakplace.co.kr" target="_parent" onfocus="blur();"><img src="../n_img/main_07.jpg" width="274" height="61" border="0" /></a></td>
+        <td><a href="http://uhakplace.co.kr" target="_parent" onFocus="blur();"><img src="../n_img/main_07.jpg" width="274" height="61" border="0" /></a></td>
         <td><embed src="../n_img/new_top_menu.swf" width="706" height="61"></embed></td>
       </tr>
     </table></td>
   </tr>
 </table>
 
-<div style="height:52px"></div><!--ì›ëž˜ ê²ƒê³¼ë¶„ë¦¬-->
+<!--¿ø·¡ °Í°úºÐ¸®-->
 </body>
 </html>
 

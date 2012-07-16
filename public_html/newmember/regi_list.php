@@ -1,14 +1,14 @@
 <?
 	include_once("../include/lib.php");
 
-    $ret_url = "../main/";
+    $ret_url = "../new/";
 
 	if(!$_mb)
 	{?>
 	<script>
 	(function(){
 	 alert("로그인 하세요");
-	 document.location = "http://uhakplace.co.kr/temp/login.html"; 
+	 document.location = "http://uhakplace.co.kr/temp/login.php"; 
 	})();
 	</script>
 		

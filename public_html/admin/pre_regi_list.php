@@ -23,7 +23,8 @@
 	$page_info=$rs_list->select_list($page,20,10);
 
 	$MENU_L='m5';	
-?>	
+?>
+
 <? include("_header.php"); ?>
 <? include("admin.header.php"); ?>
 <table border="0" cellpadding="0" cellspacing="0" width="800" align="center">
@@ -136,7 +137,7 @@
     <td align="center" class="tt5"><?=$_regi['chain'][$R[chain]]?></td>
     <td align="center" class="tt5"><?=rg_date($R[regi_date],'%Y.%m.%d')?></td>	
     <td align="center" class="tt5"><?=$R[airpoet_date1]?>.<?=$R[airpoet_date2]?>.<?=$R[airpoet_date3]?></td>	
-    <td align="center" class="tt5"><img src=images/main_real_national<?=$R[national]?>.gif>&nbsp;<?=$_const['national'][$R[national]]?></td>
+    <td align="center" class="tt5"><img src=images/main_real_national<?=$R[national]?>.gif>&nbsp;<?=$_const['national01'][$R[national]]?></td>
     <td align="center" class="tt5"><?=$R[tel]?></td>
     <td align="center" class="tt5"><?=$R[email]?></td>
     <td align="center" class="tt5"><?=$insert_gubun?></td>

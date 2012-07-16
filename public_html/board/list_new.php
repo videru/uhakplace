@@ -4,7 +4,7 @@
   최종수정일 : 
  ===================================================== */
 	include_once("../include/lib.php");
-	include_once($_path['inc']."lib_bbs.php");
+	include_once($_path['inc']."lib_bbs_new.php");
 	
 	$mode='list';
 	
@@ -23,7 +23,16 @@
 		include("msg.php");
 		exit;
 	}
-	
+	$title_img_path;
+	switch($bbs_code)
+	{
+		case "jw_notice":$title_img_path = "../n_img/6_1.jpg";
+		break;
+		case "jw_ot":$title_img_path = "../n_img/6_2.jpg";
+		break;
+		case "jw_yensu":$title_img_path = "../n_img/6_4.jpg";
+		break;
+	}
 	
 	
 	include('list_main_process_new.php');

@@ -6,7 +6,7 @@
 <?
 /* =====================================================
 
-  ÃÖÁ¾¼öÁ¤ÀÏ : 
+  ï¿½ï¿½~ï¿½ï¿½dï¿½ï¿½ : 
  ===================================================== */
 	if(isset($_REQUEST['skin_path'])) exit;
 	if(file_exists($skin_path."style.php")) include($skin_path."style.php");
@@ -18,8 +18,11 @@
 		include('list_pre_process.php');
 	
 	
-		if($mode==='list') include("../temp/top.php");
+		if($mode==='list')
+		 include_once("../temp/top.php");
+	
+		 include_once("../temp/nav.php");
 		if(file_exists($skin_path."list.php")) include($skin_path."list.php");
-		if($mode==='list') include('../temp/footer.php');
+		if($mode==='list') include_once('../temp/footer.php');
 	}
 ?>

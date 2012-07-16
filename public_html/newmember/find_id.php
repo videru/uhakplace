@@ -165,7 +165,7 @@
 		<td>
 		<form name="search_id_form" method="post" action="?" onSubmit="return validate(this)" enctype='multipart/form-data'>
 		<input type="hidden" name="form_mode" value="find_id_ok">
-		<input type="hidden" name="ret_url" value="../main/index.php">
+		<input type="hidden" name="ret_url" value='../phil/index_new.php'>
 		<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
 <!--	<tr>
 				<td height="3" bgcolor="#07472c"><img width="1" height="1"></td>

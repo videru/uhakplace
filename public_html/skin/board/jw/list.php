@@ -1,17 +1,17 @@
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+
 <style>
 #gall a img{ border: 2px solid #e4e4e4; }
 #gall a:hover img{ border: 2px solid #4B9FBE;	}
 </style>
-
-<?include_once '../temp/nav.php'?>
- <!-- 게시판 내용 -->
+ <!-- ????? ???? -->
 <form name="list_form" method="post" enctype="multipart/form-data" action="?">
 <?=$_post_param[3]?>
 <input name="mode" type="hidden" value="">
 <table border="0" cellpadding="0" cellspacing="0" width="692" bordercolordark="white" bordercolorlight="#E1E1E1" onmouseover="list_over_color(event,'#FFFFDD',1)" onmouseout='list_out_color(event)'>
 	<tr align="center" bgcolor="#E8ECF1" height="30">
 <? 
-$colspan=6; //기본 수
+$colspan=6; //?? ??
 ?>
 
 		<tr><td colspan="<?=$colspan?>" height="2" bgcolor="#ffb59c"></td></tr>
@@ -20,7 +20,7 @@ $colspan=6; //기본 수
 	if($rs_list->num_rows()<1) {
 		echo "
 	<tr height=\"50\">
-		<td align=\"center\" colspan=\"".$colspan."\"><B>등록(검색) 된 자료가 없습니다.</td>
+		<td align=\"center\" colspan=\"".$colspan."\"><B>???(???) ?? ??? ??4??.</td>
 	</tr>";
 	}
 
@@ -30,10 +30,10 @@ $colspan=6; //기본 수
 		$i_no=--$no;
 		include("list_data_process_new.php");
 		
-		if($bd_delete > 0) include($_skin_list_delete); // 삭제글	
-		else if($bd_secret > 0) include($_skin_list_secret); // 비밀글
-		else if($bd_notice > 0) include($_skin_list_notice); // 공지사항		
-		else if($o_bd_num==$bd_num) include($_skin_list_current); // 현재글
+		if($bd_delete > 0) include($_skin_list_delete); // ??f??	
+		else if($bd_secret > 0) include($_skin_list_secret); // ??б?
+		else if($bd_notice > 0) include($_skin_list_notice); // ???????		
+		else if($o_bd_num==$bd_num) include($_skin_list_current); // ?????
 		else include($_skin_list_main);
 	}
 ?>
@@ -43,7 +43,7 @@ $colspan=6; //기본 수
 </table>
 </form>
 
- <!-- 검색 등 -->
+ <!-- ??? ?? -->
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
 	<tr>
 		<td height="16"></td>
@@ -51,13 +51,13 @@ $colspan=6; //기본 수
 				<tr>
 					<td align="right" >
 <? if($_bbs_auth['write']) { ?>
-					<img src="<?=$skin_url?>images/write.gif" onclick="location.href='write.php?<?=$_get_param[3]?>'" style="cursor:pointer" align="absmiddle">
+					<img src="<?=$skin_url?>images/write.gif" onclick="location.href='write_new.php?<?=$_get_param[3]?>'" style="cursor:pointer" align="absmiddle">
 <? } ?>
 <? if($_bbs_auth['admin']) { ?>
 <script>
 function board_manager(){
 	if(!chk_checkbox(list_form,'chk_nums[]',true)){
-		alert('한개이상 선택 하세요.');
+		alert('?????? ???? ?????.');
 		return;
 	}
 	window_open('', "board_manager", 'scrollbars=no,width=355,height=200');
@@ -83,23 +83,23 @@ function board_manager(){
 			<table width="100%" border="0" cellpadding="0" cellspacing="0" >
                 <tr>
 					<td>
-						<table width="709" cellspacing="0" border="0" cellpadding="0" align="center">
+						<table width="650" cellspacing="0" border="0" cellpadding="0" align="center">
 						<form name="search_form" action="?" method="get" enctype="multipart/form-data" onsubmit="return validate(this)">
 						<?=$_post_param[0]?>
-							<tr> 
+							<tr align="center"> 
 								
 								<td width="565" background="<?=$skin_url?>images/searchbg.gif">&nbsp;
-									<input type="checkbox" name="ss[sn]" value="1" <?=$checked_sn?>>작성자&nbsp;
+									<input type="checkbox" name="ss[sn]" value="1" <?=$checked_sn?>>이름&nbsp;
 									<input type="checkbox" name="ss[st]" value="1" <?=$checked_st?>>제목&nbsp;
 									<input type="checkbox" name="ss[sc]" value="1" <?=$checked_sc?>>내용&nbsp;&nbsp;
-									<input name="kw" type="text" id="kw" value="<?=$kw?>" size="14" hname="검색어" style="border:0px;width:300px;height:18px;background-image:url('<?=$skin_url?>images/search_form.gif');" required>
+									<input name="kw" type="text" id="kw" value="<?=$kw?>" size="14" hname="" style="border:0px;width:200px;height:18px;background-image:url('<?=$skin_url?>images/search_form.gif');" required>
 									<input type="image" src="<?=$skin_url?>images/s_search.gif" align="absmiddle">
 								</td>
 								
-							</tr>
-							</form>
-						</table>
-						</td>
+						  </tr>
+						  </form>
+		        </table>
+				  </td>
 				</tr>
 			</table>
 		</td>

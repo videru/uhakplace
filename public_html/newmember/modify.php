@@ -10,7 +10,7 @@
 	<script>
 	(function(){
 	 alert("로그인 하세요");
-	 document.location = "http://uhakplace.co.kr/temp/login.html"; 
+	 document.location = "http://uhakplace.co.kr/temp/login.php"; 
 	})();
 	</script>
 		
@@ -153,7 +153,7 @@
 		$rs->commit();
 		// 가입완료 파일이 없다면 바로 다음으로 넘기고 
 //				if (!file_exists($skin_site_path."mb_join_ok.php")) 
-		if($ret_url=='') $ret_url='../main/index.php';
+		if($ret_url=='') $ret_url='../phil/index_new.php';
 		rg_href($ret_url);
 	}
 
@@ -173,7 +173,18 @@
 	}
 	}
 ?>
-<? include_once('_header.php'); ?>
+<? include_once('../temp/top.php'); ?>
+<table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
+   <div style="height:52px"></div>
+  <tr>
+    <td width="223" valign="top"><embed src="../n_img/left_08.swf" width="223" height="400"></embed></td>
+    <td width="37">&nbsp;</td>
+    <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><img src="../n_img/8_1.jpg" width="720" height="250" /></td>
+      </tr>
+<tr>
+ <td>
 <table width="720" align="center" border="0" cellpadding="0" cellspacing="0">
 	<tr>
 		<td>
@@ -185,7 +196,7 @@
 		</table>
 		<form name="member_form" method="post" action="?" onsubmit="return validate(this)" enctype='multipart/form-data'>
 		<input type="hidden" name="form_mode" value="member_modify_ok">
-		<input type="hidden" name="ret_url" value="../main/index.php">
+		<input type="hidden" name="ret_url" value="../phil/index_new.php">
 		<? include('member_form.php') ?>
 		<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
 			<tr>
@@ -202,3 +213,4 @@
 		</td>
 	</tr>
 </table>
+<? include_once('../temp/footer.php'); ?>

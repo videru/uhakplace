@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>М∙└К╕╛М∙─ Л═└К╛╦ М▐╛М└╦ М∙└Л┌╛ЙЁ╪</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+<title>гй╦╝ги юЭ╧╝ фВеп гй╩Г╟З</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
         <td><img src="../n_img/8_9.jpg" width="720" height="250" /></td>
       </tr>
       <tr>
-        <td><iframe src="../newmember/regi_list.php" width="100%" height="1200" border="0" frameborder="no" scrolling="no" marginwidth="0" hspace="0" vspace="0"></iframe></td>
+        <td><? include_once('../newmember/regi_list.php'); ?></td>
      </tr>
     </table></td>
   </tr>

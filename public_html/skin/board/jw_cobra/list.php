@@ -65,7 +65,7 @@
 				<tr>
 					<td align="right" >
 <? if($_bbs_auth['write']) { ?>
-					<img src="<?=$skin_url?>images/write.gif" onclick="location.href='write.php?<?=$_get_param[3]?>'" style="cursor:pointer" align="absmiddle">
+					<img src="<?=$skin_url?>images/write.gif" onclick="location.href='write_new.php?<?=$_get_param[3]?>'" style="cursor:pointer" align="absmiddle">
 <? } ?>
 <? if($_bbs_auth['admin']) { ?>
 <script>

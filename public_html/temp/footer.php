@@ -6,7 +6,7 @@
 </td>
 </tr>
 </table>
-<div height="30">&nbsp;</div><!-- 내용과 약간 띄우기 -->
+<div height="30">&nbsp;</div>
 <!-- 실제 푸터 -->
 <table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
