@@ -7,7 +7,7 @@
 ?>
 <table align="center" cellspacing="0" cellspacing="0" border="0">
 <tr><td align="center">
-<a href="<?=$_path['bbs']?>list.php?bbs_code=<?=$bbs_code?>&year=<?=$nextyear?>&month=<?=$nextmonth?>"> <span style="font-size:10pt;font-weight:bold;"><?=$nextmonth?>¿ù</span></a> <span style="font-size:8pt;"><?=$nextyear?></span>
+<a href="<?=$_path['bbs']?>list_new.php?bbs_code=<?=$bbs_code?>&year=<?=$nextyear?>&month=<?=$nextmonth?>"> <span style="font-size:10pt;font-weight:bold;"><?=$nextmonth?>¿ù</span></a> <span style="font-size:8pt;"><?=$nextyear?></span>
 </td><tr>
 	<tr>
 		<td>
@@ -88,9 +88,9 @@
 										$cal_list->add_where("bd_ext5='$view_date'");
 										$cal_list->add_order("bd_num ASC"); 
 										if($cal=$cal_list->fetch()){
-											echo "<A HREF='{$_path['bbs']}view.php?bbs_code={$bbs_code}&bd_num={$cal[bd_num]}&year=$nextyear&month=$nextmonth' title='$cal[bd_subject]'><b><u><span style=' color:$day_color;'>$day</span></u></b></a></td>" ;
+											echo "<A HREF='{$_path['bbs']}view_new.php?bbs_code={$bbs_code}&bd_num={$cal[bd_num]}&year=$nextyear&month=$nextmonth' title='$cal[bd_subject]'><b><u><span style=' color:$day_color;'>$day</span></u></b></a></td>" ;
 										} else {
-											if($_bbs_auth['write']) 	echo "<a href='{$_path['bbs']}write.php?{$_get_param[3]}&book={$next_book}'>";
+											if($_bbs_auth['write']) 	echo "<a href='{$_path['bbs']}write_new.php?{$_get_param[3]}&book={$next_book}'>";
 											echo "<span style=' color:$day_color;'>$day</span>";
 											if($_bbs_auth['write']) echo "</a>";
 											echo "</td>";

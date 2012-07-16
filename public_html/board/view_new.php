@@ -1,16 +1,11 @@
-<link href="<?=$_url['css']?>style.css" rel="stylesheet" type="text/css">
-<script src="<?=$_url['js']?>common.js"></script>
-<script src="<?=$_url['js']?>lib.validate.js"></script>
-<script src="<?=$_url['js']?>flash.js"></script>
 <?
-
 /* =====================================================
 
   최종수정일 : 
 	2007-12-10 $bd_home XSS취약점 수정
  ===================================================== */
 	include_once("../include/lib.php");
-	include_once($_path['inc']."lib_bbs.php");
+	include_once($_path['inc']."lib_bbs_new.php");
 	
 	$tmp_level=$_gmb_info['gm_level'];
 	if($tmp_level=='') $tmp_level=0;
@@ -61,7 +56,7 @@
 	if(file_exists($skin_path.'setup.php')) include($skin_path.'setup.php');
 	
 	if(!$validate->number_only($bd_num)) {
-		rg_href("list.php?$_get_param[3]");
+		rg_href("list_new.php?$_get_param[3]");
 		exit;
 	}
 
@@ -73,7 +68,7 @@
 	if($mode=='comment_delete') {
 		if($mode2!='select') {
 			if(!$validate->number_only($bc_num)) {
-				rg_href("list.php?$_get_param[3]");
+				rg_href("list_new.php?$_get_param[3]");
 				exit;
 			}
 		}
@@ -87,7 +82,7 @@
 	$rs->add_where("bd_num=$bd_num");
 	$data=$rs->fetch();	
 	if(!$data) {
-		rg_href("list.php?$_get_param[3]");
+		rg_href("list_new.php?$_get_param[3]");
 		exit;
 	}
 
@@ -96,12 +91,12 @@
 	if($mode=='vote_yes' || $mode=='vote_no') {
 		if($mode=='vote_yes' && !$vcfg['vote_yes']) {
 			$_msg_type='vote_yes_auth';
-			include("msg.php");
+			include("msg_new.php");
 			exit;
 		}
 		if($mode=='vote_no' && !$vcfg['vote_no']) {
 			$_msg_type='vote_no_auth';
-			include("msg.php");
+			include("msg_new.php");
 			exit;
 		}
 		// 투표여부
@@ -121,13 +116,13 @@
 			setcookie("vote_chk", $vote_chk, time()+3600*24*30); // 한달
 		} else {
 			$_msg_type='vote_already';
-			include("msg.php");
+			include("msg_new.php");
 			exit;
 		}
 		unset($tmp);
 	
 		$rs->commit();
-		rg_href("view.php?$_get_param[4]");
+		rg_href("view_new.php?$_get_param[4]");
 	}
 	
 	if($mode=='comment_write' || $mode=='comment_delete') {
@@ -137,7 +132,7 @@
 					$_msg_type='comment_write_no_auth_member';
 				else
 					$_msg_type='comment_write_no_auth_guest';
-				include("msg.php");
+				include("msg_new.php");
 				exit;
 			}
 			
@@ -145,7 +140,7 @@
 				$schk_code = $_SESSION["schk_".$spam_chk_code];
 				if($schk_code =='' || $schk_code != $spam_chk) { // 스팸문자 맞지 않음
 					$_msg_type='spam_chk';
-					include("msg.php");
+					include("msg_new.php");
 					exit;
 				}
 			}
@@ -154,7 +149,7 @@
 				if($bc_name=='' && $_mb) $bc_name=$s_bc_name;
 				if($bc_name=='') {
 					$_msg_type='comment_write_no_name';
-					include("msg.php");
+					include("msg_new.php");
 					exit;
 				}
 			} else {
@@ -163,13 +158,13 @@
 			
 			if($bc_pass=='' && !$_mb) {
 				$_msg_type='comment_write_no_pass';
-				include("msg.php");
+				include("msg_new.php");
 				exit;
 			}
 			
 			if($bc_content=='') {
 				$_msg_type='comment_write_no_content';
-				include("msg.php");
+				include("msg_new.php");
 				exit;
 			}
 			
@@ -202,7 +197,7 @@
 			if($mode2=='select') { // 선택삭제
 				if(!$_auth['bbs_admin']) {
 					$_msg_type='comment_delete_no_auth_member';
-					include("msg.php");
+					include("msg_new.php");
 				} else {
 					if(is_array($chk_cnums)) {
 						$rs->clear();
@@ -220,7 +215,7 @@
 				}
 			} else {
 				if(!$validate->number_only($bc_num)) {
-					rg_href("view.php?$_get_param[4]");
+					rg_href("view_new.php?$_get_param[4]");
 					exit;
 				}
 	/*
@@ -242,7 +237,7 @@
 				if($_auth['bbs_admin']) {
 					if($confirm!='ok') {
 						$_confirm_type='comment_delete_admin';
-						include("confirm.php");
+						include("confirm_new.php");
 						exit;
 					}
 				} else {
@@ -251,7 +246,7 @@
 						if($_mb['mb_num']==$data_comment['mb_num']) {
 							if($confirm!='ok') {
 								$_confirm_type='comment_delete_member';
-								include("confirm.php");
+								include("confirm_new.php");
 								exit;
 							}
 						} else {
@@ -259,14 +254,14 @@
 							if($data_comment['bc_pass']=='') {
 								// 글 암호가 없다면
 								$_msg_type='comment_delete_no_auth_member';
-								include("msg.php");
+								include("msg_new.php");
 								exit;
 							} else {
 								// 글 암호 있다면
 								if($old_pass=='') { // 입력된 암호 없다면
 									// 암호입력
 									$_pass_type='comment_delete';
-									include("pass.php");
+									include("pass_new.php");
 									exit;
 								} else {
 									// 입력된 암호 있다면 비교
@@ -274,7 +269,7 @@
 										// 암호가 다르다면
 										// 에러 메시지 표시
 										$_msg_type='comment_delete_pass_error';
-										include("msg.php");
+										include("msg_new.php");
 										exit;
 									}
 								} // $old_pass==''
@@ -285,14 +280,14 @@
 						if($data_comment['bc_pass']=='') {
 							// 글 암호가 없다면
 							$_msg_type='comment_delete_no_auth_guest';
-							include("msg.php");
+							include("msg_new.php");
 							exit;
 						} else {
 							// 글 암호가 있다면
 							if($old_pass=='') { // 입력된 암호 없다면
 								// 암호입력
 								$_pass_type='comment_delete';
-								include("pass.php");
+								include("pass_new.php");
 								exit;
 							} else {
 								// 입력된 암호 있다면 비교
@@ -300,7 +295,7 @@
 									// 암호가 다르다면
 									// 에러 메시지 표시
 									$_msg_type='comment_delete_pass_error';
-									include("msg.php");
+									include("msg_new.php");
 									exit;
 								}
 							} // $old_pass==''
@@ -354,7 +349,7 @@
 			$mail_subject = rg_get_text($data[bd_subject]);
 			$mail_from_name = rg_get_text($bc_name);
 			$mail_content = rg_conv_text($bc_content);
-			$mail_view_url = rg_get_current_url().'view.php?bbs_code='.$bbs_code.'&bd_num='.$bd_num;
+			$mail_view_url = rg_get_current_url().'view_new.php?bbs_code='.$bbs_code.'&bd_num='.$bd_num;
 	
 			// 이메일 추출하기 
 			$email_list=array();
@@ -399,7 +394,7 @@
 		}
 
 
-		rg_href("view.php?$_get_param[4]");
+		rg_href("view_new.php?$_get_param[4]");
 	} // 코멘트 관련 여기까지
 
 	// 권한체크	
@@ -410,19 +405,19 @@
 				if($bd_pass=='') { // 암호가 없다면
 					// 에러 메시지 표시
 					$_msg_type='view_secret_error';
-					include("msg.php");
+					include("msg_new.php");
 					exit;
 				} else {
 					if($old_pass=='') { // 암호입력
 						// 암호입력
 						$_pass_type='view_secret';
-						include("pass.php");
+						include("pass_new.php");
 						exit;
 					} else {
 						if($bd_pass!=rg_password_encode($old_pass)) {
 							// 에러 메시지 표시
 							$_msg_type='view_secret_pass_error';
-							include("msg.php");
+							include("msg_new.php");
 							exit;
 						}
 					}
@@ -434,7 +429,7 @@
 			$_msg_type='view_no_auth_member';
 		else
 			$_msg_type='view_no_auth_guest';
-		include("msg.php");
+		include("msg_new.php");
 		exit;
 	}
 	
@@ -443,7 +438,7 @@
 		if(!$_auth['bbs_admin']) { // 관리자가 아니라면
 			// 에러 메시지 표시
 			$_msg_type='view_delete_error';
-			include("msg.php");
+			include("msg_new.php");
 			exit;
 		}
 	}
@@ -537,12 +532,12 @@
 		$vcfg['view_signature']=false;
 	}
 
-	$url_modify="write.php?$_get_param[3]&bd_num=$bd_num&mode=modify";
-	$url_delete="write.php?$_get_param[3]&bd_num=$bd_num&mode=delete";
-	$url_reply="write.php?$_get_param[3]&bd_num=$bd_num&mode=reply";
+	$url_modify="write_new.php?$_get_param[3]&bd_num=$bd_num&mode=modify";
+	$url_delete="write_new.php?$_get_param[3]&bd_num=$bd_num&mode=delete";
+	$url_reply="write_new.php?$_get_param[3]&bd_num=$bd_num&mode=reply";
 	$url_list=$url_list_org."&bd_num=$bd_num";
-	$url_vote_yes="view.php?$_get_param[3]&bd_num=$bd_num&mode=vote_yes";
-	$url_vote_no="view.php?$_get_param[3]&bd_num=$bd_num&mode=vote_no";
+	$url_vote_yes="view_new.php?$_get_param[3]&bd_num=$bd_num&mode=vote_yes";
+	$url_vote_no="view_new.php?$_get_param[3]&bd_num=$bd_num&mode=vote_no";
 
 	if($is_admin) {
 		$bd_content = rg_conv_text($bd_content,$bd_html);
@@ -604,7 +599,7 @@
 				$prev_data['bd_subject'] = rg_get_text($prev_data['bd_subject']);
 			}
 //			$prev_data['bd_content'] = rg_conv_text($prev_data['bd_content'],$prev_data['bd_html']);
-			$url_view_prev="view.php?$_get_param[3]&bd_num={$prev_data['bd_num']}";
+			$url_view_prev="view_new.php?$_get_param[3]&bd_num={$prev_data['bd_num']}";
 		}	else {
 			$url_view_prev="";
 		}
@@ -616,7 +611,7 @@
 				$next_data['bd_subject'] = rg_get_text($next_data['bd_subject']);
 			}
 //			$next_data['bd_content'] = rg_conv_text($next_data['bd_content'],$next_data['bd_html']);
-			$url_view_next="view.php?$_get_param[3]&bd_num={$next_data['bd_num']}";
+			$url_view_next="view_new.php?$_get_param[3]&bd_num={$next_data['bd_num']}";
 		}	else {
 			$url_view_next="";
 		}
@@ -653,7 +648,8 @@
 	$bd_name_layer=
 		rg_name_layer($mb_id,$bd_name,$mb_icon,$open_profile,$open_memo,$bbs_code,$bd_num,$bd_home,$bd_email);
 		
-	include("../temp/top.php");
+	include_once("../temp/top.php");
+	include_once("../temp/nav.php");
 	if(file_exists($skin_path."view.php")) include($skin_path."view.php");
-	include('../temp/footer.php');
+	include_once('../temp/footer.php');
 ?>

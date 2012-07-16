@@ -45,7 +45,7 @@ padding:0px;
 
 <table align="center" cellspacing="0" cellspacing="0" border="0">
 <tr><td align="center">
-<a href="<?=$_path['bbs']?>list.php?bbs_code=<?=$bbs_code?>&year=<?=$prevyear?>&month=<?=$prevmonth?>"><span style="font-size:10pt;font-weight:bold;"><?=$prevmonth?>¿ù</span></a> <span style="font-size:8pt;"><?=$prevyear?></span>
+<a href="<?=$_path['bbs']?>list_new.php?bbs_code=<?=$bbs_code?>&year=<?=$prevyear?>&month=<?=$prevmonth?>"><span style="font-size:10pt;font-weight:bold;"><?=$prevmonth?>¿ù</span></a> <span style="font-size:8pt;"><?=$prevyear?></span>
 </td><tr>
 	<tr>
 		<td>
@@ -117,9 +117,9 @@ padding:0px;
 										$cal_list->add_where("bd_ext5='$view_date'");
 										$cal_list->add_order("bd_num ASC"); 
 										if($cal=$cal_list->fetch()){
-											echo "<A HREF='{$_path['bbs']}view.php?bbs_code={$bbs_code}&bd_num={$cal[bd_num]}&year=$prevyear&month=$prevmonth' title='$cal[bd_subject]'><b><u><span style=' color:$day_color;'>$day</span></u></b></a></td>" ;
+											echo "<A HREF='{$_path['bbs']}view_new.php?bbs_code={$bbs_code}&bd_num={$cal[bd_num]}&year=$prevyear&month=$prevmonth' title='$cal[bd_subject]'><b><u><span style=' color:$day_color;'>$day</span></u></b></a></td>" ;
 										} else {
-											if($_bbs_auth['write']) 	echo "<a href='{$_path['bbs']}write.php?{$_get_param[3]}&book={$prev_book}'>";
+											if($_bbs_auth['write']) 	echo "<a href='{$_path['bbs']}write_new.php?{$_get_param[3]}&book={$prev_book}'>";
 											echo "<span style=' color:$day_color;'>$day</span>";
 											if($_bbs_auth['write']) echo "</a>";
 											echo "</td>";
