@@ -43,6 +43,7 @@
 								   ,'10'=>'Torbay'
 								   ); // 영국지역
 	$_const['area5']		= array('1'=>'Calgary'
+<<<<<<< HEAD
 	                               ,'2'=>'Canmore'
 								   ,'3'=>'Edmonton'
 								   ,'4'=>'Grande Prairie'
@@ -71,6 +72,16 @@
 ,'27'=>'Victoria'
 ,'28'=>'West Vancouver'
 ,'29'=>'Whistler'
+=======
+	                               ,'2'=>'Halifax'
+								   ,'3'=>'Montreal'
+								   ,'4'=>'Ottawa'
+								   ,'5'=>'Surrey'
+								   ,'6'=>'Toronto'
+								   ,'7'=>'Vancouver'
+								   ,'8'=>'Victoria'
+								   ,'9'=>'Whistler'
+>>>>>>> a5194620cbb296d3b5e3162483bae4e15a98e0e9
 								   ); //캐나다 
 $_const['area6']			 = array('1'=>'Los Angeles'
                                     ,'2'=>'San Diego'

@@ -82,9 +82,9 @@ A.green:hover   { color:#69A80F; text-decoration:none;}
 if($_bbs_auth['cart']) { 
 	?>	<td width="20"><input type="checkbox" onClick="set_checkbox(list_form,'chk_nums[]',this.checked)" class="none"></td>
 <? } ?><td width="80">
-			<a href="list.php?bbs_code=<?=$bbs_code?>&year=<?=$prevyeary?>&month=<?=$pmonth?>" title="<?=$prevyeary?>년 <?=$pmonth?>월 보기" style="font-size:11px;" class="green">◀</a> 
+			<a href="list_new.php?bbs_code=<?=$bbs_code?>&year=<?=$prevyeary?>&month=<?=$pmonth?>" title="<?=$prevyeary?>년 <?=$pmonth?>월 보기" style="font-size:11px;" class="green">◀</a> 
 			<span  style="font-size:13px;font-weight:bold;"><?=$year?>년</span> 
-			<a href="list.php?bbs_code=<?=$bbs_code?>&year=<?=$nextyeary?>&month=<?=$pmonth?>" title="<?=$nextyeary?>년 <?=$pmonth?>월 보기" style="font-size:11px;" class="green">▶</a> 
+			<a href="list_new.php?bbs_code=<?=$bbs_code?>&year=<?=$nextyeary?>&month=<?=$pmonth?>" title="<?=$nextyeary?>년 <?=$pmonth?>월 보기" style="font-size:11px;" class="green">▶</a> 
 			</td>
 			<td>
 			<form name="cal_month_form" action="?" method="get" enctype="multipart/form-data">

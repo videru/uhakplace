@@ -14,7 +14,11 @@ if(!isset($site_path) || preg_match("/:\/\//",$site_path)) $site_path='../';
 <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
 <title>Untitled Document</title>
 <script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<<<<<<< HEAD
 <script language="javascript" type="text/javascript" src="../temp/search_school.js?20120716_2"></script>
+=======
+<script language="javascript" type="text/javascript" src="../temp/search_school.js?20120704_4"></script>
+>>>>>>> a5194620cbb296d3b5e3162483bae4e15a98e0e9
 <style type="text/css">
 #stateselect {
 	font-size: 12px;

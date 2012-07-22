@@ -5,7 +5,7 @@ if($data[$s]['bd_ext5']==$book)	{//일정이 있다면..
 		else $bd_subject=$bd_subject=$data[$s]['bd_subject'];
 
 		$bd_num=$data[$s]['bd_num'];
-		$view_url="view.php?$_get_param[3]&bd_num=$bd_num&year=$year&month=$month";
+		$view_url="view_new.php?$_get_param[3]&bd_num=$bd_num&year=$year&month=$month";
 	
 		// 카테고리명
 		$cat_num=$data[$s]['cat_num'];

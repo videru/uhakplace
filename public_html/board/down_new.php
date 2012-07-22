@@ -32,23 +32,27 @@
 
 	extract($data);
 	$bd_files=unserialize($bd_files);
-	
+
 	if($bd_files[$key]) {
 		if($mode=='down')
 			$type='application/octet-stream';
 		else
 			$type=$bd_files[$key]['type'];
+		
 		if(file_exists($_path['bbs_data'].$bd_files[$key][sname])) {
 			$LastModified = gmdate("D d M Y H:i:s", filemtime($_path['bbs_data'].$bd_files[$key][sname])); 
 			header("Last-Modified: $LastModified GMT"); 
 			header("ETag: \"$LastModified\""); 
-			rg_file_download($_path['bbs_data'].$bd_files[$key][sname],$bd_files[$key][name],$type);
-			if($mode=='down') {
+			echo ($_path['bbs_data'].$bd_files[$key][sname]);
+				
+				if($mode=='down') {
 				$bd_files[$key][hits]++;
 				$bd_files=serialize($bd_files);
 				$rs->add_field("bd_files",$bd_files);
 				$rs->update();
 				$rs->commit();
+				rg_file_download($_path['bbs_data'].$bd_files[$key][sname],$bd_files[$key][name],$type);
+						
 			}
 		} else 
 			rg_href('','파일이 없습니다.','back');
