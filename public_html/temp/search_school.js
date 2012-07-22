@@ -23,7 +23,7 @@ function MM_preloadImages() { //v3.0
 }
 
 
-$("#national")[0].src=img_national[a[1]];//초기이미지는 뉴질랜드
+	MM_swapImage('Image5','','../n_img/power_such/btn_4.jpg',5);//초기이미지는 뉴질랜드
 }
 function MM_swapImgRestore() { //v3.0
 	var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
@@ -169,7 +169,9 @@ function MM_selectMenu(type)
 		case 1://도시선택
 			
 			$('#schoolselect').empty();
-			citycode=$("#cityselect option:selected")[0].value* 1;
+			if(nationalcode == 3 || nationalcode==4)
+				citycode=$("#cityselect option:selected")[0].value* 1;
+			else citycode=$("#cityselect option:selected")[0].value* 1+1;
 			
 			$('#schoolselect').append('<option value="'+0+'" selected="selected">-학교-</option>');
 			$.getJSON("http://uhakplace.co.kr/temp/state.php?nationalcode="+nationalcode+"&state="+statecode+"&city="+citycode
@@ -207,12 +209,11 @@ function searchschool()
 	
 	if(nationalcode)
 	{
-	    if(statecode !=0 && citycode == 0)
+	    if(statecode !=null && statecode !=0 && (citycode ==null || citycode == 0))
 	    {
-	        alert("도시를 선택하세요");
-	        return;
+	    	window.location="http://uhakplace.co.kr/phil/school_list_new.php?national="+nationalcode+"&state="+statecode;//국가도시 선택
 	    }
-	    if( citycode !=0)
+	    else if(citycode !=null && citycode !=0)
 	    {
 	       window.location="http://uhakplace.co.kr/phil/school_list_new.php?national="+nationalcode+"&area="+citycode;//국가도시 선택
 	    }

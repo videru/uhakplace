@@ -102,7 +102,7 @@ onload=set_img_width_init;
 			list($is_image)=explode('/',$v['type']);
 			if($is_image!='image') continue;
 ?>
-<img src="<?=$v['view_url']?>" onclick="view_image_popup(this)" id="view_image" style="cursor:pointer; border:2px solid #e4e4e4;"><br><br>
+<img src="<?=$v['view_url']?>" onerror="javascript:LoadImg(this,'<?=$v['view_url']?>')"  onclick="view_image_popup(this)" id="view_image" style="cursor:pointer; border:2px solid #e4e4e4;"><br><br>
 <? 	}
 	}
 ?>

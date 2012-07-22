@@ -22,7 +22,7 @@ $bd_content = ereg_replace("&nbsp;","",$bd_content);
 			list($is_image)=explode('/',$v['type']);
 			if($is_image=='image') {
 			?>
-			<a href="<?=$view_url?>"><img src="<?=$v['view_url']?>" width="90" height="68" align="left" border="0"></a>
+			<a href="<?=$view_url?>"><img src="<?=$v['view_url']?>" onerror="javascript:LoadImg(this,'<?=$v['view_url']?>')"  width="90" height="68" align="left" border="0"></a>
 			<?
 			}
 		} 

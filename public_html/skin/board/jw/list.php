@@ -1,5 +1,13 @@
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+<script type="text/javascript" src='http://code.jquery.com/jquery-1.7.2.min.js'></script>
+<script>
+function LoadImg(img,url)
+{
 
+	$.get(url,function(msg){
+		img.src=msg;
+	});
+}
+</script>
 <style>
 #gall a img{ border: 2px solid #e4e4e4; }
 #gall a:hover img{ border: 2px solid #4B9FBE;	}
@@ -14,7 +22,7 @@
 $colspan=6; //?? ??
 ?>
 
-		<tr><td colspan="<?=$colspan?>" height="2" bgcolor="#ffb59c"></td></tr>
+		<tr><td colspan="<?=$colspan?>" height="2" bgcolor="#68bf5e"></td></tr>
 
 <?
 	if($rs_list->num_rows()<1) {
@@ -39,7 +47,7 @@ $colspan=6; //?? ??
 ?>
 
 
-		<tr><td colspan="<?=$colspan?>" height="2" bgcolor="#ffb59c"></td></tr>
+		<tr><td colspan="<?=$colspan?>" height="2" bgcolor="#68bf5e"></td></tr>
 </table>
 </form>
 

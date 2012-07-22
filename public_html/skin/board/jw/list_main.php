@@ -1,8 +1,18 @@
 <?$bd_content=strip_tags($bd_content);
 $bd_content = ereg_replace("&nbsp;","",$bd_content);
-//$bd_content = ereg_replace(" ","",$bd_content);
-?>
 
+?>
+<script>
+	
+function Save(url)
+{
+	alert(url);
+	$.get(url,function(msg){
+		alert(msg);
+	});
+}
+	
+</script>
 
 <tr><td colspan="4" height="10" ></td></tr>
 <TR bgColor='<?=($i%2==1)?"#F7F7F7":"#FFFFFF"?>' height="78">
@@ -18,11 +28,14 @@ $bd_content = ereg_replace("&nbsp;","",$bd_content);
 		$v=current($bd_files);
 		foreach($bd_files as $k => $v) { 
 			$v['view_url']= $_url['bbs']."down.php?bbs_code=".$_get_param[3]."&bd_num=".$bd_num."&key=".$k."&mode=view"; 
+				
+		
 		}
 			list($is_image)=explode('/',$v['type']);
 			if($is_image=='image') {
 			?>
-			<a href="<?=$view_url?>"><img src="<?=$v['view_url']?>" width="90" height="68" align="left" border="0"></a>
+			
+			<a href="<?=$view_url?>"><img src="<?=$v['view_url']?>" onerror="javascript:LoadImg(this,'<?=$v['view_url']?>')" width="90" height="68" align="left" border="0"></a>
 			<?
 			}
 		} 
